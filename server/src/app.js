@@ -21,11 +21,10 @@ const app = express();
 
 
 
-// à faire après
 // Utilisation des middlewares
-// app.use(body_parser_middleware);
-// app.use(cookie_parser_middleware);
-// app.use(session_middleware);
+app.use(body_parser_middleware);
+app.use(cookie_parser_middleware);
+app.use(session_middleware);
 
 
 
@@ -65,7 +64,7 @@ app.use( (req,res,next) => {
 
 const PORT = process.env.SERVER_PORT || 3000;
 
-// Configuration du port d'écoute du serverconsole.log('Port d\'écoute du serveur : ', process.env.PORT_BACK_ECOUTE);
+// Configuration du port d'écoute 
 app.listen( PORT, () => {
     console.log('Serveur en écoute sur le port : ', PORT);
 });
