@@ -10,6 +10,6 @@ const user_schema = new mongoose.Schema({
 });
 
 // Création du modèle à partir du schéma
-const User_model = mongoose.model('User_model', user_schema);
+const User_model = mongoose.model('User', user_schema);
 
 module.exports = User_model;

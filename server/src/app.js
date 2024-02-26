@@ -6,7 +6,7 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 // Charger le module des variables d'environnement & exportation des variables d'environnements
-require('dotenv').config;
+require('dotenv').config();
 // Importation des middlewares de l'application
 const { session_middleware, cookie_parser_middleware, body_parser_middleware } = require('./middlewares/app_middlewares');
 
@@ -30,6 +30,9 @@ app.use(session_middleware);
 
 // Utilisation des routes de l'application
 
+// Utilisation des routes pour les utilisateurs
+const user_route = require('./routes/user_route');
+app.use('/user', user_route);
 
 
 

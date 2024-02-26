@@ -18,6 +18,6 @@ const logement_schema = new mongoose.Schema({
 });
 
 // Création du modèle à partir du schéma
-const Logement_model = mongoose.model('Logement_model', logement_schema);
+const Logement_model = mongoose.model('Logement', logement_schema);
 
 module.exports = Logement_model;
