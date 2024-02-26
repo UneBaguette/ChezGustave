@@ -1,11 +1,10 @@
-const app = require('./app');
-const database = require('./database');
+// main.js
 
-database.authenticate().then(() => {
-    console.log('Connected to database!');
-    database.sync({ force: true });
-});
+//  Point d'entrée de l'application
 
-app.listen(process.env.PORT, () => {
-    console.log('Server listening on 3630');
-});
+
+
+// Importation de la configuration de l'application
+const app = require("./app.js");
+// Importation de la configuration de la connexionà l'application
+const {mongoose, objet_connexion} = require("./config/db_info.js");
