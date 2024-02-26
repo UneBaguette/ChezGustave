@@ -33,7 +33,14 @@ app.use(session_middleware);
 // Utilisation des routes pour les utilisateurs
 const user_route = require('./routes/user_route');
 app.use('/user', user_route);
+// Utilisation des routes pour les reservations
+const reservation_route = require('./routes/reservation_routes');
 
+// Utilisation des routes pour rating
+const rating_route = require('./routes/rating_routes');
+
+// Utilisation des routes pour logement
+const logement_route = require('./routes/logement_routes');
 
 
 

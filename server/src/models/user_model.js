@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-// Définition du schéma
+// Définition du schéma user
 const user_schema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   name: { type: String, required: true },

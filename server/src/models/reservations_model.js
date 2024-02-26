@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Définition du shema reservation
 const reservation_schema = new mongoose.Schema({
     id: { type: Number, required: true, unique: true },
     start_date: { type: Date, required: true },

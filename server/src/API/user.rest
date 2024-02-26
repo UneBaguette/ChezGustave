@@ -1,3 +1,4 @@
+### Création d'un utilisateur
 POST http://localhost:3000/user/ajout-user
 Content-Type: application/json
 
@@ -7,4 +8,80 @@ Content-Type: application/json
   "tel": "0123456789",
   "password": "1234",
   "is_admin": false
+}
+
+
+
+
+### Obtenir tous les utilisateurs
+GET http://localhost:3000/user/get-all-users
+
+
+
+
+
+### Modifier les informations des utilisateurs en bloc (ici 1 bloc "{}")
+PUT http://localhost:3000/user/update-users-bloc
+Content-Type: application/json
+
+[
+  {
+    "_id": "65dc9f93a76a80f85398a277",
+    "email": "nouveau_email2@example.com",
+    "name": "Nouveau Nom 1",
+    "tel": "091011121314",
+    "password": "1234",
+    "is_admin": true
+  }
+]
+
+
+
+
+
+### Supprimer tous les utilisateurs
+DELETE http://localhost:3000/user/delete-all-users
+
+
+
+
+
+### Supprimer un utilisateur par son id
+DELETE http://localhost:3000/user/delete-user/65dc9d6e852609fb97f735db
+
+
+
+
+
+### Rechercher un utilisateur via son id (Récupérer les détails du user)
+GET http://localhost:3000/user/get-user-by-id/65dc8af62a171e3d79d95ebc
+
+
+
+
+
+### Modifier les informations d'un utilisateur par son id
+PUT http://localhost:3000/user/update-users/65dc8af62a171e3d79d95ebc
+Content-Type: application/json
+
+  {
+    "_id": "65dc8af62a171e3d79d95ebc",
+    "email": "nouvel_utilisateur2@example.com",
+    "name": "Nouvel Utilisateur",
+    "tel": "0123456789",
+    "password": "1234",
+    "is_admin": false
+  }
+
+
+
+
+
+### LOGIN USER
+GET http://localhost:3000/user/login-user
+Content-Type: application/json
+
+{
+  "email": "nouvel_utilisateur@example.com",
+  "password": "1234"
 }
