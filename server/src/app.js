@@ -8,8 +8,7 @@ const jwt = require('jsonwebtoken');
 // Charger le module des variables d'environnement & exportation des variables d'environnements
 require('dotenv').config;
 // Importation des middlewares de l'application
-// à faire après
-// const { session_middleware, cookie_parser_middleware, body_parser_middleware } = require('./middlewares/app_middlewares');
+const { session_middleware, cookie_parser_middleware, body_parser_middleware } = require('./middlewares/app_middlewares');
 
 
 
