@@ -19,7 +19,7 @@ exports.create_user = async (req, res) => {
         const hashed_password = await bcrypt.hash(password, 10);
 
         // Création d'un nouvel utilisateur avec le mot de passe hashé
-        const newUser = new User({
+        const new_user = new User({
             email,
             name,
             tel,
@@ -28,7 +28,7 @@ exports.create_user = async (req, res) => {
         });
 
         // Sauvegarde de l'utilisateur
-        const saved_user = await newUser.save();
+        const saved_user = await new_user.save();
 
         // Réponse positive de l'utilisateur sauvegardé
         res.status(201).json(saved_user);
@@ -88,15 +88,15 @@ exports.get_user_by_id = async (req, res) => {
 exports.update_users_bloc = async (req, res) => {
     try {
         // Récupérer les données des utilisateurs à mettre à jour depuis la requête
-        const usersToUpdate = req.body;
+        const users_to_update = req.body;
 
         // Parcourir chaque utilisateur à mettre à jour
-        for (let i = 0; i < usersToUpdate.length; i++) {
-            const userData = usersToUpdate[i];
-            const userId = userData._id;
+        for (let i = 0; i < users_to_update.length; i++) {
+            const user_data = users_to_update[i];
+            const user_id = user_data._id;
 
             // Mettre à jour l'utilisateur dans la base de données
-            await User.findByIdAndUpdate(userId, userData, { new: true });
+            await User.findByIdAndUpdate(user_id, user_data, { new: true });
         }
 
         // Renvoyer une réponse de succès si toutes les mises à jour ont réussi
@@ -115,20 +115,20 @@ exports.update_users_bloc = async (req, res) => {
 exports.update_user_by_id = async (req, res) => {
     try {
         // Récupérer l'ID de l'utilisateur à mettre à jour depuis les paramètres de l'URL
-        const userId = req.params.id;
+        const user_id = req.params.id;
         // Récupérer les données de l'utilisateur à mettre à jour depuis le corps de la requête
-        const userData = req.body;
+        const user_data = req.body;
 
         // Mettre à jour l'utilisateur dans la base de données
-        const updatedUser = await User.findByIdAndUpdate(userId, userData, { new: true });
+        const updated_user = await User.findByIdAndUpdate(user_id, user_data, { new: true });
 
         // Vérifier si l'utilisateur a été trouvé et mis à jour
-        if (!updatedUser) {
+        if (!updated_user) {
             return res.status(404).json({ message: "Utilisateur non trouvé." });
         }
 
         // Renvoyer la réponse avec l'utilisateur mis à jour
-        res.status(200).json(updatedUser);
+        res.status(200).json(updated_user);
     } catch (error) {
         console.error("Une erreur s'est produite lors de la mise à jour des utilisateurs :", error);
         res.status(500).json({ message: "Une erreur s'est produite lors de la mise à jour des utilisateurs." });
@@ -161,13 +161,13 @@ exports.delete_all_users = async (req, res) => {
 exports.delete_user_by_id = async (req, res) => {
     try {
         // Récupérer l'ID de l'utilisateur à supprimer depuis les paramètres de l'URL
-        const userId = req.params.id;
+        const user_id = req.params.id;
 
         // Supprimer l'utilisateur de la base de données
-        const deletedUser = await User.findByIdAndDelete(userId);
+        const deleted_user = await User.findByIdAndDelete(user_id);
 
         // Vérifier si l'utilisateur a été trouvé et supprimé
-        if (!deletedUser) {
+        if (!deleted_user) {
             return res.status(404).json({ message: "Utilisateur non trouvé." });
         }
 
@@ -201,7 +201,6 @@ exports.login_user = async (req, res) => {
         // Générez le token JWT
         const token = jwt.sign({ user_id: user._id }, process.env.SECRET_KEY);
 
-        // Renvoyer le token dans la réponse
         // Renvoyer le token et les informations de l'utilisateur dans la réponse
         res.status(200).json({
             message: 'Authentification réussie',token,user});
