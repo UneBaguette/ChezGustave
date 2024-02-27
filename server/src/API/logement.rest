@@ -1,0 +1,17 @@
+POST http://localhost:3000/logement/ajouter-logement
+Content-Type: application/json
+
+{
+  "images": ["image1.jpg", "image2.jpg"],
+  "secteur": "Quartier A",
+  "description": "Description du logement",
+  "tarif_bas": 100,
+  "tarif_moyen": 150,
+  "tarif_haut": 200,
+  "m_carre": 80,
+  "chambre": 2,
+  "salle_de_bain": 1,
+  "categorie": "Appartement",
+  "type": "T2",
+  "equipements": ["wifi", "climatisation"]
+}

@@ -1,12 +1,11 @@
+// Importation du model user
 const User = require('../models/user_model');
+// Importation de jwt pour vérifier les cookies d el'utilisateur
 const jwt = require('jsonwebtoken');
-
-
 // Contorller d'ajout d'un utilisateur
 const bcrypt = require('bcrypt');
-
-
-
+// Charger le module des variables d'environnement & exportation des variables d'environnements
+require('dotenv').config();
 
 
 // Controller pour l'inscritpion d'un utilisateur
@@ -95,6 +94,12 @@ exports.update_users_bloc = async (req, res) => {
             const user_data = users_to_update[i];
             const user_id = user_data._id;
 
+            // Vérifier si un nouveau mot de passe est fourni
+            if (user_data.password) {
+                // Hasher le nouveau mot de passe
+                user_data.password = await bcrypt.hash(user_data.password, 10);
+            }
+
             // Mettre à jour l'utilisateur dans la base de données
             await User.findByIdAndUpdate(user_id, user_data, { new: true });
         }
@@ -117,7 +122,13 @@ exports.update_user_by_id = async (req, res) => {
         // Récupérer l'ID de l'utilisateur à mettre à jour depuis les paramètres de l'URL
         const user_id = req.params.id;
         // Récupérer les données de l'utilisateur à mettre à jour depuis le corps de la requête
-        const user_data = req.body;
+        let user_data = req.body;
+
+        // Vérifier si un nouveau mot de passe est fourni
+        if (user_data.password) {
+            // Hasher le nouveau mot de passe
+            user_data.password = await bcrypt.hash(user_data.password, 10);
+        }
 
         // Mettre à jour l'utilisateur dans la base de données
         const updated_user = await User.findByIdAndUpdate(user_id, user_data, { new: true });
@@ -134,6 +145,7 @@ exports.update_user_by_id = async (req, res) => {
         res.status(500).json({ message: "Une erreur s'est produite lors de la mise à jour des utilisateurs." });
     }
 };
+
 
 
 
@@ -183,6 +195,30 @@ exports.delete_user_by_id = async (req, res) => {
 
 
 
+// Controller pour récupérer les réservations d'un user
+
+const Reservation = require('../models/reservation_model');
+
+exports.get_user_reservations = async (req, res) => {
+    try {
+        // Récupérer l'ID de l'utilisateur depuis les paramètres de l'URL
+        const user_id = req.params.userId;
+
+        // Rechercher les réservations de l'utilisateur dans la base de données
+        const user_reservations = await Reservation.find({ user_id: user_id });
+
+        // Renvoyer les réservations de l'utilisateur dans la réponse
+        res.status(200).json(user_reservations);
+    } catch (error) {
+        console.error("Une erreur s'est produite lors de la récupération des réservations de l'utilisateur :", error);
+        res.status(500).json({ message: "Une erreur s'est produite lors de la récupération des réservations de l'utilisateur." });
+    }
+};
+
+
+
+
+
 // Controller d'authentification de l'ustilisateur
 exports.login_user = async (req, res) => {
     try {
@@ -198,14 +234,91 @@ exports.login_user = async (req, res) => {
             return res.status(401).json({ message: 'Mot de passe incorrect' });
         }
 
-        // Générez le token JWT
-        const token = jwt.sign({ user_id: user._id }, process.env.SECRET_KEY);
+        // Générez le token JWT en incluant les informations de l'utilisateur
+        const token = jwt.sign({ user: user }, process.env.SECRET_KEY);
+
+        // Définir le cookie dans la réponse avec le token
+        res.cookie('token', token, { httpOnly: true });
 
         // Renvoyer le token et les informations de l'utilisateur dans la réponse
         res.status(200).json({
-            message: 'Authentification réussie',token,user});
+            message: 'Authentification réussie',
+            token: token,
+            user: user
+        });
+
     } catch (error) {
         console.error(`Erreur lors de l'authentification :`, error);
         res.status(500).json({ message: `Erreur lors de l'authentification` });
     }
 };
+
+
+
+
+
+
+// Contrôleur pour la déconnexion de l'utilisateur
+exports.logout_user = async (req, res) => {
+    try {
+        // Récupérer le token JWT à partir des cookies
+        const { token } = req.cookies;
+
+        // Vérification si le token existe
+        if (!token || typeof token !== "string") {
+            return res.status(401).json({
+                message: `Aucun token trouvé. L'utilisateur n'est probablement pas connecté.`,
+            });
+        }
+
+        // Supprimer le cookie en le remplaçant par un cookie vide et en définissant sa durée de vie à 0
+        res.clearCookie('token');
+
+        // Répondre avec un message de déconnexion réussie
+        res.status(200).json({ message: 'Déconnexion réussie.' });
+    } catch (error) {
+        console.error('Erreur lors de la déconnexion :', error);
+        res.status(500).json({ message: 'Erreur serveur' });
+    }
+}
+
+
+
+
+
+
+// Contrôleur pour obtenir les informations de l'utilisateur connecté
+exports.get_logged_in_user = async (req, res) => {
+    try {
+        // Récupération du token depuis les cookies
+        const { token } = req.cookies;
+
+        // Vérifier si un token est présent dans les cookies
+        if (!token) {
+            return res.status(401).json({ message: 'Aucun token trouvé dans les cookies.' });
+        }
+
+        // Débogage: Afficher le token récupéré
+        console.log('Token récupéré depuis les cookies :', token);
+
+        // Décoder le token
+        const decoded_token = jwt.verify(token, process.env.SECRET_KEY);
+
+        // Débogage: Afficher le contenu du token décodé
+        console.log('Token décodé :', decoded_token);
+
+        // Vérifier si des informations utilisateur sont présentes dans le token décodé
+        if (!decoded_token) {
+            return res.status(401).json({ message: 'Aucune information utilisateur trouvée dans le token décodé.' });
+        }
+
+        // Débogage: Afficher les informations utilisateur stockées dans le token décodé
+        console.log('Informations utilisateur connecté :', decoded_token.user);
+
+        // Répondre avec les informations de l'utilisateur stockées dans le token
+        res.status(200).json({ message: 'Informations utilisateur récupérées avec succès.', user: decoded_token.user });
+    } catch (error) {
+        console.error('Erreur lors de la récupération des informations de l\'utilisateur :', error);
+        res.status(500).json({ message: 'Erreur serveur' });
+    }
+}

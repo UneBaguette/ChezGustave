@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 
 // Définition du schéma logement
 const logement_schema = new mongoose.Schema({
-  id: { type: Number, required: true, unique: true },
   images: [String],
   secteur: { type: String, required: true },
   description: { type: String, required: true },

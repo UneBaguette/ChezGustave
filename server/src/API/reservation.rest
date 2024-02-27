@@ -1,0 +1,12 @@
+POST http://localhost:3000/reservation/ajouter-reservation
+Content-Type: application/json
+Set-Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY1ZGRiZjU3YjZjMmMyMzRmZWNhMDUwZSIsImVtYWlsIjoibm91dmVsX3V0aWxpc2F0ZXVyQGV4YW1wbGUuY29tIiwibmFtZSI6Ik5vdXZlbCBVdGlsaXNhdGV1ciIsInRlbCI6IjAxMjM0NTY3ODkiLCJwYXNzd29yZCI6IiQyYiQxMCRtaXdMMkQvN0E2aTU5SnFvUzRpZkplZzVzNzVXLkJMQnpPWnR5ZkxBcGF1UDBOem9wellwMiIsImlzX2FkbWluIjp0cnVlLCJfX3YiOjB9LCJpYXQiOjE3MDkwMzEyODl9.CdNr3hzVUq__qNjRWh6fD8gRUh2tzx9-HbQJVhZhDPk; Path=/; HttpOnly
+
+{
+  "start_date": "2024-03-01",
+  "end_date": "2024-03-05",
+  "chef_cuisine": true,
+  "visite": "2024-02-28",
+  "logement_id": "65dda4492d699c32bd6c5e01",
+  "user_id": "65ddbf57b6c2c234feca050e"
+}
