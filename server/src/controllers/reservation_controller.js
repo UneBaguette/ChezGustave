@@ -4,6 +4,8 @@
 const jwt = require('jsonwebtoken');
 // Importation du model reservation
 const Reservation = require('../models/reservation_model');
+// Charger le module des variables d'environnement & exportation des variables d'environnements
+require('dotenv').config();
 
 
 
@@ -24,7 +26,7 @@ exports.create_reservation = async (req, res) => {
         const decoded_token = jwt.verify(token, process.env.SECRET_KEY);
 
         // Vérifier si des informations utilisateur sont présentes dans le token décodé
-        if (!decoded_token || !decoded_token.user_id) {
+        if (!decoded_token || !decoded_token.user) {
             return res.status(401).json({ message: 'Aucune information utilisateur trouvée dans le token décodé.' });
         }
 
@@ -32,10 +34,14 @@ exports.create_reservation = async (req, res) => {
         const user_id = decoded_token.user._id;
 
         // Récupérer les informations de la réservation depuis le corps de la requête
-        const { start_date, end_date, chef_cuisine, visite, logement_id } = req.body;
+        const { start_date, end_date, chef_cuisine, visite, logement_id, user_id: req_user_id } = req.body;
 
+        // Vérifier si l'ID de l'utilisateur dans le token correspond à celui dans le corps de la requête
+        if (req_user_id && req_user_id !== user_id) {
+            return res.status(401).json({ message: "L'ID de l'utilisateur dans le token ne correspond pas à celui dans la requête." });
+        }
 
-        // Créer une nouvelle réservation
+        // Créer une nouvelle réservation avec l'ID de l'utilisateur
         const new_reservation = new Reservation({
             start_date,
             end_date,
@@ -55,6 +61,7 @@ exports.create_reservation = async (req, res) => {
         res.status(500).json({ message: "Une erreur s'est produite lors de la création de la réservation." });
     }
 };
+
 
 
 

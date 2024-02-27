@@ -1,4 +1,4 @@
-### Endpont Création d'un utilisateur
+### Endpoint pour la Création d'un utilisateur
 POST http://localhost:3000/user/ajout-user
 Content-Type: application/json
 
@@ -13,14 +13,14 @@ Content-Type: application/json
 
 
 
-### Endpont pour Obtenir tous les utilisateurs
+### Endpoint pour Obtenir tous les utilisateurs
 GET http://localhost:3000/user/get-all-users
 
 
 
 
 
-### Endpont pour Modifier les informations des utilisateurs en bloc (ici 1 bloc "{}")
+### Endpoint pour Modifier les informations des utilisateurs en bloc (ici 1 bloc "{}")
 PUT http://localhost:3000/user/update-users-bloc
 Content-Type: application/json
 
@@ -39,28 +39,28 @@ Content-Type: application/json
 
 
 
-### Endpont pour Supprimer tous les utilisateurs
+### Endpoint pour Supprimer tous les utilisateurs
 DELETE http://localhost:3000/user/delete-all-users
 
 
 
 
 
-### Endpont pour Supprimer un utilisateur par son id
+### Endpoint pour Supprimer un utilisateur par son id
 DELETE http://localhost:3000/user/delete-user/65ddbe6bd27c43f23aa17128
 
 
 
 
 
-### Endpont pour Rechercher un utilisateur via son id (Récupérer les détails du user)
+### Endpoint pour Rechercher un utilisateur via son id (Récupérer les détails du user)
 GET http://localhost:3000/user/get-user-by-id/65dc8af62a171e3d79d95ebc
 
 
 
 
 
-### Endpont pour Modifier les informations d'un utilisateur par son id
+### Endpoint pour Modifier les informations d'un utilisateur par son id
 PUT http://localhost:3000/user/update-users/65ddbf57b6c2c234feca050e
 Content-Type: application/json
 
@@ -76,7 +76,7 @@ Content-Type: application/json
 
 
 
-### Endpont pour CONNEXION USER
+### Endpoint pour CONNEXION USER
 GET http://localhost:3000/user/login-user
 Content-Type: application/json
 
@@ -96,5 +96,5 @@ GET http://localhost:3000/user/get-logged-in-user
 
 
 
-### Endpont pour deconnecter un user
+### Endpoint pour deconnecter un user
 GET http://localhost:3000/user/logout-user
