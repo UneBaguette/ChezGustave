@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   server:
@@ -17,22 +17,7 @@ services:
     environment:
       PORT: ${SERVER_PORT}
       DATABASE_URL: postgres://${DATABASE_USER}:${DATABASE_PASSWORD}@database/${DATABASE_NAME}
-  
-  client:
-    build:
-      context: client
-      dockerfile: ../Dockerfile
-    command: npm run dev
-    ports:
-      - 5173:5173
-    volumes:
-      - type: bind
-        source: ./client
-        target: /usr/app
-      - /usr/app/node_modules
-    depends_on:
-      - server
-  
+
   database:
     image: postgres:alpine
     environment:
