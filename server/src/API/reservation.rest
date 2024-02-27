@@ -12,3 +12,28 @@ Set-Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY1Z
   "logement_id": "65dda4492d699c32bd6c5e01",
   "user_id": "65ddbf57b6c2c234feca050e"
 }
+
+
+
+
+
+### Enpoint pour ajouter une reservation
+POST http://localhost:3000/reservation/ajouter-reservation
+Content-Type: application/json
+Set-Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY1ZGRiZjU3YjZjMmMyMzRmZWNhMDUwZSIsImVtYWlsIjoibm91dmVsX3V0aWxpc2F0ZXVyQGV4YW1wbGUuY29tIiwibmFtZSI6Ik5vdXZlbCBVdGlsaXNhdGV1ciIsInRlbCI6IjAxMjM0NTY3ODkiLCJwYXNzd29yZCI6IiQyYiQxMCRtaXdMMkQvN0E2aTU5SnFvUzRpZkplZzVzNzVXLkJMQnpPWnR5ZkxBcGF1UDBOem9wellwMiIsImlzX2FkbWluIjp0cnVlLCJfX3YiOjB9LCJpYXQiOjE3MDkwMzk2NjJ9.25EJMxWfNx1QRKbJctm3F_wNApEjAWHee_EQk9ZRZaY; Path=/; HttpOnly
+
+{
+  "start_date": "2024-07-15",
+  "end_date": "2024-07-30",
+  "chef_cuisine": false,
+  "visite": "2024-07-10",
+  "logement_id": "65dda4492d699c32bd6c5e01",
+  "user_id": "65ddbf57b6c2c234feca050e"
+}
+
+
+
+
+
+### Enpoint pour obtenir toutes les réservations
+GET http://localhost:3000/reservation/all-reservation

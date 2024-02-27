@@ -1,5 +1,7 @@
 // Importation du model user
 const User = require('../models/user_model');
+// Controller pour récupérer les réservations d'un user
+const Reservation = require('../models/reservation_model');
 // Importation de jwt pour vérifier les cookies d el'utilisateur
 const jwt = require('jsonwebtoken');
 // Contorller d'ajout d'un utilisateur
@@ -195,10 +197,6 @@ exports.delete_user_by_id = async (req, res) => {
 
 
 
-// Controller pour récupérer les réservations d'un user
-
-const Reservation = require('../models/reservation_model');
-
 exports.get_user_reservations = async (req, res) => {
     try {
         // Récupérer l'ID de l'utilisateur depuis les paramètres de l'URL
@@ -322,3 +320,25 @@ exports.get_logged_in_user = async (req, res) => {
         res.status(500).json({ message: 'Erreur serveur' });
     }
 }
+
+
+
+
+
+// Controller pour récupérer les réservations d'un utilisateur spécifique
+exports.get_user_reservations = async (req, res) => {
+    try {
+        // Récupération de l'ID de l'utilisateur depuis les paramètres de l'URL
+        const user_id = req.params.id;
+
+        // Recherche des réservations de l'utilisateur dans la base de données
+        const user_reservations = await Reservation.find({ user_id: user_id });
+
+        // Renvoi des réservations dans la réponse
+        res.status(200).json(user_reservations);
+    } catch (error) {
+        // En cas d'erreur, renvoi d'un code d'erreur avec un message
+        console.error("Erreur lors de la récupération des réservations de l'utilisateur :", error);
+        res.status(500).json({ message: "Une erreur s'est produite lors de la récupération des réservations de l'utilisateur." });
+    }
+};

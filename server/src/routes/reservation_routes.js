@@ -7,11 +7,11 @@ const reservation_controller = require('../controllers/reservation_controller');
 
 
 
-// Endpoint pour récupérer les réservations d'un utilisateur
-router.get('/user/:userId/reservation', reservation_controller.get_user_reservations);
-
 // Endpoint pour créer une nouvelle réservation
 router.post('/ajouter-reservation', reservation_controller.create_reservation);
+
+// Endpoint pour obtenir toutes les réservations
+router.get('/all-reservation', reservation_controller.get_all_reservations)
 
 
 

@@ -1,3 +1,4 @@
+### Route pour créer un nouveau logement
 POST http://localhost:3000/logement/ajouter-logement
 Content-Type: application/json
 
@@ -13,5 +14,28 @@ Content-Type: application/json
   "salle_de_bain": 1,
   "categorie": "Appartement",
   "type": "T2",
+  "equipements": ["wifi", "climatisation"]
+}
+
+
+
+
+
+### Route pour créer un nouveau logement
+POST http://localhost:3000/logement/ajouter-logement
+Content-Type: application/json
+
+{
+  "images": ["image1.jpg", "image2.jpg"],
+  "secteur": "Quartier B",
+  "description": "Description du logement",
+  "tarif_bas": 200,
+  "tarif_moyen": 450,
+  "tarif_haut": 900,
+  "m_carre": 120,
+  "chambre": 3,
+  "salle_de_bain": 1,
+  "categorie": "Appartement",
+  "type": "T3",
   "equipements": ["wifi", "climatisation"]
 }

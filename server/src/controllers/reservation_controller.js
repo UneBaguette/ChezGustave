@@ -66,21 +66,17 @@ exports.create_reservation = async (req, res) => {
 
 
 
-
-// Controller pour récupérer les réservations d'un utilisateur spécifique
-exports.get_user_reservations = async (req, res) => {
+// Router pour obtenir toutes les réservations
+exports.get_all_reservations = async (req, res) => {
     try {
-        // Récupération de l'ID de l'utilisateur depuis les paramètres de l'URL
-        const user_id = req.params.userId;
+        // Récupérer toutes les réservations dans la base de données
+        const reservations = await Reservation.find();
 
-        // Recherche des réservations de l'utilisateur dans la base de données
-        const user_reservations = await Reservation.find({ user_id: user_id });
-
-        // Renvoi des réservations dans la réponse
-        res.status(200).json(user_reservations);
+        // Renvoyer les réservations dans la réponse
+        res.status(200).json(reservations);
     } catch (error) {
-        // En cas d'erreur, renvoi d'un code d'erreur avec un message
-        console.error("Erreur lors de la récupération des réservations de l'utilisateur :", error);
-        res.status(500).json({ message: "Une erreur s'est produite lors de la récupération des réservations de l'utilisateur." });
+        // En cas d'erreur, renvoyer un code d'erreur avec un message
+        console.error("Une erreur s'est produite lors de la récupération des réservations :", error);
+        res.status(500).json({ message: "Une erreur s'est produite lors de la récupération des réservations." });
     }
 };

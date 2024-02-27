@@ -34,6 +34,8 @@ router.get('/logout-user', user_controller.logout_user);
 // Endpoint pour obtenir les informations d'un utilisateurs connecté
 router.get('/get-logged-in-user', user_controller.get_logged_in_user)
 
+// Endpoint pour récupérer les réservations d'un utilisateur
+router.get('/:id/reservation', user_controller.get_user_reservations);
 
 
 
