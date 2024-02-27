@@ -103,5 +103,5 @@ GET http://localhost:3000/user/logout-user
 
 
 
-### Enpoint pour récupérer la / les réservation(s) d'un user
+### Enpoint pour récupérer la / les réservation(s) d'un user a
 GET http://localhost:3000/user/65ddbf57b6c2c234feca050e/reservation
