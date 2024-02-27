@@ -1,4 +1,4 @@
-### Route pour créer un nouveau logement
+### Enpoint pour créer un nouveau logement
 POST http://localhost:3000/logement/ajouter-logement
 Content-Type: application/json
 
@@ -17,11 +17,7 @@ Content-Type: application/json
   "equipements": ["wifi", "climatisation"]
 }
 
-
-
-
-
-### Route pour créer un nouveau logement
+### Enpoint pour créer un nouveau logement
 POST http://localhost:3000/logement/ajouter-logement
 Content-Type: application/json
 
@@ -39,3 +35,43 @@ Content-Type: application/json
   "type": "T3",
   "equipements": ["wifi", "climatisation"]
 }
+
+
+
+
+
+### Enpoint pour obtenir tous les details d'un logement par son id 
+GET http://localhost:3000/logement/get-logement-details/65dda4492d699c32bd6c5e01
+
+
+
+
+
+### Endpoint pour modifier les informations d'un logmeent par son id
+PUT http://localhost:3000/logement/update-logement-details/65dda4492d699c32bd6c5e01
+Content-Type: application/json
+
+{
+  "tarif_haut": 250
+}
+
+
+
+
+
+### Endpoint pour supprimer un logement par son id
+DELETE http://localhost:3000/logement/delete-logement/65dda4492d699c32bd6c5e01
+
+
+
+
+
+### Endpoint pour récupérer les réservations d'un logement par son id
+GET http://localhost:3000/logement/reservation-logement/65dddfee0ead76b43f534e2b
+
+
+
+
+
+###
+PUT http://localhost:3000/logement/

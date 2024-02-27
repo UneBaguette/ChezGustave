@@ -9,6 +9,7 @@ require('dotenv').config();
 
 
 
+// Controller pour créeer une réseravation via l'user connecté du cookies
 exports.create_reservation = async (req, res) => {
     try {
         // Récupérer le token depuis les cookies
@@ -66,7 +67,7 @@ exports.create_reservation = async (req, res) => {
 
 
 
-// Router pour obtenir toutes les réservations
+// Controller pour obtenir toutes les réservations
 exports.get_all_reservations = async (req, res) => {
     try {
         // Récupérer toutes les réservations dans la base de données
@@ -78,5 +79,62 @@ exports.get_all_reservations = async (req, res) => {
         // En cas d'erreur, renvoyer un code d'erreur avec un message
         console.error("Une erreur s'est produite lors de la récupération des réservations :", error);
         res.status(500).json({ message: "Une erreur s'est produite lors de la récupération des réservations." });
+    }
+};
+
+
+
+
+
+// Contrôleur pour récupérer les détails d'une réservation
+exports.get_reservation_details = async (req, res) => {
+    try {
+        // Récupérer l'ID de la réservation depuis les paramètres de l'URL
+        const reservation_id = req.params.id;
+
+        // Recherche de la réservation dans la base de données par son ID
+        const reservation = await Reservation.findById(reservation_id);
+
+        // Vérifier si la réservation existe
+        if (!reservation) {
+            return res.status(404).json({ message: "Réservation non trouvée." });
+        }
+
+        // Renvoyer les détails de la réservation dans la réponse
+        res.status(200).json(reservation);
+    } catch (error) {
+        // En cas d'erreur, renvoyer un code d'erreur avec un message
+        console.error("Erreur lors de la récupération des détails de la réservation :", error);
+        res.status(500).json({ message: "Une erreur s'est produite lors de la récupération des détails de la réservation." });
+    }
+};
+
+
+
+
+
+// Contrôleur pour mettre à jour les détails d'une réservation par son id
+exports.update_reservation_details = async (req, res) => {
+    try {
+        // Récupérer l'ID de la réservation depuis les paramètres de l'URL
+        const reservation_id = req.params.id;
+
+        // Récupérer les nouvelles données de la réservation depuis le corps de la requête
+        const updated_data = req.body;
+
+        // Mettre à jour les détails de la réservation dans la base de données
+        const updated_reservation = await Reservation.findByIdAndUpdate(reservation_id, updated_data, { new: true });
+
+        // Vérifier si la réservation a été trouvée et mise à jour
+        if (!updated_reservation) {
+            return res.status(404).json({ message: "Réservation non trouvée." });
+        }
+
+        // Renvoyer la réservation mise à jour dans la réponse
+        res.status(200).json(updated_reservation);
+    } catch (error) {
+        // En cas d'erreur, renvoyer un code d'erreur avec un message
+        console.error("Erreur lors de la mise à jour des détails de la réservation :", error);
+        res.status(500).json({ message: "Une erreur s'est produite lors de la mise à jour des détails de la réservation." });
     }
 };
