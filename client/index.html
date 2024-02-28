@@ -3,9 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChezGustaves</title>
+    <title>Chez Gustave</title>
 </head>
+<header>
+    <div class="header-container">
+        <nav>
+            <ul>
+                <li>Accueil</li>
+                <li><img src="./images/logo gustave transparent.png" alt="fleur du logo"></li> 
+                <li>A propos</li>
+                <li>Se connecter</li>
+            </ul>
+        <img src="./images/page d'accueil.jpg" alt="image de fond">
+        </nav>
+        <div class="logo-container">
+            <img src="./images/lesvacanceschezgustave - logo.png" alt="logo">
+            <p>Loin des pauvres, près du ciel. <br>Monsieur Poulpe</p>
+        </div>
+    </div>
+</header>
 <body>
+    <div class="text-container">
+        <img src="./images/maison-avec-vue-mer.jpg" alt="vue sur mer avec longue vue">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Sed felis eget velit aliquet sagittis id consectetur purus ut. Condimentum id venenatis a condimentum vitae sapien pellentesque habitant morbi. Tincidunt praesent semper feugiat nibh sed pulvinar. Dui vivamus arcu felis bibendum ut. Arcu risus quis varius quam quisque id diam vel. Nunc lobortis mattis aliquam faucibus purus in massa tempor nec. Vel turpis nunc eget lorem dolor sed viverra ipsum.</p>
+            <button>En savoir plus</button>
+            <h2>Réservez vos prochaines vacances</h2>
+    </div>
+    <div class="search-bar-container">
+        <img src="./images/salon-chalet.jpg" alt="salon d'un chalet de montagne">
+        <form>
+            <label for="destination">Où allez-vous?</label>
+            <select id="destination">
+              <option value="ville">Ville</option>
+              <option value="departement">Département</option>
+              <option value="region">Région</option>
+              <option value="topographie">Topographie</option>
+            </select>
+            
+            <label for="dates">Quand partez-vous?</label>
+            <input type="date" id="start-date" name="start-date">
+            <input type="date" id="end-date" name="end-date">
+            <label for="participants">Combien êtes-vous?</label>
+            <div>
+            <label for="adults">Adultes:</label>
+            <input type="number" id="adults" name="adults" value="2" min="0">
+            </div>
+            <div>
+            <label for="children">Enfants:</label>
+            <input type="number" id="children" name="children" value="0" min="0">
+            </div>
+            <div>
+            <label for="pets">Animaux:</label>
+            <input type="number" id="pets" name="pets" value="1" min="0">
+            </div>
+            <button type="submit">Rechercher</button>
+          </form>
+          <h2>Venez découvrir nos biens d’exception</h2>   
+    </div>
+    <div class="slider-container"></div>
+    
     
 </body>
 </html>
