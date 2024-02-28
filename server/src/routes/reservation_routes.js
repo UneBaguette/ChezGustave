@@ -19,5 +19,20 @@ router.get('/get-reservation-details/:id', reservation_controller.get_reservatio
 // route pour mettre à jour les détails d'une réservation par son id
 router.put('/update-reservation-details/:id', reservation_controller.update_reservation_details);
 
+// Route pour mettre à jour toutes les réservations
+router.put('/update-all-reservations', reservation_controller.update_all_reservations);
+
+// Route pour supprimer une réservation par son ID
+router.delete('/delete-reservation/:id', reservation_controller.delete_reservation);
+
+// Route pour supprimer toutes les réservations
+router.delete('/delete-all-reservations', reservation_controller.delete_all_reservations);
+
+// Route pour récupérer les notes d'une réservation par son ID
+router.get('/get-reservation-rating/:id', reservation_controller.get_reservation_rating);
+
+
+
+
 
 module.exports = router;

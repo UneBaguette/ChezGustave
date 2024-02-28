@@ -1,0 +1,58 @@
+### Enpoint pour ajouter un équipement
+POST http://localhost:3000/equipement/create-equipment
+Content-Type: application/json
+
+{
+    "name" : "Climatiseur"
+}
+
+
+
+
+
+### Enpoint pour récupérer tous les équipements
+GET http://localhost:3000/equipement/get-all-equipments
+
+
+
+
+
+### Enpoint pour mettre à jour un équipement par son id
+PUT http://localhost:3000/equipement/update-equipment/65df0571ad1d5787ed8e3b2b
+Content-Type: application/json
+
+{
+    "name" : "Chauffage"
+}
+
+
+
+
+### Enpoint pour Mettre à jour tous les équipements
+PUT http://localhost:3000/equipement/update-all-equipments
+Content-Type: application/json
+
+{
+  "name": "Cafetière"
+}
+
+
+
+
+
+### Enpoint pour supprimer un équipement par son ID
+DELETE http://localhost:3000/equipement/delete-equipment/65df0571ad1d5787ed8e3b2b
+
+
+
+
+
+### Enpoint pour supprimer tous les équipements
+DELETE http://localhost:3000/equipement/delete-all-equipments
+
+
+
+
+
+### Enpoint pour Récupérer les détails d'un équipement
+GET http://localhost:3000/equipement//get-equipment-details/65df07f7d8a2f4246980d0e1

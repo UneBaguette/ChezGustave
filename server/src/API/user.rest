@@ -76,7 +76,7 @@ Content-Type: application/json
 
 
 
-### Endpoint pour CONNEXION USER
+### Endpoint pour la connexion d'un utilisateur 
 GET http://localhost:3000/user/login-user
 Content-Type: application/json
 

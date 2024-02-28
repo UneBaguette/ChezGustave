@@ -43,10 +43,15 @@ app.use('/reservation', reservation_route);
 
 // Utilisation des routes pour rating
 const rating_route = require('./routes/rating_routes');
+app.use('/rating', rating_route);
 
 // Utilisation des routes pour logement
 const logement_route = require('./routes/logement_routes');
 app.use('/logement', logement_route);
+
+//
+const equipement_route = require('./routes/equipement_routes');
+app.use('/equipement', equipement_route)
 
 
 

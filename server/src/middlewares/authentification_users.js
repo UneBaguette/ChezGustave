@@ -1,6 +1,8 @@
 const jwt = require('jsonwebtoken');
 
-exports.authMiddleware = (req, res, next) => {
+
+
+exports.auth_middleware = (req, res, next) => {
   // Vérifier si le cookie contient le token
   const token = req.cookies.token;
 

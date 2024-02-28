@@ -11,17 +11,25 @@ const logement_controller = require('../controllers/logement_controller');
 router.post('/ajouter-logement', logement_controller.ajouter_logement);
 
 // Route pour obtenir tous les details d'un logement par son id 
-router.get('/get-logement-details', logement_controller.get_logement_details);
+router.get('/get-logement-details/:id', logement_controller.get_logement_details);
 
-//
+// Route pour modifier les informations d'un logement par son id 
 router.put('/update-logement-details/:id', logement_controller.update_logement_details);
+
+// Route pour mettre à jour tous les logements
+router.put('/update-all-logements', logement_controller.update_all_logements);
+
+// Route pour obtenir tous les logements
+router.get('/get-all-logements', logement_controller.get_all_logements);
 
 // Route pour supprimer un logement par son id
 router.delete('/delete-logement/:id', logement_controller.delete_logement);
 
+// Route pour supprimer tous les logements
+router.delete('/delete-all-logements', logement_controller.delete_all_logements);
+
 // Route pour récupérer les réservations d'un logement par son id
 router.get('/reservation-logement/:id', logement_controller.get_reservations_of_logement);
-
 
 
 

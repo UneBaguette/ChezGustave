@@ -10,6 +10,7 @@ const bcrypt = require('bcrypt');
 require('dotenv').config();
 
 
+
 // Controller pour l'inscritpion d'un utilisateur
 exports.create_user = async (req, res) => {
     try {
@@ -118,8 +119,8 @@ exports.update_users_bloc = async (req, res) => {
 
 
 
-// Controller pour Mettre à jour des users via son id 
-exports.update_user_by_id = async (req, res) => {
+// Controller pour Mettre à jour un utilisateur via son id 
+exports.update_user = async (req, res) => {
     try {
         // Récupérer l'ID de l'utilisateur à mettre à jour depuis les paramètres de l'URL
         const user_id = req.params.id;
@@ -152,7 +153,6 @@ exports.update_user_by_id = async (req, res) => {
 
 
 
-
 // Controller pour supprimer tout les utilisateurs
 exports.delete_all_users = async (req, res) => {
     try {
@@ -172,7 +172,7 @@ exports.delete_all_users = async (req, res) => {
 
 
 // Controller pour supprimer un utilisateur via son id
-exports.delete_user_by_id = async (req, res) => {
+exports.delete_user = async (req, res) => {
     try {
         // Récupérer l'ID de l'utilisateur à supprimer depuis les paramètres de l'URL
         const user_id = req.params.id;
@@ -197,10 +197,11 @@ exports.delete_user_by_id = async (req, res) => {
 
 
 
+// Contorller pour récupérer les réservations d'un utilisateur par son id
 exports.get_user_reservations = async (req, res) => {
     try {
         // Récupérer l'ID de l'utilisateur depuis les paramètres de l'URL
-        const user_id = req.params.userId;
+        const user_id = req.params.id;
 
         // Rechercher les réservations de l'utilisateur dans la base de données
         const user_reservations = await Reservation.find({ user_id: user_id });
@@ -284,7 +285,6 @@ exports.logout_user = async (req, res) => {
 
 
 
-
 // Contrôleur pour obtenir les informations de l'utilisateur connecté
 exports.get_logged_in_user = async (req, res) => {
     try {
@@ -325,7 +325,7 @@ exports.get_logged_in_user = async (req, res) => {
 
 
 
-// Controller pour récupérer les réservations d'un utilisateur spécifique
+// Controller pour récupérer les réservations d'un utilisateur spécifique par son id
 exports.get_user_reservations = async (req, res) => {
     try {
         // Récupération de l'ID de l'utilisateur depuis les paramètres de l'URL

@@ -99,7 +99,7 @@ exports.get_reservation_details = async (req, res) => {
         if (!reservation) {
             return res.status(404).json({ message: "Réservation non trouvée." });
         }
-
+b
         // Renvoyer les détails de la réservation dans la réponse
         res.status(200).json(reservation);
     } catch (error) {
@@ -136,5 +136,102 @@ exports.update_reservation_details = async (req, res) => {
         // En cas d'erreur, renvoyer un code d'erreur avec un message
         console.error("Erreur lors de la mise à jour des détails de la réservation :", error);
         res.status(500).json({ message: "Une erreur s'est produite lors de la mise à jour des détails de la réservation." });
+    }
+};
+
+
+
+
+
+// Contorller pour metttre à jour toutes les reservations 
+exports.update_all_reservations = async (req, res) => {
+    try {
+        // Mise à jour de toutes les réservations avec les données reçues du corps de la requête
+        const updated_reservations = await Reservation.updateMany({}, req.body, { new: true });
+
+        // Renvoi des réservations mises à jour dans la réponse
+        res.status(200).json(updated_reservations);
+    } catch (error) {
+        // En cas d'erreur, renvoi d'un message d'erreur avec le code d'erreur 500 (Internal Server Error)
+        console.error("Une erreur s'est produite lors de la mise à jour des réservations :", error);
+        res.status(500).json({ message: "Une erreur s'est produite lors de la mise à jour des réservations." });
+    }
+};
+
+
+
+
+
+// Controller pour Supprimer une réservation par son id
+exports.delete_reservation = async (req, res) => {
+    try {
+        // Récupération de l'ID de la réservation depuis les paramètres de l'URL
+        const reservation_id = req.params.id;
+
+        // Recherche de la réservation dans la base de données par son ID et suppression
+        const deleted_reservation = await Reservation.findByIdAndDelete(reservation_id);
+
+        // Vérification si la réservation a été trouvée et supprimée
+        if (!deleted_reservation) {
+            return res.status(404).json({ message: "Réservation non trouvée." });
+        }
+
+        // Renvoi d'une réponse de succès
+        res.status(200).json({ message: "Réservation supprimée avec succès." });
+    } catch (error) {
+        // En cas d'erreur, renvoi d'un message d'erreur avec le code d'erreur 500 (Internal Server Error)
+        console.error("Une erreur s'est produite lors de la suppression de la réservation :", error);
+        res.status(500).json({ message: "Une erreur s'est produite lors de la suppression de la réservation." });
+    }
+};
+
+
+
+
+
+// Controller pour Supprimer toutes les réservations
+exports.delete_all_reservations = async (req, res) => {
+    try {
+        // Suppression de toutes les réservations dans la base de données
+        await Reservation.deleteMany();
+
+        // Renvoi d'une réponse de succès
+        res.status(200).json({ message: "Toutes les réservations ont été supprimées avec succès." });
+    } catch (error) {
+        // En cas d'erreur, renvoi d'un message d'erreur avec le code d'erreur 500 (Internal Server Error)
+        console.error("Une erreur s'est produite lors de la suppression de toutes les réservations :", error);
+        res.status(500).json({ message: "Une erreur s'est produite lors de la suppression de toutes les réservations." });
+    }
+};
+
+
+
+
+
+// Contrtoller pour Récupérer les notes d'une réservation par son id
+exports.get_reservation_rating = async (req, res) => {
+    try {
+        // Récupération de l'ID de la réservation depuis les paramètres de l'URL
+        const reservation_id = req.params.id;
+
+        // Recherche de la réservation dans la base de données par son ID
+        const reservation = await Reservation.findById(reservation_id);
+
+        // Vérification si la réservation existe
+        if (!reservation) {
+            return res.status(404).json({ message: "Réservation non trouvée." });
+        }
+
+        // Vérification si la réservation a une note
+        if (!reservation.rating) {
+            return res.status(404).json({ message: "Cette réservation n'a pas encore de note." });
+        }
+
+        // Renvoi de la note de la réservation dans la réponse
+        res.status(200).json({ rating: reservation.rating });
+    } catch (error) {
+        // En cas d'erreur, renvoi d'un message d'erreur avec le code d'erreur 500 (Internal Server Error)
+        console.error("Une erreur s'est produite lors de la récupération de la note de la réservation :", error);
+        res.status(500).json({ message: "Une erreur s'est produite lors de la récupération de la note de la réservation." });
     }
 };
