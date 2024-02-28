@@ -33,13 +33,15 @@
     <div class="search-bar-container">
         <img src="./images/salon-chalet.jpg" alt="salon d'un chalet de montagne">
         <form>
-            <label for="destination">Où allez-vous?</label>
+            <!-- <label for="destination">Où allez-vous?</label>
             <select id="destination">
               <option value="ville">Ville</option>
               <option value="departement">Département</option>
               <option value="region">Région</option>
               <option value="topographie">Topographie</option>
-            </select>
+            </select> -->
+            <label for="destination_name">Où allez-vous? </label>
+            <input type="text" id="destination_name" name="destination_name"  placeholder="ville, département,région...." required>
             
             <label for="dates">Quand partez-vous?</label>
             <input type="date" id="start-date" name="start-date">
@@ -61,7 +63,52 @@
           </form>
           <h2>Venez découvrir nos biens d’exception</h2>   
     </div>
-    <div class="slider-container"></div>
+    <div class="slider-container">
+        <div class="slider-images">
+            <img src="./images/mer.jpg" alt="Vue sur mer">
+            <h5>Une pause au bord de la mer</h5>
+            <img src="./images/campagne.jpg" alt="Maison de campagne">
+            <h5>Une virée à la campagne</h5>
+            <img src="./images/chalet.jpg" alt="Chalet ville">
+            <h5>Un havre de paix en ville</h5>
+            <img src="./images/montagne.jpg" alt="Grand chalet de montagne">
+            <h5>Un retour aux sources à la montagne</h5>
+        </div>
+
+        <img src="./images/lesvacanceschezgustave - logo.png" alt="logo-rond">
+    </div>
+    <footer>
+        <div class="footer-legal">
+        <h4>Plan site</h4>
+        <ul>
+            <li>Accueil</li>
+            <li>A propos</li>
+            <li>Recherche</li>
+            <li>Se connecter</li>
+        </ul>
+        <h4>En savoir plus</h4>
+        <ul>
+            <li>Mentions légales</li>
+            <li>CGV | RGPD</li>
+            <li>FAQ</li>
+        </ul>
+        <h4>Contacts</h4>
+        <ul>
+            <li>Gustave MAURICE</li>
+            <li>Jean MARLIN</li>
+            <li>Marc LAVIE</li>
+            <li>Martin CRAIE</li>
+            <li>Paul ALKER</li>
+        </ul>
+    </div>
+    <div class="footer-media">
+        <img src="" alt="logo insta">
+        <img src="" alt="logo facebook">
+        <img src="" alt="logo tel">
+
+
+    </div>
+    </footer>
     
     
 </body>
