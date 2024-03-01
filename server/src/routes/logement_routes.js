@@ -4,11 +4,12 @@ const express = require('express');
 const router = express.Router();
 // Importation du controller pour ajouter un logement
 const logement_controller = require('../controllers/logement_controller');
-
+// Importation du middleware multer pour les images
+const upload_logements = require('../middlewares/multer_logement');
 
 
 // Route pour ajouter un logement
-router.post('/ajouter-logement', logement_controller.ajouter_logement);
+router.post('/ajouter-logement', upload_logements.array('images'), logement_controller.ajouter_logement);
 
 // Route pour obtenir tous les details d'un logement par son id 
 router.get('/get-logement-details/:id', logement_controller.get_logement_details);
@@ -30,6 +31,9 @@ router.delete('/delete-all-logements', logement_controller.delete_all_logements)
 
 // Route pour récupérer les réservations d'un logement par son id
 router.get('/reservation-logement/:id', logement_controller.get_reservations_of_logement);
+
+// Route pour rechercher un logement avec des critères
+router.post('/recherche-logement', logement_controller.search_logement)
 
 
 

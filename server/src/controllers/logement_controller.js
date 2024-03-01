@@ -21,7 +21,10 @@ exports.ajouter_logement = async (req, res) => {
             salle_de_bain,
             categorie,
             type,
-            equipements
+            equipements,
+            adulte,
+            enfant,
+            animeaux
         } = req.body;
 
         // Création d'une nouvelle instance de Logement avec les données reçues
@@ -37,7 +40,10 @@ exports.ajouter_logement = async (req, res) => {
             salle_de_bain,
             categorie,
             type,
-            equipements
+            equipements,
+            adulte,
+            enfant,
+            animeaux
         });
 
         // Sauvegarde du nouveau logement dans la base de données
@@ -216,5 +222,77 @@ exports.get_all_logements = async (req, res) => {
         // En cas d'erreur, renvoi d'un message d'erreur avec le code d'erreur 500 (Internal Server Error)
         console.error("Une erreur s'est produite lors de la récupération des logements :", error);
         res.status(500).json({ message: "Une erreur s'est produite lors de la récupération des logements." });
+    }
+};
+
+
+
+
+
+// Controller pour rechercher un logement
+exports.search_logement = async (req, res) => {
+    try {
+        const { secteur, tarif_bas, tarif_moyen, tarif_haut, m_carre, chambre, salle_de_bain, categorie, type, equipements, adulte, enfant, animaux } = req.body;
+
+        // Construire le filtre de recherche
+        const filter = {};
+
+        // Ajouter des conditions au filtre si les champs sont fournis dans la requête
+        if (secteur) {
+            filter.secteur = secteur;
+        }
+        if (tarif_bas) {
+            filter.tarif_bas = { $lte: tarif_bas }; // $lte est un opérateur pour afficher les résultats inférieur ou égale de la recherche
+        }
+        if (tarif_moyen) {
+            // Utiliser $lt pour les tarifs moyens inférieurs au tarif moyen spécifié
+            filter.tarif_moyen = { $lte: tarif_moyen }; // $lte est un opérateur pour afficher les résultats inférieur ou égale de la recherche
+        }
+        if (tarif_haut) {
+            filter.tarif_haut = { $lte:  tarif_haut}; // $lte est un opérateur pour afficher les résultats inférieur ou égale de la recherche
+        }
+        if (m_carre) {
+            filter.m_carre = m_carre;
+        }
+        if (chambre) {
+            filter.chambre = chambre;
+        }
+        if (salle_de_bain) {
+            filter.salle_de_bain = salle_de_bain;
+        }
+        if (categorie) {
+            filter.categorie = categorie;
+        }
+        if (type) {
+            filter.type = type;
+        }
+        if (equipements && equipements.length > 0) {
+            // Utilisation de l'opérateur $all pour rechercher les logements ayant tous les équipements spécifiés
+            filter.equipements = { $all: equipements };
+        }
+        if (adulte) {
+            filter.adulte = adulte;
+        }
+        if (enfant) {
+            filter.enfant = enfant;
+        }
+        if (animaux) {
+            filter.animaux = animaux;
+        }
+
+        // Recherche des logements correspondant au filtre
+        const logements = await Logement.find(filter);
+
+        // Vérifier si des logements ont été trouvés
+        if (logements.length === 0) {
+            return res.status(404).json({ message: "Aucun logement trouvé." });
+        }
+
+        // Renvoyer les logements trouvés dans la réponse
+        res.status(200).json(logements);
+    } catch (error) {
+        // En cas d'erreur, renvoyer un code d'erreur avec un message
+        console.error("Erreur lors de la recherche de logements :", error);
+        res.status(500).json({ message: "Une erreur s'est produite lors de la recherche de logements." });
     }
 };
