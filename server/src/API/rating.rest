@@ -1,13 +1,13 @@
 ### Créer une nouvelle note
 POST http://localhost:3000/rating/add-note
 Content-Type: application/json
+Set-Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY1ZTcyNGM5NzI1NjdkZDBlMWEyOWI0NCIsImVtYWlsIjoibm91dmVsdXRpbGlzYXRldXJAZXhhbXBsZS5jb20iLCJuYW1lIjoiTm91dmVsIFV0aWxpc2F0ZXVyIiwidGVsIjoiMDEyMzQ1Njc4OSIsInBhc3N3b3JkIjoiJDJiJDEwJG9HdWpPZGZWa2NUWE9heDhiVGkvSmV1Ni9vdUl4WnZubkIyUVl3VzJpLjd5ZlpiaDAuNzFTIiwiaXNfYWRtaW4iOnRydWUsInJlc2VydmF0aW9ucyI6WyI2NWU3MjUwZDcyNTY3ZGQwZTFhMjliNGMiXSwiX192IjoxfSwiaWF0IjoxNzA5NjQ4MDQ0fQ._nMaBKiVsCNHMeiONTz4c4DfP_8QUUaHrxf178lXkAs; Path=/; HttpOnly
 
 {
   "rated": 5,
   "text": "Excellent service !",
-  "logement_id": "65dddfee0ead76b43f534e2b",
-  "reservation_id": "65df2d1260571506d834c018",
-  "user_id": "65ddbf57b6c2c234feca050e"
+  "logement": "65e724e372567dd0e1a29b47",
+  "reservation": "65e7250d72567dd0e1a29b4c"
 }
 
 
@@ -60,4 +60,4 @@ DELETE http://localhost:3000/rating/delete-all-ratings
 
 
 ### Enpoint pour récupérer les informations d'une note avec son id
-GET http://localhost:3000/rating/get-infos-rating/65df3193bde68e2f229a53b5
+GET http://localhost:3000/rating/get-infos-rating/65e72a1bb18fd1610633af36

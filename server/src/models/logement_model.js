@@ -13,12 +13,22 @@ const logement_schema = new mongoose.Schema({
   m_carre: { type: Number, required: true },
   chambre: { type: Number, required: true },
   salle_de_bain: { type: Number, required: true },
-  categorie: { type: String, required: true },
-  type: { type: String, required: true },
-  equipements: [String],
-  adulte : { type: Number },
+  categorie: { type: String },
+  type: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Type'
+  },
+  equipements: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Equipment'
+  },
+  adulte: { type: Number },
   enfant: { type: Number },
   animeaux: { type: Number },
+  reservation: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Reservation'
+  }
 });
 
 // Création du modèle à partir du schéma

@@ -296,23 +296,14 @@ exports.get_logged_in_user = async (req, res) => {
             return res.status(401).json({ message: 'Aucun token trouvé dans les cookies.' });
         }
 
-        // Débogage: Afficher le token récupéré
-        console.log('Token récupéré depuis les cookies :', token);
-
         // Décoder le token
         const decoded_token = jwt.verify(token, process.env.SECRET_KEY);
-
-        // Débogage: Afficher le contenu du token décodé
-        console.log('Token décodé :', decoded_token);
 
         // Vérifier si des informations utilisateur sont présentes dans le token décodé
         if (!decoded_token) {
             return res.status(401).json({ message: 'Aucune information utilisateur trouvée dans le token décodé.' });
         }
-
-        // Débogage: Afficher les informations utilisateur stockées dans le token décodé
-        console.log('Informations utilisateur connecté :', decoded_token.user);
-
+        
         // Répondre avec les informations de l'utilisateur stockées dans le token
         res.status(200).json({ message: 'Informations utilisateur récupérées avec succès.', user: decoded_token.user });
     } catch (error) {

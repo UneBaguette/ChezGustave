@@ -4,7 +4,7 @@ Content-Type: application/json
 
 {
   "images": ["image1.jpg", "image2.jpg"],
-  "secteur": "Quartier A",
+  "secteur": "Paris",
   "description": "Description du logement",
   "tarif_bas": 100,
   "tarif_moyen": 150,
@@ -12,141 +12,9 @@ Content-Type: application/json
   "m_carre": 80,
   "chambre": 2,
   "salle_de_bain": 1,
-  "categorie": "Appartement",
-  "type": "T2",
-  "equipements": ["wifi", "climatisation"],
-    "adulte": 2,
-  "enfant": 1,
-  "animeaux": 1
-}
-
-### Enpoint pour créer un nouveau logement
-POST http://localhost:3000/logement/ajouter-logement
-Content-Type: application/json
-
-{
-  "images": ["image1.jpg", "image2.jpg"],
-  "secteur": "Quartier B",
-  "description": "Description du logement",
-  "tarif_bas": 200,
-  "tarif_moyen": 450,
-  "tarif_haut": 900,
-  "m_carre": 70,
-  "chambre": 2,
-  "salle_de_bain": 2,
-  "categorie": "Atipyque",
-  "type": "T3",
-  "equipements": ["Bateau à moteur", "Bateau à voile"],
-    "adulte": 1,
-  "enfant": 0,
-  "animeaux": 1
-}
-
-### Enpoint pour créer un nouveau logement
-POST http://localhost:3000/logement/ajouter-logement
-Content-Type: application/json
-
-{
-  "images": ["image1.jpg", "image2.jpg"],
-  "secteur": "Quartier B",
-  "description": "Description du logement",
-  "tarif_bas": 200,
-  "tarif_moyen": 250,
-  "tarif_haut": 300,
-  "m_carre": 50,
-  "chambre": 1,
-  "salle_de_bain": 1,
-  "categorie": "Chalet",
-  "type": "T2",
-  "equipements": ["Centre equestre", "Golf"],
-    "adulte": 2,
-  "enfant": 0,
-  "animeaux": 0
-}
-
-### Enpoint pour créer un nouveau logement
-POST http://localhost:3000/logement/ajouter-logement
-Content-Type: application/json
-
-{
-  "images": ["image1.jpg", "image2.jpg"],
-  "secteur": "Quartier C",
-  "description": "Description du logement",
-  "tarif_bas": 500,
-  "tarif_moyen": 750,
-  "tarif_haut": 900,
-  "m_carre": 120,
-  "chambre": 4,
-  "salle_de_bain": 1,
-  "categorie": "Maison",
-  "type": "T5",
-  "equipements": ["Jaccuzi", "Golf"],
-    "adulte": 1,
-  "enfant": 1,
-  "animeaux": 1
-}
-
-### Enpoint pour créer un nouveau logement
-POST http://localhost:3000/logement/ajouter-logement
-Content-Type: application/json
-
-{
-  "images": ["image1.jpg", "image2.jpg"],
-  "secteur": "Quartier D",
-  "description": "Description du logement",
-  "tarif_bas":650,
-  "tarif_moyen": 850,
-  "tarif_haut": 1050,
-  "m_carre": 150,
-  "chambre": 4,
-  "salle_de_bain": 2,
-  "categorie": "Manoir",
-  "type": "T4",
-  "equipements": ["Parc de jeu", "Patinoire", "Piscine"],
-    "adulte": 1,
-  "enfant": 1,
-  "animeaux": 1
-}
-
-### Enpoint pour créer un nouveau logement
-POST http://localhost:3000/logement/ajouter-logement
-Content-Type: application/json
-
-{
-  "images": ["image1.jpg", "image2.jpg"],
-  "secteur": "Quartier A",
-  "description": "Description du logement",
-  "tarif_bas":6050,
-  "tarif_moyen": 7050,
-  "tarif_haut": 8050,
-  "m_carre": 550,
-  "chambre": 15,
-  "salle_de_bain": 10,
-  "categorie": "Villa",
-  "type": "T25",
-  "equipements": ["Piste de bobsleigh", "Plongée", "Spa", "Sport d'hiver", "Tennis", "Piscine"],
-    "adulte": 3,
-  "enfant": 2,
-  "animeaux": 0
-}
-
-### Enpoint pour créer un nouveau logement
-POST http://localhost:3000/logement/ajouter-logement
-Content-Type: application/json
-
-{
-  "images": ["image1.jpg", "image2.jpg"],
-  "secteur": "Quartier B",
-  "description": "Description du logement",
-  "tarif_bas": 200,
-  "tarif_moyen": 250,
-  "tarif_haut": 300,
-  "m_carre": 50,
-  "chambre": 1,
-  "salle_de_bain": 1,
-  "categorie": "Chalet",
-  "type": "T2",
-  "equipements": ["Centre equestre", "Golf"],
+  "categorie": "Campagne",
+  "type": ["65e6f9f99a93ec5cec4c9089"],
+  "equipements": ["65e6f8d89d1d89c4e4095c34"],
   "adulte": 2,
   "enfant": 1,
   "animeaux": 1
@@ -158,7 +26,7 @@ Content-Type: application/json
 
 
 ### Enpoint pour obtenir tous les details d'un logement par son id 
-GET http://localhost:3000/logement/get-logement-details/65dddfee0ead76b43f534e2b
+GET http://localhost:3000/logement/get-logement-details/65e1ca782eaada7ed1fc11d0
 
 
 
@@ -207,6 +75,13 @@ DELETE http://localhost:3000/logement/delete-all-logements
 
 ### Endpoint pour récupérer les réservations d'un logement par son id
 GET http://localhost:3000/logement/reservation-logement/65dddfee0ead76b43f534e2b
+
+
+
+
+
+### Obtenire tous les logements
+GET http://localhost:3000/logement/get-all-logements
 
 
 

@@ -6,9 +6,18 @@ const mongoose = require('mongoose');
 const ratingSchema = new mongoose.Schema({
   rated: { type: Number, min: 0, max: 5, required: true },
   text: { type: String },
-  logement_id: { type: String, required: true }, // Identifiant du logement
-  reservation_id: { type: String, required: true }, // Identifiant de la réservation
-  user_id: { type: String, required: true } // Identifiant de l'utilisateur
+  logement: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Logement'
+  },
+  reservation: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Reservation'
+  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }
 });
 
 // Création du modèle à partir du schéma

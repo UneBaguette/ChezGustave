@@ -1,0 +1,6 @@
+POST http://localhost:3000/type/ajouter-type
+Content-Type: application/json
+
+{
+  "tag": "maison"
+}

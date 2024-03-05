@@ -49,13 +49,18 @@ exports.ajouter_logement = async (req, res) => {
         // Sauvegarde du nouveau logement dans la base de données
         const saved_logement = await new_logement.save();
 
-        // Réponse avec le logement ajouté
+        // Utiliser populate() pour récupérer les informations sur le type et les équipements
+        await saved_logement.populate('type');
+        await saved_logement.populate('equipements');
+
+        // Réponse avec le logement ajouté et le code de statut 201 (Created)
         res.status(201).json(saved_logement);
     } catch (error) {
-        // En cas d'erreur, renvoyer un message d'erreur avec le code d'erreur 400 (Bad Request)
+        // Si une erreur se produit pendant le processus, renvoyer un message d'erreur avec le code d'erreur 400 (Bad Request)
         res.status(400).json({ message: error.message });
     }
 };
+
 
 
 

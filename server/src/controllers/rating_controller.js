@@ -1,47 +1,69 @@
 const Rating = require('../models/rating_model');
-// Importer le contrôleur pour créer une note
 const Reservation = require('../models/reservation_model');
 const Logement = require('../models/logement_model');
 const User = require('../models/user_model');
+// Importation de jwt pour vérifier les cookies d el'utilisateur
+const jwt = require('jsonwebtoken');
+// Charger le module des variables d'environnement & exportation des variables d'environnements
+require('dotenv').config();
+;
 
 
 
 // Controller pour créer une note
 exports.create_rating = async (req, res) => {
     try {
-        // Récupérer les données de la note depuis le corps de la requête
-        const { rated, text, logement_id, reservation_id, user_id } = req.body;
+        const { rated, text, logement, reservation } = req.body;
+        const { token } = req.cookies;
 
-        // Vérifier si les ID existent pour le logement, la réservation et l'utilisateur
-        const logement_exists = await Logement.exists({ _id: logement_id });
-        const reservation_exists = await Reservation.exists({ _id: reservation_id });
-        const user_exists = await User.exists({ _id: user_id });
-
-        // Vérifier si le logement, la réservation et l'utilisateur existent avant de créer la note
-        if (!logement_exists || !reservation_exists || !user_exists) {
-            return res.status(404).json({ message: "Logement, réservation ou utilisateur non trouvé." });
+        if (!token) {
+            return res.status(401).json({ message: "Token manquant." });
         }
 
-        // Créer une nouvelle note
-        const new_rating = new Rating({
+        const decodedToken = jwt.verify(token, process.env.SECRET_KEY);
+
+        if (!decodedToken) {
+            return res.status(401).json({ message: "Token invalide." });
+        }
+
+        const user_id = decodedToken.user._id;
+
+        if (!user_id) {
+            return res.status(401).json({ message: "Identifiant de l'utilisateur manquant." });
+        }
+
+        const user = await User.findById(user_id)
+
+        if (!logement || !reservation) {
+            return res.status(404).json({ message: "Logement ou réservation non trouvé." });
+        }
+
+        const newRating = new Rating({
             rated,
             text,
-            logement_id,
-            reservation_id,
-            user_id
+            logement,
+            reservation,
+            user
         });
 
-        // Sauvegarder la nouvelle note
-        await new_rating.save();
+        const saved_rating = await newRating.save();
 
-        // Renvoyer une réponse de succès
-        res.status(201).json({ message: "Note créée avec succès." });
+        await saved_rating.populate("logement");
+
+        await saved_rating.populate("reservation");
+
+        await saved_rating.populate("user");
+
+        res.status(201).json({ message: "Note créée avec succès.", new_rating: newRating });
     } catch (error) {
-        // En cas d'erreur, renvoyer un message d'erreur avec le code d'erreur 500 (Internal Server Error)
-        console.error("Une erreur s'est produite lors de la création de la note :", error);
+        console.error("Erreur lors de la création de la note :", error);
         res.status(500).json({ message: "Une erreur s'est produite lors de la création de la note." });
     }
 };
+
+
+
+
 
 
 

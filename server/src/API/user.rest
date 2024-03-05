@@ -3,11 +3,11 @@ POST http://localhost:3000/user/ajout-user
 Content-Type: application/json
 
 {
-  "email": "nouvel_utilisateur@example.com",
+  "email": "nouvelutilisateur@example.com",
   "name": "Nouvel Utilisateur",
   "tel": "0123456789",
   "password": "1234",
-  "is_admin": false
+  "is_admin": true
 }
 
 
@@ -47,25 +47,25 @@ DELETE http://localhost:3000/user/delete-all-users
 
 
 ### Endpoint pour Supprimer un utilisateur par son id
-DELETE http://localhost:3000/user/delete-user/65ddbe6bd27c43f23aa17128
+DELETE http://localhost:3000/user/delete-user/65e71d79698db8bdd80606ee
 
 
 
 
 
 ### Endpoint pour Rechercher un utilisateur via son id (Récupérer les détails du user)
-GET http://localhost:3000/user/get-user-by-id/65dc8af62a171e3d79d95ebc
+GET http://localhost:3000/user/get-user-by-id/65e58e67b8b434cb2e224fb1
 
 
 
 
 
 ### Endpoint pour Modifier les informations d'un utilisateur par son id
-PUT http://localhost:3000/user/update-users/65ddbf57b6c2c234feca050e
+PUT http://localhost:3000/user/update-users/65e5d363b1460464adac2ebd
 Content-Type: application/json
 
   {
-  "email": "nouvel_utilisateur@example.com",
+  "email": "nouvelutilisateur@example.com",
   "name": "Nouvel Utilisateur",
   "tel": "0123456789",
   "password": "12345",
@@ -81,8 +81,8 @@ GET http://localhost:3000/user/login-user
 Content-Type: application/json
 
 {
-  "email": "nouvel_utilisateur@example.com",
-  "password": "12345"
+  "email": "nouvelutilisateur@example.com",
+  "password": "1234"
 }
 
 

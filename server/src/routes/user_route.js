@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const user_controller = require('../controllers/user_controller');
+const delete_user = require('../middlewares/delete_user_middleware');
 
 
 
@@ -20,10 +21,10 @@ router.put('/update-users-bloc', user_controller.update_users_bloc);
 router.put('/update-users/:id', user_controller.update_user);
 
 // Route pour supprimer tout les utilisateurs
-router.delete('/delete-all-users', user_controller.delete_all_users);
+router.delete('/delete-all-users', delete_user, user_controller.delete_all_users);
 
 // Route pour supprimer un utilisateur par son ID
-router.delete('/delete-user/:id', user_controller.delete_user);
+router.delete('/delete-user/:id', delete_user, user_controller.delete_user);
 
 // Route pour créer un nouvel utilisateur
 router.get('/login-user', user_controller.login_user )

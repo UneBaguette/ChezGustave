@@ -53,6 +53,9 @@ app.use('/logement', logement_route);
 const equipement_route = require('./routes/equipement_routes');
 app.use('/equipement', equipement_route)
 
+const type_route = require('./routes/type_routes');
+app.use('/type', type_route);
+
 
 
 

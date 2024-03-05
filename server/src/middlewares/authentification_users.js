@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 
 exports.auth_middleware = (req, res, next) => {
   // Vérifier si le cookie contient le token
-  const token = req.cookies.token;
+  const { token } = req.cookies;
 
   if (!token) {
     return res.status(401).json({ message: 'Accès non autorisé - Token manquant' });
