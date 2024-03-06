@@ -1,9 +1,12 @@
+// Configurations de toutes les routes de l'application 
+
+
 
 // Importation du framework express 
 const express = require('express');
 const router = express.Router();
 
-// Utilisation des routes de l'routerlication :
+
 
 // Utilisation des routes pour les utilisateurs
 const user_route = require('./user_route');
@@ -31,6 +34,8 @@ router.use('/equipement', equipement_route)
 
 const type_route = require('./type_routes');
 router.use('/type', type_route);
+
+
 
 
 

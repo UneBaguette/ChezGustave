@@ -1,5 +1,7 @@
 const Type = require('../models/type_model');
 
+
+
 exports.ajouter_type = async (req, res) => {
     try {
         const { tag } = req.body;

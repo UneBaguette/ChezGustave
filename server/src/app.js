@@ -39,12 +39,6 @@ app.use('/', routes);
 
 
 
-
-
-
-
-
-
 // Décoder le token dans le cookie à l'aide de JWT
 app.use( (req,res,next) => {
     const token = req.cookies.token;

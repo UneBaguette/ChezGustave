@@ -1,6 +1,5 @@
 const jwt = require('jsonwebtoken');
 const Reservation = require('../models/reservation_model');
-require('dotenv').config();
 const User = require('../models/user_model');
 
 
@@ -67,11 +66,6 @@ exports.create_reservation = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 }
-
-
-
-
-
 
 
 

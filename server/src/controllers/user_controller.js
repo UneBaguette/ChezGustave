@@ -6,8 +6,6 @@ const Reservation = require('../models/reservation_model');
 const jwt = require('jsonwebtoken');
 // Contorller d'ajout d'un utilisateur
 const bcrypt = require('bcrypt');
-// Charger le module des variables d'environnement & exportation des variables d'environnements
-require('dotenv').config();
 
 
 

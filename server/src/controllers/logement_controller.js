@@ -64,7 +64,6 @@ exports.ajouter_logement = async (req, res) => {
 
 
 
-
  
 // Controller pour obtenir tous les details d'un logement par son id 
 exports.get_logement_details = async (req, res) => {

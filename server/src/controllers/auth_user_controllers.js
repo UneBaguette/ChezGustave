@@ -72,7 +72,7 @@ exports.logout_user = async (req, res) => {
         console.error('Erreur lors de la déconnexion :', error);
         res.status(500).json({ message: 'Erreur serveur' });
     }
-}
+};
 
 
 
@@ -103,4 +103,4 @@ exports.get_logged_in_user = async (req, res) => {
         console.error('Erreur lors de la récupération des informations de l\'utilisateur :', error);
         res.status(500).json({ message: 'Erreur serveur' });
     }
-}
+};

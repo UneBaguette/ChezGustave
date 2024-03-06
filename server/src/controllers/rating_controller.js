@@ -4,9 +4,6 @@ const Logement = require('../models/logement_model');
 const User = require('../models/user_model');
 // Importation de jwt pour vérifier les cookies d el'utilisateur
 const jwt = require('jsonwebtoken');
-// Charger le module des variables d'environnement & exportation des variables d'environnements
-require('dotenv').config();
-;
 
 
 
@@ -60,10 +57,6 @@ exports.create_rating = async (req, res) => {
         res.status(500).json({ message: "Une erreur s'est produite lors de la création de la note." });
     }
 };
-
-
-
-
 
 
 
