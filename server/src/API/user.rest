@@ -1,10 +1,10 @@
 ### Endpoint pour la Création d'un utilisateur
-POST http://localhost:3000/user/ajout-user
+POST http://localhost:3000/user
 Content-Type: application/json
 
 {
-  "email": "nouvelutilisateur@example.com",
-  "name": "Nouvel Utilisateur",
+  "email": "nouvelutilisateur2@example.com",
+  "name": "Nouvel Utilisateur2",
   "tel": "0123456789",
   "password": "1234",
   "is_admin": true
@@ -14,19 +14,19 @@ Content-Type: application/json
 
 
 ### Endpoint pour Obtenir tous les utilisateurs
-GET http://localhost:3000/user/get-all-users
+GET http://localhost:3000/user
 
 
 
 
 
 ### Endpoint pour Modifier les informations des utilisateurs en bloc (ici 1 bloc "{}")
-PUT http://localhost:3000/user/update-users-bloc
+PUT http://localhost:3000/user
 Content-Type: application/json
 
 [
   {
-    "_id": "65dda50b2d699c32bd6c5e05",
+    "_id": "65e72dcfe6339dfd13e6a075",
     "email": "nouveau_email2@example.com",
     "name": "Nouveau Nom 1",
     "tel": "091011121314",
@@ -47,21 +47,21 @@ DELETE http://localhost:3000/user/delete-all-users
 
 
 ### Endpoint pour Supprimer un utilisateur par son id
-DELETE http://localhost:3000/user/delete-user/65e71d79698db8bdd80606ee
+DELETE http://localhost:3000/user/65e72dcfe6339dfd13e6a075
 
 
 
 
 
 ### Endpoint pour Rechercher un utilisateur via son id (Récupérer les détails du user)
-GET http://localhost:3000/user/get-user-by-id/65e58e67b8b434cb2e224fb1
+GET http://localhost:3000/user/65e724c972567dd0e1a29b44
 
 
 
 
 
 ### Endpoint pour Modifier les informations d'un utilisateur par son id
-PUT http://localhost:3000/user/update-users/65e5d363b1460464adac2ebd
+PUT http://localhost:3000/user/65e724c972567dd0e1a29b44
 Content-Type: application/json
 
   {
@@ -77,12 +77,12 @@ Content-Type: application/json
 
 
 ### Endpoint pour la connexion d'un utilisateur 
-GET http://localhost:3000/user/login-user
+GET http://localhost:3000/user/login/login-user
 Content-Type: application/json
 
 {
   "email": "nouvelutilisateur@example.com",
-  "password": "1234"
+  "password": "12345"
 }
 
 

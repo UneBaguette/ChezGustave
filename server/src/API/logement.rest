@@ -1,5 +1,5 @@
 ### Enpoint pour créer un nouveau logement
-POST http://localhost:3000/logement/ajouter-logement
+POST http://localhost:3000/logement
 Content-Type: application/json
 
 {
@@ -26,14 +26,14 @@ Content-Type: application/json
 
 
 ### Enpoint pour obtenir tous les details d'un logement par son id 
-GET http://localhost:3000/logement/get-logement-details/65e1ca782eaada7ed1fc11d0
+GET http://localhost:3000/logement/65e724e372567dd0e1a29b47
 
 
 
 
 
 ### Endpoint pour modifier les informations / mettre à jour un logmement par son id
-PUT http://localhost:3000/logement/update-logement-details/65dddfee0ead76b43f534e2b
+PUT http://localhost:3000/logement/65e724e372567dd0e1a29b47
 Content-Type: application/json
 
 {
@@ -45,7 +45,7 @@ Content-Type: application/json
 
 
 ### Enpoint pour modifier tous les logements
-PUT http://localhost:3000/logement/update-all-logements
+PUT http://localhost:3000/logement
 Content-Type: application/json
 
 {
@@ -60,28 +60,28 @@ Content-Type: application/json
 
 
 ### Endpoint pour supprimer un logement par son id
-DELETE http://localhost:3000/logement/delete-logement/65dda4492d699c32bd6c5e01
+DELETE http://localhost:3000/logement/65e724e372567dd0e1a29b47
 
 
 
 
 
 ### Endpoint pour supprimer tous les logements
-DELETE http://localhost:3000/logement/delete-all-logements
+DELETE http://localhost:3000/logement
 
 
 
 
 
 ### Endpoint pour récupérer les réservations d'un logement par son id
-GET http://localhost:3000/logement/reservation-logement/65dddfee0ead76b43f534e2b
+GET http://localhost:3000/logement/65e724e372567dd0e1a29b47/reservations
 
 
 
 
 
 ### Obtenire tous les logements
-GET http://localhost:3000/logement/get-all-logements
+GET http://localhost:3000/logement
 
 
 
@@ -99,7 +99,7 @@ POST http://localhost:3000/logement/recherche-logement
 Content-Type: application/json
 
 {
-  "tarif_bas": 160
+  "tarif_bas": 110
 }
 
 ### Enpoint pour rechercher logement avec critères prix

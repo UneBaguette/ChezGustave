@@ -195,7 +195,7 @@ exports.get_reservations_of_logement = async (req, res) => {
         const logement_id = req.params.id;
 
         // Recherche des réservations associées au logement dans la base de données
-        const reservations = await Reservation.find({ logement_id: logement_id });
+        const reservations = await Reservation.find({ logement: logement_id });
 
         // Vérifier si des réservations ont été trouvées pour le logement
         if (!reservations || reservations.length === 0) {

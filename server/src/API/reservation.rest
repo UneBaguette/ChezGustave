@@ -1,7 +1,7 @@
 ### Enpoint pour ajouter une reservation
-POST http://localhost:3000/reservation/ajouter-reservation
+POST http://localhost:3000/reservation
 Content-Type: application/json
-Set-Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY1ZTcyNGM5NzI1NjdkZDBlMWEyOWI0NCIsImVtYWlsIjoibm91dmVsdXRpbGlzYXRldXJAZXhhbXBsZS5jb20iLCJuYW1lIjoiTm91dmVsIFV0aWxpc2F0ZXVyIiwidGVsIjoiMDEyMzQ1Njc4OSIsInBhc3N3b3JkIjoiJDJiJDEwJG9HdWpPZGZWa2NUWE9heDhiVGkvSmV1Ni9vdUl4WnZubkIyUVl3VzJpLjd5ZlpiaDAuNzFTIiwiaXNfYWRtaW4iOnRydWUsInJlc2VydmF0aW9ucyI6W10sIl9fdiI6MH0sImlhdCI6MTcwOTY0NzA1NH0.Tmk1HkFA0Ynv4-EkqcEDXVDAGfH5kED0_vJ0f2Bz8rM; Path=/; HttpOnly
+Set-Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY1ZTcyNGM5NzI1NjdkZDBlMWEyOWI0NCIsImVtYWlsIjoibm91dmVsdXRpbGlzYXRldXJAZXhhbXBsZS5jb20iLCJuYW1lIjoiTm91dmVsIFV0aWxpc2F0ZXVyIiwidGVsIjoiMDEyMzQ1Njc4OSIsInBhc3N3b3JkIjoiJDJiJDEwJGlVUlZRM2xLN0RyQnNEa3E4N3pvYWVzOHVKMWR2M3pDY3g3QVhVT1Z6dEVXbkQ5Sk0wb1l1IiwiaXNfYWRtaW4iOnRydWUsInJlc2VydmF0aW9ucyI6WyI2NWU3MjUwZDcyNTY3ZGQwZTFhMjliNGMiXSwiX192IjoxfSwiaWF0IjoxNzA5NjUwNjQ4fQ.VN3NOpFaQ3CTfChz6wdJDx4pinsojtIiExIHGWgIMRc; Path=/; HttpOnly
 
 {
   "start_date": "2024-07-10",
@@ -16,21 +16,21 @@ Set-Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY1Z
 
 
 ### Enpoint pour obtenir toutes les réservations
-GET http://localhost:3000/reservation/all-reservation
+GET http://localhost:3000/reservation
 
 
 
 
 
 ### Enpoint pour obtenir les details des informations d'une reservation par son id
-GET http://localhost:3000/reservation/get-reservation-details/
+GET http://localhost:3000/reservation/id
 
 
 
 
 
 ### Enpoint pour mettre à jour les détails d'une réservation par son id
-PUT http://localhost:3000/reservation/update-reservation-details/
+PUT http://localhost:3000/reservation/
 Content-Type: application/json
 
 {
@@ -42,7 +42,7 @@ Content-Type: application/json
 
 
 ### Endpoint pour mettre à jour toutes les réservations
-PUT http://localhost:3000/reservation/update-all-reservations
+PUT http://localhost:3000/reservation
 Content-Type: application/json
 
 {
@@ -54,18 +54,18 @@ Content-Type: application/json
 
 
 ### Enpoint pour supprimer une reservation par son id
-DELETE http://localhost:3000/reservation/delete-reservation/
+DELETE http://localhost:3000/reservation/id
 
 
 
 
 
 ### Enpoint pour suprier toutes les réservations
-DELETE http://localhost:3000/reservation/delete-all-reservations
+DELETE http://localhost:3000/reservation
 
 
 
 
 
 ### Enpoint pour Récupérer les notes d'une réservation par son id
-GET http://localhost:3000/reservation/get-reservation-rating/
+GET http://localhost:3000/reservation/id/ratings

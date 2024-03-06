@@ -24,7 +24,7 @@ const logement_schema = new mongoose.Schema({
   },
   adulte: { type: Number },
   enfant: { type: Number },
-  animeaux: { type: Number },
+  animaux: { type: Number },
   reservation: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Reservation'
