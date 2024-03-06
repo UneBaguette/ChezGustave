@@ -31,30 +31,15 @@ app.use(session_middleware);
 
 
 
-// Utilisation des routes de l'application :
+// Utilisation des routes
+const routes = require('./routes');
+app.use('/', routes);
 
-// Utilisation des routes pour les utilisateurs
-const user_route = require('./routes/user_route');
-app.use('/user', user_route);
 
-// Utilisation des routes pour les reservations
-const reservation_route = require('./routes/reservation_routes');
-app.use('/reservation', reservation_route);
 
-// Utilisation des routes pour rating
-const rating_route = require('./routes/rating_routes');
-app.use('/rating', rating_route);
 
-// Utilisation des routes pour logement
-const logement_route = require('./routes/logement_routes');
-app.use('/logement', logement_route);
 
-//
-const equipement_route = require('./routes/equipement_routes');
-app.use('/equipement', equipement_route)
 
-const type_route = require('./routes/type_routes');
-app.use('/type', type_route);
 
 
 

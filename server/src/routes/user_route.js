@@ -26,15 +26,6 @@ router.delete('/', delete_user, user_controller.delete_all_users);
 // Route pour supprimer un utilisateur par son ID
 router.delete('/:id', delete_user, user_controller.delete_user);
 
-// Route pour créer un nouvel utilisateur
-router.get('/login/login-user', user_controller.login_user )
-
-// Route pour la déconnexion de l'utilisateur
-router.get('/logout-user', user_controller.logout_user);
-
-// Route pour obtenir les informations d'un utilisateurs connecté
-router.get('/get-logged-in-user', user_controller.get_logged_in_user)
-
 // Route pour récupérer les réservations d'un utilisateur
 router.get('/:id/reservation', user_controller.get_user_reservations);
 

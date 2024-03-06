@@ -6,7 +6,7 @@ Content-Type: application/json
   "email": "nouvelutilisateur2@example.com",
   "name": "Nouvel Utilisateur2",
   "tel": "0123456789",
-  "password": "1234",
+  "password": "12345",
   "is_admin": true
 }
 
@@ -40,7 +40,7 @@ Content-Type: application/json
 
 
 ### Endpoint pour Supprimer tous les utilisateurs
-DELETE http://localhost:3000/user/delete-all-users
+DELETE http://localhost:3000/user
 
 
 
@@ -65,8 +65,8 @@ PUT http://localhost:3000/user/65e724c972567dd0e1a29b44
 Content-Type: application/json
 
   {
-  "email": "nouvelutilisateur@example.com",
-  "name": "Nouvel Utilisateur",
+  
+  "name": "New username",
   "tel": "0123456789",
   "password": "12345",
   "is_admin": true
@@ -77,11 +77,11 @@ Content-Type: application/json
 
 
 ### Endpoint pour la connexion d'un utilisateur 
-GET http://localhost:3000/user/login/login-user
+GET http://localhost:3000/auth
 Content-Type: application/json
 
 {
-  "email": "nouvelutilisateur@example.com",
+  "email": "nouvelutilisateur2@example.com",
   "password": "12345"
 }
 
@@ -90,14 +90,14 @@ Content-Type: application/json
 
 
 ### Endpoint pour récupérer les informations d'un utilisateur connecté
-GET http://localhost:3000/user/get-logged-in-user
+GET http://localhost:3000/auth/get-logged-in-user
 
 
 
 
 
 ### Endpoint pour deconnecter un user
-GET http://localhost:3000/user/logout-user
+GET http://localhost:3000/auth/logout
 
 
 
