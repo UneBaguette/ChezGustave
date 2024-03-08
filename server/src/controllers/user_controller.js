@@ -2,8 +2,6 @@
 const User = require('../models/user_model');
 // Controller pour récupérer les réservations d'un user
 const Reservation = require('../models/reservation_model');
-// Importation de jwt pour vérifier les cookies d el'utilisateur
-const jwt = require('jsonwebtoken');
 // Contorller d'ajout d'un utilisateur
 const bcrypt = require('bcrypt');
 

@@ -16,6 +16,10 @@ router.use('/user', user_route);
 const auth_user_route = require('./auth_user_routes');
 router.use('/auth', auth_user_route);
 
+// Utilisation des routes pour les invitations
+const invitation_route = require('./invitation_routes');
+router.use('/invitation', invitation_route )
+
 // Utilisation des routes pour les reservations
 const reservation_route = require('./reservation_routes');
 router.use('/reservation', reservation_route);

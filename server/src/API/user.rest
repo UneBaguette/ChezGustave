@@ -13,6 +13,7 @@ Content-Type: application/json
 
 
 
+
 ### Endpoint pour Obtenir tous les utilisateurs
 GET http://localhost:3000/user
 
@@ -81,8 +82,8 @@ GET http://localhost:3000/auth
 Content-Type: application/json
 
 {
-  "email": "nouvelutilisateur2@example.com",
-  "password": "12345"
+  "email": "marvin.morin@institutsolacroup.com",
+  "password": "fsUTdur461"
 }
 
 

@@ -18,6 +18,7 @@ exports.auth_middleware = (req, res, next) => {
     req.user = decoded.user;
 
     next();
+    
   } catch (error) {
     return res.status(401).json({ message: 'Accès non autorisé - Token invalide' });
   }
