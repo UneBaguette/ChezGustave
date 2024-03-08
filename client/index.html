@@ -4,34 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chez Gustave</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+<body>
 <header>
-    <div class="header-container">
+    <section class="header-container">
         <nav>
             <ul>
-                <li>Accueil</li>
-                <li><img src="./images/logo gustave transparent.png" alt="fleur du logo"></li> 
-                <li>A propos</li>
-                <li>Se connecter</li>
+                <!-- <a> autour de chaque élément de la liste pour transformer chaque élément en un lien cliquable. -->
+                <li><a href="#">Accueil</a></li>
+                <li><img src="./images/logo gustave transparent.png" alt="fleur du logo"></li> >
+                <li><a href="#">A propos</a></li>
+                <li class="cta__button"><a href="#">SE CONNECTER</a></li>
             </ul>
-        <img src="./images/page d'accueil.jpg" alt="image de fond">
+        <!-- <img src="./images/page d'accueil.jpg" alt="image de fond"> -->
         </nav>
+        
         <div class="logo-container">
-            <img src="./images/lesvacanceschezgustave - logo.png" alt="logo">
-            <p>Loin des pauvres, près du ciel. <br>Monsieur Poulpe</p>
+            <div class="glass-effect">  
+                <span class="cadre-header">
+                    <img src="./images/lesvacanceschezgustave - logo.png" alt="logo">
+                </span>
+                <div class="text">
+           <p class="p1">Loin des pauvres, près du ciel</p>
+        <p class="p2">Monsieur Poulpe</p>
         </div>
-    </div>
+        </div>
+        </div>
+    </section>
 </header>
-<body>
-    <div class="text-container">
+<main>
+    <section class="text-container">
+        <div class="top-section">
+            <span class="cadre2">
         <img src="./images/maison-avec-vue-mer.jpg" alt="vue sur mer avec longue vue">
+            </span>
+        <div class="text">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Sed felis eget velit aliquet sagittis id consectetur purus ut. Condimentum id venenatis a condimentum vitae sapien pellentesque habitant morbi. Tincidunt praesent semper feugiat nibh sed pulvinar. Dui vivamus arcu felis bibendum ut. Arcu risus quis varius quam quisque id diam vel. Nunc lobortis mattis aliquam faucibus purus in massa tempor nec. Vel turpis nunc eget lorem dolor sed viverra ipsum.</p>
+        </div>
+        </div>
+        <div class="middle-section">
             <button>En savoir plus</button>
-            <h2>Réservez vos prochaines vacances</h2>
-    </div>
-    <div class="search-bar-container">
-        <img src="./images/salon-chalet.jpg" alt="salon d'un chalet de montagne">
+        </div>
+
+        <div class="bottom-section">
+            <span class="cadre3">
+            <h2>
+             <p class="p1">Réservez</p>  
+             <p class="p2">vos prochaines vacances</p>  
+           </h2>
+           </span>
+        </div>
+    </section>
+
+    <section class="search-bar-container">
+        <div class="choice">
         <form>
             <!-- <label for="destination">Où allez-vous?</label>
             <select id="destination">
@@ -63,8 +91,11 @@
           </form>
           <h2>Venez découvrir nos biens d’exception</h2>   
     </div>
-    <div class="slider-container">
-        <div class="slider-images">
+    </section>
+
+    <section class="slider-container">
+        <div id="slider">
+        <!-- <div class="slider-images">
             <img src="./images/mer.jpg" alt="Vue sur mer">
             <h5>Une pause au bord de la mer</h5>
             <img src="./images/campagne.jpg" alt="Maison de campagne">
@@ -73,12 +104,17 @@
             <h5>Un havre de paix en ville</h5>
             <img src="./images/montagne.jpg" alt="Grand chalet de montagne">
             <h5>Un retour aux sources à la montagne</h5>
+        </div> -->
         </div>
+   
+    </section> 
+</main>
 
-        <img src="./images/lesvacanceschezgustave - logo.png" alt="logo-rond">
-    </div>
     <footer>
-        <div class="footer-legal">
+        <span class="logo-rond">
+            <img src="./images/lesvacanceschezgustave - logo.png" alt="logo-rond">
+        </span>
+        <section class="footer-legal">
         <h4>Plan site</h4>
         <ul>
             <li>Accueil</li>
@@ -100,7 +136,7 @@
             <li>Martin CRAIE</li>
             <li>Paul ALKER</li>
         </ul>
-    </div>
+    </section>
     <div class="footer-media">
         <img src="" alt="logo insta">
         <img src="" alt="logo facebook">
@@ -112,4 +148,5 @@
     
     
 </body>
+<script src="./script.js"></script>
 </html>
