@@ -95,6 +95,7 @@ exports.get_invitations = async (req, res) => {
 
 
 
+
 // Controller pour Supprimer toutes les invitations
 exports.delete_all_invitations = async (req, res) => {
   try {

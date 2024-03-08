@@ -3,8 +3,8 @@ POST http://localhost:3000/user
 Content-Type: application/json
 
 {
-  "email": "nouvelutilisateur2@example.com",
-  "name": "Nouvel Utilisateur2",
+  "email": "marvin.malouin@gmail.com",
+  "name": "Marvin Morin",
   "tel": "0123456789",
   "password": "12345",
   "is_admin": true
@@ -62,12 +62,12 @@ GET http://localhost:3000/user/65e724c972567dd0e1a29b44
 
 
 ### Endpoint pour Modifier les informations d'un utilisateur par son id
-PUT http://localhost:3000/user/65e724c972567dd0e1a29b44
+PUT http://localhost:3000/user/65eacaaa7f739ecf1539d7b1
 Content-Type: application/json
 
   {
   
-  "name": "New username",
+  "name": "Marvin Morin",
   "tel": "0123456789",
   "password": "12345",
   "is_admin": true

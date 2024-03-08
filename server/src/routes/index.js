@@ -20,6 +20,10 @@ router.use('/auth', auth_user_route);
 const invitation_route = require('./invitation_routes');
 router.use('/invitation', invitation_route )
 
+//
+const demande_invitation_route = require('./demande_invitation_routes');
+router.use('/demande-invitation', demande_invitation_route)
+
 // Utilisation des routes pour les reservations
 const reservation_route = require('./reservation_routes');
 router.use('/reservation', reservation_route);

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 
+
 const type_schema = new mongoose.Schema({
     tag : { type : String}
 });
