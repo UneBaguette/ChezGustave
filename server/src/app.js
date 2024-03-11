@@ -10,6 +10,8 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 // Importation des middlewares de l'application
 const { session_middleware, cookie_parser_middleware, body_parser_middleware } = require('./middlewares/app_middlewares');
+// Importation du module cors
+const cors = require('cors');
 
 
 
@@ -17,6 +19,13 @@ const { session_middleware, cookie_parser_middleware, body_parser_middleware } =
 
 // Création d'une nouvelle instance de l'application Express
 const app = express();
+
+
+
+
+
+// Utilisation du middleware CORS
+app.use(cors());
 
 
 
@@ -40,19 +49,19 @@ app.use('/', routes);
 
 
 // Décoder le token dans le cookie à l'aide de JWT
-app.use( (req,res,next) => {
+app.use((req, res, next) => {
     const token = req.cookies.token;
-        if(token) {
-            try {
-                const decoded = jwt.verify(token, process.env.SECRET_KEY);
-                req.user = decoded;
-                next();
-            } catch (error) {
-                logger.error('Erreur de vérification JWT token :', error);
-                res.clearCookie('token');
-            }
+    if (token) {
+        try {
+            const decoded = jwt.verify(token, process.env.SECRET_KEY);
+            req.user = decoded;
+            next();
+        } catch (error) {
+            logger.error('Erreur de vérification JWT token :', error);
+            res.clearCookie('token');
         }
-        next();
+    }
+    next();
 });
 
 
@@ -64,7 +73,7 @@ app.use( (req,res,next) => {
 const PORT = process.env.SERVER_PORT || 3000;
 
 // Configuration du port d'écoute 
-app.listen( PORT, () => {
+app.listen(PORT, () => {
     console.log('Serveur en écoute sur le port : ', PORT);
 });
 
