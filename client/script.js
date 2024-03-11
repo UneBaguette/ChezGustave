@@ -1,9 +1,11 @@
 // Sélectionne l'élément HTML avec l'ID "slider"
 const div = document.querySelector("#slider");
+const sliderContainer = document.querySelector("#slider-container");
 
 // Crée un bouton pour reculer dans le slider
 const btnReculer = document.createElement("button");
 btnReculer.textContent = "<";
+btnReculer.classList.add("custom-button1"); // Ajoute une classe à l'élément
 div.appendChild(btnReculer);
 
 // Crée un conteneur pour l'image
@@ -15,13 +17,20 @@ let monImage = document.createElement("img");
 monImage.setAttribute("src", "../client/images/maison-bord-de-mer2.jpg");
 div_image.appendChild(monImage);
 
+// Crée un conteneur pour le titre de l'image
+const div_titre = document.createElement("div");
+div_titre.classList.add("slider-title");
+div_image.appendChild(div_titre);
+
 // Crée un titre pour l'image
 let monTitre = document.createElement("h2");
 div_image.appendChild(monTitre);
 monTitre.textContent = "Une pause au bord de la mer";
+// Ajoute le titre au conteneur du titre
+div_titre.appendChild(monTitre);
 let autoplay = true;
-// Définit une liste d'images avec leurs titres
 
+// Définit une liste d'images avec leurs titres
 let aListeImage = [
   {
     adresse: "maison-bord-de-mer2.jpg",
@@ -33,7 +42,7 @@ let aListeImage = [
   },
   {
     adresse: "la-maison-de-ville2.jpg",
-    titre: "Un havre da paix en ville",
+    titre: "Un havre de paix en ville",
   },
   {
     adresse: "la-maison-en-montagne2.jpg",
@@ -44,6 +53,7 @@ let aListeImage = [
 // Crée un bouton pour avancer dans le slider
 const btnAvancer = document.createElement("button");
 btnAvancer.textContent = ">";
+btnAvancer.classList.add("custom-button2"); // Ajoute une classe à l'élément
 div.appendChild(btnAvancer);
 
 let position = 0;
@@ -74,15 +84,15 @@ const affiche = (step) => {
 // Événement lorsque le bouton "Reculer" est cliqué
 btnReculer.addEventListener("click", () => {
   affiche(-1), // Recule dans le slider
-    (autoplay = false), // Arrête le défilement automatique
-    (btnPlay.textContent = "Play"); // Change le texte du bouton Play
+    (autoplay = false); // Arrête le défilement automatique
+  // (btnPlay.textContent = "Play"); // Change le texte du bouton Play
 });
 
 // Événement lorsque le bouton "Avancer" est cliqué
 btnAvancer.addEventListener("click", () => {
   affiche(1), // Avance dans le slider
-    (autoplay = false), // Arrête le défilement automatique
-    (btnPlay.textContent = "Play"); // Change le texte du bouton Play
+    (autoplay = false); // Arrête le défilement automatique
+  // (btnPlay.textContent = "Play"); // Change le texte du bouton Play
 });
 
 // Fonction pour exécuter le défilement automatique du slider
@@ -96,9 +106,42 @@ runSlider(); // Démarre le défilement automatique initial
 
 // Crée un bouton pour mettre en pause ou reprendre le défilement automatique
 const btnPlay = document.createElement("button");
-btnPlay.textContent = "Pause";
-body.appendChild(btnPlay);
+btnPlay.textContent = "X";
+btnPlay.classList.add("btn-pause"); // Ajoute une classe au bouton
+// body.appendChild(btnPlay);
+sliderContainer.appendChild(btnPlay); // Attache le bouton au conteneur du slider
 btnPlay.addEventListener("click", () => {
   autoplay = !autoplay; // Inverse l'état du défilement automatique
   runSlider(); // Redémarre le défilement automatique si autoplay est vrai
+});
+
+// Sélectionner les éléments nécessaires
+const modal = document.getElementById("modal");
+const btnOpenModal = document.getElementById("btn-open-modal");
+const btnCloseModal = document.querySelector(".modal .close");
+
+// Fonction pour ouvrir la modale
+function openModal() {
+  modal.style.display = "block";
+}
+
+// Fonction pour fermer la modale
+function closeModal() {
+  modal.style.display = "none";
+}
+
+// Événement de clic sur le lien "Se connecter" pour ouvrir la modale
+btnOpenModal.addEventListener("click", (event) => {
+  event.preventDefault(); // Empêcher le comportement de lien par défaut
+  openModal();
+});
+
+// Événement de clic sur le bouton de fermeture pour fermer la modale
+btnCloseModal.addEventListener("click", closeModal);
+
+// Événement de clic en dehors de la modale pour la fermer
+window.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    closeModal();
+  }
 });

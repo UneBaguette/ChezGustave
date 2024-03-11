@@ -4,23 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chez Gustave/Recherche</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<div class="header-container">
-    <nav>
+
+
+<body>
+
+<header>
+ <section class="header-container-recherche">
+    <nav class="navbar">
         <ul>
-            <li>Accueil</li>
-            <li><img src="./images/logo gustave transparent.png" alt="fleur du logo"></li> 
-            <li>A propos</li>
-            <li>Se connecter</li>
+            <!-- <a> autour de chaque élément de la liste pour transformer chaque élément en un lien cliquable. -->
+            <li><a href="#">Accueil</a></li>
+            <li><img src="./images/logo gustave transparent.png" alt="fleur du logo"></li> >
+            <li><a href="#">A propos</a></li>
+            <li class="cta__button"><a href="#">SE CONNECTER</a></li>
         </ul>
-    <img src="./images/salon-chalet.jpg" alt="salon d'un chalet de montagne">
+    <!-- <img src="./images/page d'accueil.jpg" alt="image de fond"> -->
     </nav>
+
     <div class="search-bar-container">
        <p>Où allez- vous?  Montagne </p>
        <p>Quand partez-vous?  Du: lun.18 mars 2024 | Au: dim. 24 mars 2024</p>
        <p>Combien êtes-vous?  Adultes: 2| Enfants: 0| Animaux: 1</p>
-<body>
-    <main>
+    </div>
+ </section>
+</header>
+
+<main>
     <div class="selection">
         <p>Nos meilleurs résultats pour: Montagne</p>
     </div>
@@ -54,7 +65,8 @@
                     <li>Parc de jeux</li>    <li>Tennis</li>
                 </ul>
         </ul>
-    </section class="column1">
+    </section>
+    <section class="column1">
         <div class="choice1">
             <img src="./images/montagne.jpg" alt="Grand chalet de montagne">
             <p>Le Pic, 180m²<br>
@@ -110,9 +122,12 @@
             <a href="#" class="page-number">3</a>
             <a href="#" class="next">suivant &gt;&gt;</a>
         </div>
-        <img src="./images/lesvacanceschezgustave - logo.png" alt="logo-rond">
+      
     </main>
     <footer>
+        <span class="logo-rond">
+            <img src="./images/lesvacanceschezgustave - logo.png" alt="logo-rond">
+        </span>
         <div class="footer-legal">
             <h4>Plan site</h4>
             <ul>

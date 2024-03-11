@@ -30,63 +30,63 @@ body{
     width:100%;
 
 }
-nav{
+.navbar{
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
     height: 100px;
     padding: 0 20px;
-    background: rgba(229, 209, 154, 0.35);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(4.4px);
-    -webkit-backdrop-filter: blur(4.4px);
 }
-nav ul {
+
+.navbar ul {
     list-style-type: none; 
     margin:0;
     padding:0;
     display: flex;
 }
 
-nav li {
+.navbar li {
     display: flex;
    
 }
-nav a {
+.navbar a {
     display: flex;
     align-items: center;
     text-decoration: none;
     color:var(--text-light) ;
 }
-nav img {
+.navbar img {
     display: flex;
     height: 82px;
     margin-top: 25px;
+    margin-right: 980px;
 }
 
-nav li:nth-child(1) a{
+.navbar li:nth-child(1) a{
     float: left;
     font-family: 'inspiration',sans-serif;
     font-weight: 400;
     font-size: 96px;
     line-height:121px;
+    margin-right: 100px;
 }
 
-nav li:nth-child(4) a{
+.navbar li:nth-child(4) a{
     color: var(--yellow-light-logo);
     font-family:'raleway', sans-serif;
     font-weight: 600;
     font-size: 36px;
     line-height:42px;
+    margin-left: -300px;
 }
-nav li:nth-child(3) a{
+.navbar li:nth-child(3) a{
     color: var(--text-light);
     font-family:'raleway', sans-serif;
     font-weight: 600;
     font-size: 36px;
     line-height:42px;
+    margin-left: -600px;
 }
 
 .logo-container{
@@ -97,15 +97,8 @@ nav li:nth-child(3) a{
 }
 .glass-effect{
     display: flex;
-    /* position:relative; */
-    margin-left: 60vh;
-    margin-right: 35vh;
+    margin:156px 156px 156px 420px;
     align-items:stretch;     
-    /* margin-left: 50vh; */
-    margin-top: 20vh;
-    margin-bottom: 20vh;
-    height: 60%;
-    width: 80%;
     /* From https://css.glass */
     background: rgba(229, 209, 154, 0.35);
     border-radius: 16px;
@@ -118,11 +111,11 @@ nav li:nth-child(3) a{
     display: flex;
     flex-direction: column-reverse;
     justify-content: flex-end;
-    width:32vh;
-    height: 42vh;
-    margin-top: 7vh;
-    margin-bottom: 8vh;
-    margin-left: -20vh;
+    width:244px;
+    height:320px;
+    margin-top:53px;
+    margin-bottom:61px;
+    margin-left: -153px;
     border: 5px solid var( --green-light-logo);
 }
 .logo-container{
@@ -131,12 +124,24 @@ nav li:nth-child(3) a{
 .logo-container .text{
     display: flex;
     flex-direction: column;
-    margin-top: 15vh;
+    margin-top:153px;
 }
 .logo-container .p1{
+    font-family: Cormorant;
+    font-size: 300px;
+    font-weight: 600;
+    line-height: 363px;
+    letter-spacing: 0em;
+    text-align: left;
+   
+
+}
+
+.logo-container .p1{
     align-items: center;
-    margin-left: 15vh;
-    color: var(--text-light);
+    width: 800px;
+    margin-left:115px;
+    color: var(--text-dark);
     font-family:'cormorant', sans-serif;
     font-weight: 600;
     font-size: 64px;
@@ -144,8 +149,8 @@ nav li:nth-child(3) a{
 }
 .logo-container .p2{
     align-items: center;
-    margin-left: 15vh;
-    color: var(--text-light);
+    margin-left:115px;
+    color: var(--text-dark);
     font-family:'cormorant', sans-serif;
     font-weight: 400;
     font-size: 40px;
@@ -154,33 +159,33 @@ nav li:nth-child(3) a{
 }
 .logo-container img{
     /* position: absolute; */
-    height: 30vh;
-    width: 30vh;
-    margin-top: 7vh;
-    padding-right: 13vh;
-    margin-left: 10vh;
+    height:229px;
+    width:229px;
+    margin-top:53px;
+    padding-right:100px;
+    margin-left:76px;
     display: flex; 
 }
 .text-container{
     background-color: var(--text-dark);
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     flex-direction: column; 
-    padding: 20px;
+    /* justify-content: center;
+    padding: 76px 0 76px 0; */
     width:100%;
-   
 }
+
 .top-section {
     display: flex;
-    max-width:100vw;
-    justify-content: space-evenly; 
+    justify-content:center; 
     align-items: center; 
+    margin-right: 100px;
 }
   
 .middle-section {
     display: flex;
     justify-content: flex-end; 
-    width:100%;
     margin-top: 100px;
     margin-bottom: 100px;
 }
@@ -190,7 +195,8 @@ nav li:nth-child(3) a{
     width: 400px;
     margin-top:60px;
     margin-right: 200px;
-    margin-left: 400px;
+    margin-left: 300px;
+    z-index: 2;
    
 }
 
@@ -199,55 +205,55 @@ nav li:nth-child(3) a{
     margin-top: -60px;
     margin-left: -100px;
     margin-right: 300px;
+    z-index: 1;
     
     /* margin-bottom: -300px;  */
 }
 
 .text-container p {
-    width: 500px;
     font-family: 'raleway',sans-serif;
     font-size:1em;
     font-weight: 300;
     line-height:35px;
     letter-spacing: 0.1em;
     color: var(--text-light);
-    margin-right:0px; /* Espace entre le texte et le bouton */
+    
+}
+.deco{
+    font-family: 'cormorant',sans-serif;
+    font-size: 300px;
+    font-weight: 600;
+    text-align: left;
+    color: var(--yellow-logo);
+
    
-    /* top: 1410px
-    left: 910px */
 
 }
-.text-container .middle-section button {
-    margin-left:20px; 
-    width:100%;
-}
 
-.text-container button{
+.middle-section button{
     border: 5px solid var(--text-light);
     background-color: var(--text-dark);
     color:var(--text-light) ;
-    /* width: 250px;
-    height: 200px; */
     font-family: Raleway;
-    font-size: 36px;
+    font-size: 28px;
     font-weight: 600;
-    line-height:42px;
-    letter-spacing: 0em;
+    line-height:32px;
     text-align:center;
-    width: 256px;
-    height: 42px;
+    width: 265px;
+    height: 80px;
+    margin-right: 100px;
+    cursor: pointer;
 }
 
 .bottom-section {
     display: flex;
     align-items: center; 
-    margin-top: 80px; 
     width:100%;
 }
-.cadre3{
-    border: 5px solid var(--green-light-logo);
+.cadre3,.cadre4{
+    border: 5px solid var(--yellow-logo);
     width: 920px;
-    height: 27vh;
+    height:206px ;
     display: flex;
     flex-direction: column;
     justify-content:space-around; /* Centrer horizontalement les éléments */
@@ -255,62 +261,130 @@ nav li:nth-child(3) a{
     margin-top:auto; /* Pour placer en bas du container */
     margin-left: auto; /* Pour centrer horizontalement */
     margin-right: auto; /* Pour centrer horizontalement */
-    margin-bottom: -14vh;
+    margin-bottom: -106px;
     }
 
-.bottom-section .p1{
+.bottom-section .p1, .bottom-section-search-bar .p1{
     color: var(--text-dark);
+    background-color: white;
     font-family: 'inspiration',sans-serif;
-    font-size: 128px;
-    line-height: 162px;
+    font-size: 110px;
+    line-height: 180px;
     font-weight: 400;
-    margin-top: 40px;
+    margin-top: 30px;
+    text-align: center;
+    padding:0 0 40px 0;
+    letter-spacing: normal;
+}
+.bottom-section .p1{
+    line-height: 210px; 
 }
  
-.bottom-section .p2{
+.bottom-section .p2,.bottom-section-search-bar .p2 {
     color: var(--text-dark);
     background-color: white;
     font-family: 'cormorant',sans-serif;
-    font-size: 80px;
-    Line-height:96px;
+    font-size: 60px;
+    padding-bottom: 50px;
     font-weight: 600;
-    width: 1000px;
-    height: 200px;
-    margin-bottom: 200px;
-    padding-top: 80px;
+    width: 800px;
+    margin-top: -100px;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
 .search-bar-container{
     background-image: url(./images/salon-chalet.jpg);
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height:1200px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    width:100%;
-}
-
-.choice form{
-    display: flex;
+    align-items: center; /* Centrer verticalement */
     flex-direction: column;
-    align-items: center;
-    margin-bottom:auto; /* Pour placer en haut du container */
-    margin-left: auto; /* Pour centrer horizontalement */
-    margin-right: auto; /* Pour centrer horizontalement */
-    
+    position: relative; /* Permettra de positionner l'élément suivant par rapport à ce conteneur */
 }
-.search-bar-container h2{
-    font-family: 'cormorant',sans-serif;
-    font-size: 80px;
-    font-weight: 600;
-    line-height: 97px;
-    letter-spacing: 0em;
-    text-align: left;
-    width: 880px;
-    display: flex;
-    align-items: center;
+.top-search-bar {
+    width: 100%;
+    text-align: center; /* Centrer horizontalement */
+    margin-bottom: 20px; /* Espacement entre le paragraphe et le formulaire */
+}
 
+.top-search-bar-p p{
+    background-color: var(--green-light-logo);
+    font-family: 'cormorant',sans-serif;
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 53px;
+    color: var(--text-dark);
+    padding: 20px;
+    width: 500px;
+    border-radius: 5px;
+}
+.top-search-bar-form {
+    display: flex; /* Utiliser Flexbox pour placer les éléments côte à côte */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */ 
+    width: 500px;
+    padding: 20px 40px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.41); /* Ajoutez une couleur de fond semi-transparente */
+    /* background: rgba(229, 209, 154, 0.35); */
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.4px);
+    -webkit-backdrop-filter: blur(4.4px);
+}
+.top-search-bar-form form label{
+    font-family: 'raleway',sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 33px;
+    letter-spacing: 0em;
+    text-align: left;  
+}
+.top-search-bar-form form input[type="text"],
+.top-search-bar-form form input[type="date"],
+.top-search-bar-form form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid var(--green-logo);
+    border-radius: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    color: var(--text-dark);
+}
+.top-search-bar-form form button[type="submit"]{
+    background-color: var(--green-logo);
+    color: white;
+    border: 2px solid white;
+    height: 40px;
+    width: 100px;
+    font-family: 'raleway',sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 33px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.bottom-section{
+    position: relative; /* Ajoutez une position relative pour permettre le positionnement absolu des éléments enfants */
+    z-index: 1; /* Assurez-vous que cet élément a un z-index supérieur à l'élément .search-bar-container */
+    /* Les autres styles restent les mêmes */
+}
+.bottom-section-search-bar {
+    position: relative;
+}
+
+.bottom-section-search-bar {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /* Assurez-vous qu'il couvre la largeur totale */
+    text-align: center; /* Centrer le contenu horizontalement */
 }
 .slider-container{
     background-image:url('./images/feuille\ pour\ chez\ gustave.png');
@@ -318,18 +392,84 @@ nav li:nth-child(3) a{
     background-position: center;
     width:100%;
     background-color: #00302C;
-    height: 690px;    
+    height: 1000px;    
     font-family: sans-serif;
     font-size: 0.8rem;
+    display: flex;
+    flex-direction: column-reverse;
+    
 }
 .slider-container #slider{
-    /* border: 8px solid #F39C12; */
-    margin: 10px;
-    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.slider-title{
+    transform: translateY(-100%);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.4px);
+    -webkit-backdrop-filter: blur(4.4px); /* Opacité pour que le texte soit visible */
+    height: 200px;
+  }
+
+  .cadre-slider{
+    border: 5px solid var(--yellow-logo);
+    height: 600px;
+    width: 500px;
+  }
+  .slider-title h2 {
+    font-family: 'cormorant',sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 73px;
+    text-align: center;
+    color: #FFFDF9;
+    padding-top: 50px;
+  }
+.custom-button1, .custom-button2 {
+    background-color:transparent;
+    color: white;
+    border: none;
+    padding: 0 50px 0 50px;
+    margin-bottom: 170px;
+    font-size: 100px;
+    cursor: pointer;
+  }
+.btn-pause{
+    border: 5px solid var(--text-dark);
+    box-shadow:1px 1px 15px 15px var(--text-light);
+    border-radius: 5px;
+    background-color:transparent;
+    color: var(--text-light);
+    font-family: Raleway;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 32px;
+    width: 65px;
+    height: 50px;
+    transform: translate(1190px, 542px);
+    cursor: pointer;
+    
+  }
+  .slider-button{
+    width: 0;
+    height:0 ;
+  }
+  .slider-button button {
+    border: 5px solid var(--text-light);
+    background-color: var(--text-dark);
+    color:var(--text-light) ;
+    font-family: Raleway;
+    font-size: 28px;
+    font-weight: 600;
+    line-height:32px;
+    text-align:center;
+    width: 265px;
+    height: 80px;
+    cursor: pointer;
+    transform: translate(660px, 540px);
+}
+
 
 footer{
     background: var(--green-logo);
@@ -373,6 +513,54 @@ color:var(--yellow-light-logo);
     height:80px;
     width: 100%;
     background:var(--yellow-light-logo) ;
+}
+
+/* Style pour la modale */
+.modal {
+    display: none; /* Cacher la modale par défaut */
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+/* Style pour le contenu de la modale */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* Style pour le bouton de fermeture */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+.header-container-recherche{
+    background-image:url('./images/salon-chalet.jpg" alt="salon-chalet');
+    background-size:cover;
+    background-position:center;
+    width:100%;
+
 }
 
 
