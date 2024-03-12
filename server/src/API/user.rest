@@ -69,7 +69,7 @@ Content-Type: application/json
   
   "name": "Marvin Morin",
   "tel": "0123456789",
-  "password": "12345",
+  "password": "fsUTdur461",
   "is_admin": true
   }
 
@@ -78,7 +78,7 @@ Content-Type: application/json
 
 
 ### Endpoint pour la connexion d'un utilisateur 
-GET http://localhost:3000/auth
+POST http://localhost:3000/auth
 Content-Type: application/json
 
 {
