@@ -4,11 +4,14 @@
 
 // Importation du framework express 
 const express = require('express');
+// Importation de la bibliothèque JWT
 const jwt = require('jsonwebtoken');
 // Charger le module des variables d'environnement & exportation des variables d'environnements
 require('dotenv').config();
 // Importation des middlewares de l'application
 const { session_middleware, cookie_parser_middleware, body_parser_middleware } = require('./middlewares/app_middlewares');
+// Importation du module cors
+const cors = require('cors');
 
 
 
@@ -16,6 +19,14 @@ const { session_middleware, cookie_parser_middleware, body_parser_middleware } =
 
 // Création d'une nouvelle instance de l'application Express
 const app = express();
+
+
+
+
+
+// Utilisation du middleware CORS
+app.use(cors());
+
 
 
 
@@ -28,45 +39,30 @@ app.use(session_middleware);
 
 
 
-// Utilisation des routes de l'application
 
-// Utilisation des routes pour les utilisateurs
-const user_route = require('./routes/user_route');
-app.use('/user', user_route);
-
-// Utilisation des routes pour les reservations
-const reservation_route = require('./routes/reservation_routes');
-app.use('/reservation', reservation_route);
-
-// Utilisation des routes pour rating
-const rating_route = require('./routes/rating_routes');
-
-// Utilisation des routes pour logement
-const logement_route = require('./routes/logement_routes');
-app.use('/logement', logement_route);
+// Utilisation des routes
+const routes = require('./routes');
+app.use('/', routes);
 
 
 
 
 
 // Décoder le token dans le cookie à l'aide de JWT
-app.use( (req,res,next) => {
+app.use((req, res, next) => {
     const token = req.cookies.token;
-        if(token) {
-            try {
-                const decoded = jwt.verify(token, process.env.SECRET_KEY);
-                req.user = decoded;
-                next();
-            } catch (error) {
-                logger.error('Erreur de vérification JWT token :', error);
-                res.clearCookie('token');
-            }
+    if (token) {
+        try {
+            const decoded = jwt.verify(token, process.env.SECRET_KEY);
+            req.user = decoded;
+            next();
+        } catch (error) {
+            logger.error('Erreur de vérification JWT token :', error);
+            res.clearCookie('token');
         }
-        next();
+    }
+    next();
 });
-
-
-
 
 
 
@@ -77,7 +73,7 @@ app.use( (req,res,next) => {
 const PORT = process.env.SERVER_PORT || 3000;
 
 // Configuration du port d'écoute 
-app.listen( PORT, () => {
+app.listen(PORT, () => {
     console.log('Serveur en écoute sur le port : ', PORT);
 });
 

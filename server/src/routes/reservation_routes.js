@@ -7,11 +7,29 @@ const reservation_controller = require('../controllers/reservation_controller');
 
 
 
-// Endpoint pour récupérer les réservations d'un utilisateur
-router.get('/user/:userId/reservation', reservation_controller.get_user_reservations);
+// Route pour créer une nouvelle réservation
+router.post('/', reservation_controller.create_reservation);
 
-// Endpoint pour créer une nouvelle réservation
-router.post('/ajouter-reservation', reservation_controller.create_reservation);
+// Route pour obtenir toutes les réservations
+router.get('/', reservation_controller.get_all_reservations)
+
+// Route pour récupérer les détails d'une réservation par son id
+router.get('/:id', reservation_controller.get_reservation_details)
+
+// route pour mettre à jour les détails d'une réservation par son id
+router.put('/:id', reservation_controller.update_reservation_details);
+
+// Route pour mettre à jour toutes les réservations
+router.put('/', reservation_controller.update_all_reservations);
+
+// Route pour supprimer une réservation par son ID
+router.delete('/:id', reservation_controller.delete_reservation);
+
+// Route pour supprimer toutes les réservations
+router.delete('/', reservation_controller.delete_all_reservations);
+
+// Route pour récupérer les notes d'une réservation par son ID
+router.get('/:id/ratings', reservation_controller.get_reservation_rating);
 
 
 

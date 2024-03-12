@@ -1,9 +1,10 @@
-POST http://localhost:3000/logement/ajouter-logement
+### Enpoint pour créer un nouveau logement
+POST http://localhost:3000/logement
 Content-Type: application/json
 
 {
   "images": ["image1.jpg", "image2.jpg"],
-  "secteur": "Quartier A",
+  "secteur": "Paris",
   "description": "Description du logement",
   "tarif_bas": 100,
   "tarif_moyen": 150,
@@ -11,7 +12,154 @@ Content-Type: application/json
   "m_carre": 80,
   "chambre": 2,
   "salle_de_bain": 1,
-  "categorie": "Appartement",
-  "type": "T2",
-  "equipements": ["wifi", "climatisation"]
+  "categorie": "Campagne",
+  "type": ["65e6f9f99a93ec5cec4c9089"],
+  "equipements": ["65e6f8d89d1d89c4e4095c34"],
+  "adulte": 2,
+  "enfant": 1,
+  "animeaux": 1
 }
+
+
+
+
+
+
+### Enpoint pour obtenir tous les details d'un logement par son id 
+GET http://localhost:3000/logement/65e724e372567dd0e1a29b47
+
+
+
+
+
+### Endpoint pour modifier les informations / mettre à jour un logmement par son id
+PUT http://localhost:3000/logement/65e724e372567dd0e1a29b47
+Content-Type: application/json
+
+{
+  "tarif_haut": 250
+}
+
+
+
+
+
+### Enpoint pour modifier tous les logements
+PUT http://localhost:3000/logement
+Content-Type: application/json
+
+{
+    "description": "Nouvelle description pour tous les logements",
+    "tarif_bas": 120,
+    "tarif_moyen": 170,
+    "tarif_haut": 220
+}
+
+
+
+
+
+### Endpoint pour supprimer un logement par son id
+DELETE http://localhost:3000/logement/65e724e372567dd0e1a29b47
+
+
+
+
+
+### Endpoint pour supprimer tous les logements
+DELETE http://localhost:3000/logement
+
+
+
+
+
+### Endpoint pour récupérer les réservations d'un logement par son id
+GET http://localhost:3000/logement/65e724e372567dd0e1a29b47/reservations
+
+
+
+
+
+### Obtenire tous les logements
+GET http://localhost:3000/logement
+
+
+
+
+
+
+
+
+
+
+//     RECHERCHE    //
+
+### Enpoint pour rechercher logement avec critères prix
+POST http://localhost:3000/logement/recherche-logement
+Content-Type: application/json
+
+{
+  "tarif_bas": 110
+}
+
+### Enpoint pour rechercher logement avec critères prix
+POST http://localhost:3000/logement/recherche-logement
+Content-Type: application/json
+
+{
+  "tarif_moyen": 250
+}
+
+### Enpoint pour rechercher logement avec critères prix
+POST http://localhost:3000/logement/recherche-logement
+Content-Type: application/json
+
+{
+  "tarif_haut": 310
+}
+
+### Enpoint pour rechercher logement avec critères
+POST http://localhost:3000/logement/recherche-logement
+Content-Type: application/json
+
+{
+    "secteur": "Quartier B"
+}
+
+### Rechercher des logements par plusieurs critères
+POST http://localhost:3000/logement/recherche-logement
+Content-Type: application/json
+
+{
+    "secteur": "Quartier B",
+    "tarif_bas": 200,
+    "chambre": 1,
+    "categorie": "Chalet",
+    "type": "T2"
+}
+
+### Rechercher des logements avec équipements spécifiques
+POST http://localhost:3000/logement/recherche-logement
+Content-Type: application/json
+
+{
+    "equipements": ["Centre equestre", "Golf"]
+}
+
+### Rechercher des logements avec des animeaux
+POST http://localhost:3000/logement/recherche-logement
+Content-Type: application/json
+
+{
+  "animeaux": 2
+}
+
+### Rechercher des logements avec des animeaux, enfant, adulte
+POST http://localhost:3000/logement/recherche-logement
+Content-Type: application/json
+
+{
+  "adulte": 3,
+  "enfant": 3,
+  "animeaux": 1
+  }

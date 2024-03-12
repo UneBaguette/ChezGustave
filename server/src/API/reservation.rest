@@ -1,14 +1,71 @@
-
 ### Enpoint pour ajouter une reservation
-POST http://localhost:3000/reservation/ajouter-reservation
+POST http://localhost:3000/reservation
 Content-Type: application/json
-Set-Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY1ZGRiZjU3YjZjMmMyMzRmZWNhMDUwZSIsImVtYWlsIjoibm91dmVsX3V0aWxpc2F0ZXVyQGV4YW1wbGUuY29tIiwibmFtZSI6Ik5vdXZlbCBVdGlsaXNhdGV1ciIsInRlbCI6IjAxMjM0NTY3ODkiLCJwYXNzd29yZCI6IiQyYiQxMCRtaXdMMkQvN0E2aTU5SnFvUzRpZkplZzVzNzVXLkJMQnpPWnR5ZkxBcGF1UDBOem9wellwMiIsImlzX2FkbWluIjp0cnVlLCJfX3YiOjB9LCJpYXQiOjE3MDkwMzU5ODN9.pm7FVgha44nqqpB_TNRCgEvIyMP_GrN8HwMWe-x-Icg; Path=/; HttpOnly
+Set-Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY1ZTcyNGM5NzI1NjdkZDBlMWEyOWI0NCIsImVtYWlsIjoibm91dmVsdXRpbGlzYXRldXJAZXhhbXBsZS5jb20iLCJuYW1lIjoiTm91dmVsIFV0aWxpc2F0ZXVyIiwidGVsIjoiMDEyMzQ1Njc4OSIsInBhc3N3b3JkIjoiJDJiJDEwJGlVUlZRM2xLN0RyQnNEa3E4N3pvYWVzOHVKMWR2M3pDY3g3QVhVT1Z6dEVXbkQ5Sk0wb1l1IiwiaXNfYWRtaW4iOnRydWUsInJlc2VydmF0aW9ucyI6WyI2NWU3MjUwZDcyNTY3ZGQwZTFhMjliNGMiXSwiX192IjoxfSwiaWF0IjoxNzA5NjUwNjQ4fQ.VN3NOpFaQ3CTfChz6wdJDx4pinsojtIiExIHGWgIMRc; Path=/; HttpOnly
 
 {
-  "start_date": "2024-03-01",
-  "end_date": "2024-03-05",
-  "chef_cuisine": true,
-  "visite": "2024-02-28",
-  "logement_id": "65dda4492d699c32bd6c5e01",
-  "user_id": "65ddbf57b6c2c234feca050e"
+  "start_date": "2024-07-10",
+  "end_date": "2024-07-18",
+  "chef_cuisine": false,
+  "visite": "2024-07-10",
+  "logement": "65e724e372567dd0e1a29b47"
 }
+
+
+
+
+
+### Enpoint pour obtenir toutes les réservations
+GET http://localhost:3000/reservation
+
+
+
+
+
+### Enpoint pour obtenir les details des informations d'une reservation par son id
+GET http://localhost:3000/reservation/id
+
+
+
+
+
+### Enpoint pour mettre à jour les détails d'une réservation par son id
+PUT http://localhost:3000/reservation/
+Content-Type: application/json
+
+{
+    "chef_cuisine": false
+}
+
+
+
+
+
+### Endpoint pour mettre à jour toutes les réservations
+PUT http://localhost:3000/reservation
+Content-Type: application/json
+
+{
+  "chef_cuisine": true
+}
+
+
+
+
+
+### Enpoint pour supprimer une reservation par son id
+DELETE http://localhost:3000/reservation/id
+
+
+
+
+
+### Enpoint pour suprier toutes les réservations
+DELETE http://localhost:3000/reservation
+
+
+
+
+
+### Enpoint pour Récupérer les notes d'une réservation par son id
+GET http://localhost:3000/reservation/id/ratings
