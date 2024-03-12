@@ -1,0 +1,616 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inspiration&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inspiration&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+:root{
+    --green-logo: #155B55; 
+    --green-light-logo:#9DC8C4;
+    --yellow-logo:#B99550;
+    --yellow-light-logo:#E5D19A;
+    --text-light:#FFFDF9;
+    --text-dark:#00302C;
+}
+*{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; Inclure les bordures et le padding dans la largeur/hauteur */
+}
+body{
+    max-width: 100vw;
+    overflow-x:hidden;
+}
+
+.header-container{
+    background-image:url('./images/page\ d\'accueil.jpg');
+    background-size:cover;
+    background-position:center;
+    width:100%;
+
+}
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    padding: 0 20px;
+}
+
+.navbar ul {
+    list-style-type: none; 
+    margin:0;
+    padding:0;
+    display: flex;
+}
+
+.navbar li {
+    display: flex;
+   
+}
+.navbar a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color:var(--text-light) ;
+}
+.navbar img {
+    display: flex;
+    height: 82px;
+    margin-top: 25px;
+    margin-right: 980px;
+}
+
+.navbar li:nth-child(1) a{
+    float: left;
+    font-family: 'inspiration',sans-serif;
+    font-weight: 400;
+    font-size: 96px;
+    line-height:121px;
+    margin-right: 100px;
+}
+
+.navbar li:nth-child(4) a{
+    color: var(--yellow-light-logo);
+    font-family:'raleway', sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    line-height:42px;
+    margin-left: -300px;
+}
+.navbar li:nth-child(3) a{
+    color: var(--text-light);
+    font-family:'raleway', sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    line-height:42px;
+    margin-left: -600px;
+}
+
+.logo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;     
+    width: 100%;
+}
+.glass-effect{
+    display: flex;
+    margin:156px 156px 156px 420px;
+    align-items:stretch;     
+    /* From https://css.glass */
+    background: rgba(229, 209, 154, 0.35);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.4px);
+    -webkit-backdrop-filter: blur(4.4px);
+}
+.cadre-header{
+    /* position:relative; */
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    width:244px;
+    height:320px;
+    margin-top:53px;
+    margin-bottom:61px;
+    margin-left: -153px;
+    border: 5px solid var( --green-light-logo);
+}
+.logo-container{
+    width:100%;
+}
+.logo-container .text{
+    display: flex;
+    flex-direction: column;
+    margin-top:153px;
+}
+.logo-container .p1{
+    font-family: Cormorant;
+    font-size: 300px;
+    font-weight: 600;
+    line-height: 363px;
+    letter-spacing: 0em;
+    text-align: left;
+   
+
+}
+
+.logo-container .p1{
+    align-items: center;
+    width: 800px;
+    margin-left:115px;
+    color: var(--text-dark);
+    font-family:'cormorant', sans-serif;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 78px;
+}
+.logo-container .p2{
+    align-items: center;
+    margin-left:115px;
+    color: var(--text-dark);
+    font-family:'cormorant', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    line-height:48px;
+    
+}
+.logo-container img{
+    /* position: absolute; */
+    height:229px;
+    width:229px;
+    margin-top:53px;
+    padding-right:100px;
+    margin-left:76px;
+    display: flex; 
+}
+.text-container{
+    background-color: var(--text-dark);
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column; 
+    /* justify-content: center;
+    padding: 76px 0 76px 0; */
+    width:100%;
+}
+
+.top-section {
+    display: flex;
+    justify-content:center; 
+    align-items: center; 
+    margin-right: 100px;
+}
+  
+.middle-section {
+    display: flex;
+    justify-content: flex-end; 
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.cadre2{
+    border: 5px solid var(--green-light-logo);
+    width: 400px;
+    margin-top:60px;
+    margin-right: 200px;
+    margin-left: 300px;
+    z-index: 2;
+   
+}
+
+.text-container img{
+    clip-path: inset(20px 595px 20px 60px);
+    margin-top: -60px;
+    margin-left: -100px;
+    margin-right: 300px;
+    z-index: 1;
+    
+    /* margin-bottom: -300px;  */
+}
+
+.text-container p {
+    font-family: 'raleway',sans-serif;
+    font-size:1em;
+    font-weight: 300;
+    line-height:35px;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    
+}
+.deco{
+    font-family: 'cormorant',sans-serif;
+    font-size: 300px;
+    font-weight: 600;
+    text-align: left;
+    color: var(--yellow-logo);
+
+   
+
+}
+
+.middle-section button{
+    border: 5px solid var(--text-light);
+    background-color: var(--text-dark);
+    color:var(--text-light) ;
+    font-family: Raleway;
+    font-size: 28px;
+    font-weight: 600;
+    line-height:32px;
+    text-align:center;
+    width: 265px;
+    height: 80px;
+    margin-right: 100px;
+    cursor: pointer;
+}
+
+.bottom-section {
+    display: flex;
+    align-items: center; 
+    width:100%;
+}
+.cadre3,.cadre4{
+    border: 5px solid var(--yellow-logo);
+    width: 920px;
+    height:206px ;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around; /* Centrer horizontalement les éléments */
+    align-items: center; /* Centrer verticalement les éléments */
+    margin-top:auto; /* Pour placer en bas du container */
+    margin-left: auto; /* Pour centrer horizontalement */
+    margin-right: auto; /* Pour centrer horizontalement */
+    margin-bottom: -106px;
+    }
+
+.bottom-section .p1, .bottom-section-search-bar .p1{
+    color: var(--text-dark);
+    background-color: white;
+    font-family: 'inspiration',sans-serif;
+    font-size: 110px;
+    line-height: 180px;
+    font-weight: 400;
+    margin-top: 30px;
+    text-align: center;
+    padding:0 0 40px 0;
+    letter-spacing: normal;
+}
+.bottom-section .p1{
+    line-height: 210px; 
+}
+ 
+.bottom-section .p2,.bottom-section-search-bar .p2 {
+    color: var(--text-dark);
+    background-color: white;
+    font-family: 'cormorant',sans-serif;
+    font-size: 60px;
+    padding-bottom: 50px;
+    font-weight: 600;
+    width: 800px;
+    margin-top: -100px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.search-bar-container{
+    background-image: url(./images/salon-chalet.jpg);
+    background-size: cover;
+    background-position: center;
+    height:1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centrer verticalement */
+    flex-direction: column;
+    position: relative; /* Permettra de positionner l'élément suivant par rapport à ce conteneur */
+}
+.top-search-bar {
+    width: 100%;
+    text-align: center; /* Centrer horizontalement */
+    margin-bottom: 20px; /* Espacement entre le paragraphe et le formulaire */
+}
+
+.top-search-bar-p p{
+    background-color: var(--green-light-logo);
+    font-family: 'cormorant',sans-serif;
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 53px;
+    color: var(--text-dark);
+    padding: 20px;
+    width: 500px;
+    border-radius: 5px;
+}
+.top-search-bar-form {
+    display: flex; /* Utiliser Flexbox pour placer les éléments côte à côte */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */ 
+    width: 500px;
+    padding: 20px 40px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.41); /* Ajoutez une couleur de fond semi-transparente */
+    /* background: rgba(229, 209, 154, 0.35); */
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.4px);
+    -webkit-backdrop-filter: blur(4.4px);
+}
+.top-search-bar-form form label{
+    font-family: 'raleway',sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 33px;
+    letter-spacing: 0em;
+    text-align: left;  
+}
+.top-search-bar-form form input[type="text"],
+.top-search-bar-form form input[type="date"],
+.top-search-bar-form form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid var(--green-logo);
+    border-radius: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    color: var(--text-dark);
+}
+.top-search-bar-form form button[type="submit"]{
+    background-color: var(--green-logo);
+    color: white;
+    border: 2px solid white;
+    height: 40px;
+    width: 100px;
+    font-family: 'raleway',sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 33px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.bottom-section{
+    position: relative; /* Ajoutez une position relative pour permettre le positionnement absolu des éléments enfants */
+    z-index: 1; /* Assurez-vous que cet élément a un z-index supérieur à l'élément .search-bar-container */
+    /* Les autres styles restent les mêmes */
+}
+.bottom-section-search-bar {
+    position: relative;
+}
+
+.bottom-section-search-bar {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /* Assurez-vous qu'il couvre la largeur totale */
+    text-align: center; /* Centrer le contenu horizontalement */
+}
+.slider-container{
+    background-image:url('./images/feuille\ pour\ chez\ gustave.png');
+    background-size: 30%;
+    background-position: center;
+    width:100%;
+    background-color: #00302C;
+    height: 1000px;    
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column-reverse;
+    
+}
+.slider-container #slider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider-title{
+    transform: translateY(-100%);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.4px);
+    -webkit-backdrop-filter: blur(4.4px); /* Opacité pour que le texte soit visible */
+    height: 200px;
+  }
+
+  .cadre-slider{
+    border: 5px solid var(--yellow-logo);
+    height: 600px;
+    width: 500px;
+  }
+  .slider-title h2 {
+    font-family: 'cormorant',sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 73px;
+    text-align: center;
+    color: #FFFDF9;
+    padding-top: 50px;
+  }
+.custom-button1, .custom-button2 {
+    background-color:transparent;
+    color: white;
+    border: none;
+    padding: 0 50px 0 50px;
+    margin-bottom: 170px;
+    font-size: 100px;
+    cursor: pointer;
+  }
+.btn-pause{
+    border: 5px solid var(--text-dark);
+    box-shadow:1px 1px 15px 15px var(--text-light);
+    border-radius: 5px;
+    background-color:transparent;
+    color: var(--text-light);
+    font-family: Raleway;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 32px;
+    width: 65px;
+    height: 50px;
+    transform: translate(1190px, 542px);
+    cursor: pointer;
+    
+  }
+  .slider-button{
+    width: 0;
+    height:0 ;
+  }
+  .slider-button button {
+    border: 5px solid var(--text-light);
+    background-color: var(--text-dark);
+    color:var(--text-light) ;
+    font-family: Raleway;
+    font-size: 28px;
+    font-weight: 600;
+    line-height:32px;
+    text-align:center;
+    width: 265px;
+    height: 80px;
+    cursor: pointer;
+    transform: translate(660px, 540px);
+}
+
+
+footer{
+    background: var(--green-logo);
+    display: flex;
+    align-items: center;
+    width:100%;
+    height: 500px;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+.logo-rond img{
+    display: flex;
+    margin-top: -100px;
+    width: 258px;
+    height: 258px;
+    top: 5832px;
+    left: 831px;
+    border-radius: 250px;
+    border: 5px;
+    border: 5px solid var(--yellow-light-logo);
+    box-shadow: 0px 8px 15px 9px var(--text-dark);
+
+
+}
+.footer-legal{
+    list-style-type: none; 
+    margin:0;
+    padding:0;
+    display: flex;
+    width: 70%;
+}
+.footer-legal h4, .footer-legal ul, .footer-legal li{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+footer li{
+color:var(--yellow-light-logo);
+}
+.footer-media{
+    height:80px;
+    width: 100%;
+    background:var(--yellow-light-logo) ;
+}
+
+/* Style pour la modale */
+.modal {
+    display: none; /* Cacher la modale par défaut */
+    position: fixed; 
+    /* z-index: 1; 
+    right: 0;
+    top: 0; */
+    z-index: 999; /* Assure que la modale s'affiche au-dessus du reste du contenu */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permet de faire défiler la modale si elle dépasse la fenêtre du navigateur */
+    background-color:transparent; 
+}
+
+/* Style pour le contenu de la modale */
+.modal-content {
+    background-image: url('./images/Fleur\ 1.png'); /* Image de fond */
+    background-color: var(--text-light); /* Couleur de fond */
+    background-blend-mode: color-burn; /* Mode de fusion pour combiner la couleur de fond et l'image */
+    color: var(--yellow-logo); /* Couleur du texte */
+    height: 350px; /* Hauteur de la modale */
+    width: 50%; /* Largeur de la modale */
+    margin: 15% auto; /* Centre la modale verticalement et horizontalement */
+    padding: 80px; /* Espacement interne */
+    font-family: 'raleway', sans-serif; /* Police de caractères */
+    font-size: 24px; /* Taille de la police */
+    font-weight: 400; /* Poids de la police */
+    line-height: 32px; /* Hauteur de ligne */
+    text-align: left; /* Alignement du texte */
+    border-radius: 10px; /* Arrondi des coins */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ombre portée */
+    
+}
+#login-form{
+    font-family: 'raleway', sans-serif; /* Police de caractères */
+    font-size: 32px; /* Taille de la police */
+    font-weight: 400; /* Poids de la police */
+    line-height: 45px; /* Hauteur de ligne */
+    text-align: left; /* Alignement du texte */
+    margin-top: 70px;
+    margin-left: 70px;
+}
+#login-form input{
+    width: 578px;
+    height: 46px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 3px 2px var(--yellow-logo) inset;
+    border: none;
+}
+#login-form button{
+    width: 165px;
+    height: 42px;
+    margin-left: 560px;
+    margin-top: 40px;
+    border: 3px solid var(--yellow-logo);
+    color: var(--yellow-logo);
+    background: #FFFFFF;
+    font-family: 'raleway',sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align:center;
+
+}
+
+
+
+/* Style pour le bouton de fermeture */
+.close {
+    color:var(--yellow-logo); /* Couleur du bouton */
+    float: right; /* Alignement à droite */
+    font-size: 68px; /* Taille de la police */
+    font-weight: semi-bold; /* Poids de la police */ 
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Couleur du bouton au survol ou au focus */
+    text-decoration: none; /* Pas de soulignement */
+    cursor: pointer; /* Curseur de la souris */
+}
+
+
+
+.header-container-recherche{
+    background-image:url('./images/salon-chalet.jpg" alt="salon-chalet');
+    background-size:cover;
+    background-position:center;
+    width:100%;
+
+}
+
+
+
+
+
