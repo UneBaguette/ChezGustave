@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const auth_controller = require('../controllers/auth_user_controllers');
 
-// Route pour créer un nouvel utilisateur
+// Route pour se connecter à un utilisateur
 router.get('/', auth_controller.login_user )
 
 // Route pour la déconnexion de l'utilisateur
