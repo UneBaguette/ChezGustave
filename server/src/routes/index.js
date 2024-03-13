@@ -8,6 +8,11 @@ const router = express.Router();
 
 
 
+// TEST
+router.get("/", (req, res) => {
+    res.json({test : "Test API"});
+});
+
 // Utilisation des routes pour les utilisateurs
 const user_route = require('./user_route');
 router.use('/user', user_route);

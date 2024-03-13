@@ -21,32 +21,6 @@ GET http://localhost:3000/user
 
 
 
-### Endpoint pour Modifier les informations des utilisateurs en bloc (ici 1 bloc "{}")
-PUT http://localhost:3000/user
-Content-Type: application/json
-
-[
-  {
-    "_id": "65e72dcfe6339dfd13e6a075",
-    "email": "nouveau_email2@example.com",
-    "name": "Nouveau Nom 1",
-    "tel": "091011121314",
-    "password": "1234",
-    "is_admin": true
-  }
-]
-
-
-
-
-
-### Endpoint pour Supprimer tous les utilisateurs
-DELETE http://localhost:3000/user
-
-
-
-
-
 ### Endpoint pour Supprimer un utilisateur par son id
 DELETE http://localhost:3000/user/65e72dcfe6339dfd13e6a075
 

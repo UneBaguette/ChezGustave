@@ -17,17 +17,11 @@ router.get('/:id', logement_controller.get_logement_details);
 // Route pour modifier les informations d'un logement par son id 
 router.put('/:id', logement_controller.update_logement_details);
 
-// Route pour mettre à jour tous les logements
-router.put('/', logement_controller.update_all_logements);
-
 // Route pour obtenir tous les logements
 router.get('/', logement_controller.get_all_logements);
 
 // Route pour supprimer un logement par son id
 router.delete('/:id', logement_controller.delete_logement);
-
-// Route pour supprimer tous les logements
-router.delete('/', logement_controller.delete_all_logements);
 
 // Route pour récupérer les réservations d'un logement par son id
 router.get('/:id/reservations', logement_controller.get_reservations_of_logement);
