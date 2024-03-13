@@ -21,6 +21,7 @@
 body{
     max-width: 100vw;
     overflow-x:hidden;
+    background: var(--text-light);
 }
 
 .header-container{
@@ -303,6 +304,10 @@ body{
     align-items: center; /* Centrer verticalement */
     flex-direction: column;
     position: relative; /* Permettra de positionner l'élément suivant par rapport à ce conteneur */
+}
+
+.search-bar-container.no-bg {
+    background: none;
 }
 .top-search-bar {
     width: 100%;
@@ -603,14 +608,57 @@ color:var(--yellow-light-logo);
 
 
 .header-container-recherche{
-    background-image:url('./images/salon-chalet.jpg" alt="salon-chalet');
-    background-size:cover;
-    background-position:center;
+    background-image: url(./images/salon-chalet.jpg);
+    background-size: cover;
+    background-position: center;
     width:100%;
 
 }
 
 
 
+/*La partie d'Adélaïde*/
 
+#page-recherche {
+    margin-top: 9vh;
+    padding: 0vh 11vw;
+}
 
+h2 {
+    font-family: 'cormorant';
+    font-size: 56px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.selection {
+    text-align: center;
+    margin: 10vh 0vw;
+}
+
+/* Ici, la partie gauche de la page : les filtres */
+
+#results {
+    font-family: 'raleway';
+    font-size: 40px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--green-light-logo);
+    padding-top: 3vh;
+}
+
+#filter {
+    max-width: 25vw;
+    max-height: 205vh;
+    align-items: center;
+}
+
+#map {
+    max-width: 22vw;
+}
+
+/* Ici, les résultats affichés suite à une recherche */
+
+.choice {
+    background: #FFFFFF;
+}

@@ -7,123 +7,338 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
-
-<header>
- <section class="header-container-recherche">
-    <nav class="navbar">
-        <ul>
-            <!-- <a> autour de chaque élément de la liste pour transformer chaque élément en un lien cliquable. -->
-            <li><a href="#">Accueil</a></li>
-            <li><img src="./images/logo gustave transparent.png" alt="fleur du logo"></li> >
-            <li><a href="#">A propos</a></li>
-            <li class="cta__button" id="btn-open-modal"><a href="#">SE CONNECTER</a></li>
-        </ul>
-    <!-- <img src="./images/page d'accueil.jpg" alt="image de fond"> -->
-    </nav>
-
-    <div class="search-bar-container">
-       <p>Où allez- vous?  Montagne </p>
-       <p>Quand partez-vous?  Du: lun.18 mars 2024 | Au: dim. 24 mars 2024</p>
-       <p>Combien êtes-vous?  Adultes: 2| Enfants: 0| Animaux: 1</p>
-    </div>
- </section>
-</header>
-
-<main>
-    <div class="selection">
-        <p>Nos meilleurs résultats pour: Montagne</p>
-    </div>
-    <div>
-        <img src="./images/plan.png" alt="Plan du site">
-    </div>
-    <section class="container-choices">
-        <ul>
-            <li>Prix</li>
-            <li>Superficie</li>
-            <li>Chambres</li>
-            <li>Salle de bain</li>
-            <li>Type de bien</li>
+    <header>
+        <section class="header-container-recherche">
+            <nav class="navbar">
                 <ul>
-                    <!-- checkbox -->
-                    <li>Appartement</li>
-                    <li>Atypique</li>
-                    <li>Chalet</li>
-                    <li>Maison</li>
-                    <li>Manoir</li>
-                    <li>Villa</li>
+                    <!-- <a> autour de chaque élément de la liste pour transformer chaque élément en un lien cliquable. -->
+                    <li><a href="./index.html">Accueil</a></li>
+                    <li><img src="./images/logo gustave transparent.png" alt="fleur du logo"></li>
+                    <li><a href="#">A propos</a></li>
+                    <li class="cta__button"><a href="#">SE CONNECTER</a></li>
                 </ul>
-                <li>Equipements</li>
-                <ul>
-                    <li>Bateau à moteur</li>   <li>Patinoire</li>
-                    <li>Bateau à voile</li>    <li>Piscine</li>
-                    <li>Centre équestre</li>    <li>Piste de bobsleigh</li>
-                    <li>Golf</li>    <li>Plongée</li>
-                    <li>Jacuzzi</li>    <li> Spa</li>
-                    <li>Jardin</li>    <li>Sport d'hiver</li>
-                    <li>Parc de jeux</li>    <li>Tennis</li>
-                </ul>
-        </ul>
-    </section>
-    <section class="column1">
-        <div class="choice1">
-            <img src="./images/montagne.jpg" alt="Grand chalet de montagne">
-            <p>Le Pic, 180m²<br>
-            Gavarnie(65) <br>
-            A partir de 2000€/semaine TTC <br>
-            Type de bien: Chalet</p>
+            <!-- <img src="./images/page d'accueil.jpg" alt="image de fond"> -->
+            </nav>
+
+            <section class="search-bar-container no-bg">
+                <div class="top-search-bar-p">
+                    <p>Réservez dès à présent pour vous offrir votre escapade de rêve.</p>
+                </div>
+
+                <div class="top-search-bar-form"> 
+                <form>
+                    <!-- <label for="destination">Où allez-vous?</label>
+                    <select id="destination">
+                    <option value="ville">Ville</option>
+                    <option value="departement">Département</option>
+                    <option value="region">Région</option>
+                    <option value="topographie">Topographie</option>
+                    </select> -->
+                    <label for="destination_name">Où allez-vous? </label>
+                    <input type="text" id="destination_name" name="destination_name"  placeholder="Montagne" required>
+                    
+                    <label for="dates">Quand partez-vous?</label>
+                    <input type="date" id="start-date" name="start-date">
+                    <input type="date" id="end-date" name="end-date">
+                    <label for="participants">Combien êtes-vous?</label>
+                    <div>
+                    <label for="adults">Adultes:</label>
+                    <input type="number" id="adults" name="adults" value="2" min="0">
+                    </div>
+                    <div>
+                    <label for="children">Enfants:</label>
+                    <input type="number" id="children" name="children" value="0" min="0">
+                    </div>
+                    <div>
+                    <label for="pets">Animaux:</label>
+                    <input type="number" id="pets" name="pets" value="1" min="0">
+                    </div>
+                    <button type="submit">Rechercher</button>
+                </form>
+                </div>
+            </section>
+        </section>
+    </header>
+
+    <main id="page-recherche">
+        <div class="selection">
+            <h2>Nos meilleurs résultats pour :</h2>
+            <h2 id="results">Montagne</h2>
         </div>
-        <div class="choice2">
-            <img src="./images/Les cîmes.jpg" alt="Grand chalet de montagne">
-            <p>Les Cîmes, 200m²<br>
-            Chambéry(59) <br>
-            A partir de 2000€/semaine TTC <br>
-            Type de bien: Chalet</p>
-        </div>
-        <div class="choice3">
-            <img src="./images/Yololoiou.jpg" alt="Chalet typique de montagne">
-            <p>Yololoiou, 180m²<br>
-            Alpes suisses(Neuchâtel) <br>
-            A partir de 2000€/semaine TTC <br>
-            Type de bien: Chalet</p>
-        </div>
-    </section>
-    <section class="column2">
-        <div class="choice4">
-            <img src="./images/Chalet l'alpage.jpg" alt="Grande maison de montagne">
-            <p>L'Alpage, 200m²<br>
-            Voiron(38) <br>
-            A partir de 2000€/semaine TTC <br>
-            Type de bien: Maison</p>
-        </div>
-        <div class="choice5">
-            <img src="./images/Snowbeach.jpg" alt="Grande villa de montagne">
-            <p>Snowbeach, 200m²<br>
-            Megève(74) <br>
-            A partir de 2000€/semaine TTC <br>
-            Type de bien: Villa</p>
-        </div>
-        <div class="choice6">
-            <img src="./images/SPA.jpg" alt="Grande villa de montagne">
-            <p>Buron des cîmes, 600m²<br>
-            Serre Chevalier(05) <br>
-            A partir de 8000€/semaine TTC <br>
-            Type de bien: Villa</p>
-        </div>
-    </section>
-        <div class="pagination">
-            <a href="#" class="previous">&lt;&lt; précédent</a>
-            <!-- &lt;&lt;<< correspond à la représentation HTML du symbole "<<". -->
-            <span class="page-number">1</span>
-            <span class="separator">|</span>
-            <a href="#" class="page-number">2</a>
-            <span class="separator">|</span>
-            <a href="#" class="page-number">3</a>
-            <a href="#" class="next">suivant &gt;&gt;</a>
-        </div>
-      
-    </main>
+
+        <section id="filter">
+            <div>
+                <img id="map" src="./images/plan.png" alt="Plan du site">
+            </div>
+
+            <div class="container-choices">
+                <div id="prix">
+                    <p>Prix</p>
+                    <div class="scroller">
+                        <p>Scroller</p>
+                    </div>
+                    <div class="minimal">
+                        <p>min (€)</p>
+                        <p>2000</p>
+                    </div>
+                    <div class="maximal">
+                        <p>max(€)</p>
+                        <p>4000</p>
+                    </div>
+                </div>
+
+                <div id="surface">
+                    <p>Surface</p>
+                    <div class="scroller">
+                        <p>Scroller</p>
+                    </div>
+                    <div class="minimal">
+                        <p>min (m²)</p>
+                        <p>210</p>
+                    </div>
+                    <div class="maximal">
+                        <p>max (m²)</p>
+                        <p>600</p>
+                    </div>
+                </div>
+
+                <div id="chambres">
+                    <p>Chambres</p>
+                    <div class="scroller">
+                        <p>Scroller</p>
+                    </div>
+                    <div class="minimal">
+                        <p>min</p>
+                        <p>6</p>
+                    </div>
+                    <div class="maximal">
+                        <p>max</p>
+                        <p>7</p>
+                    </div>
+                </div>
+
+                <div id="sdb">
+                    <p>Salles de bain</p>
+                    <div class="scroller">
+                        <p>Scroller</p>
+                    </div>
+                    <div class="minimal">
+                        <p>min</p>
+                        <p>6</p>
+                    </div>
+                    <div class="maximal">
+                        <p>max</p>
+                        <p>8</p>
+                    </div>
+                </div>
+
+                <fieldset id="type-bien">
+                    <p>Type de biens</p>
+                    <div>
+                        <input type="checkbox" name="Appartement" id="appart">
+                        <label for="appart">Appartement</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="Atyique" id="atypique">
+                        <label for="atypique">Atypique</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="Chalet" id="chalet">
+                        <label for="chalet">Chalet</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="Maison" id="maison">
+                        <label for="maison">Maison</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="Manoir" id="manoir">
+                        <label for="manoir">Manoir</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="Villa" id="villa">
+                        <label for="villa">Villa</label>
+                    </div>
+                </fieldset>
+
+                <fieldset id="equip">
+                    <p>Équipements</p>
+                    <div>
+                        <input type="checkbox" name="Moteur" id="moteur">
+                        <label for="moteur">Bateau à moteur</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="Voile" id="voile">
+                        <label for="voile">Bateau à voile</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="Équestre" id="equestre">
+                        <label for="equestre">Centre équestre</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="Golf" id="golf">
+                        <label for="golf">Golf</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="Jacuzzi" id="jack-uzi">
+                        <label for="jack-uzi">Jacuzzi</label>
+                    </div>
+                    
+                    <div>
+                        <input type="checkbox" name="Jardin" id="jardin">
+                        <label for="jardin">Jardin</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="Parc-jeux" id="parc-jeux">
+                        <label for="parc-jeux">Parc de jeux</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="Patinoire" id="patinoire">
+                        <label for="patinoire">Patinoire</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="Piscine" id="piscine">
+                        <label for="piscine">Piscine</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="Bobsleigh" id="bobsleigh">
+                        <label for="bobsleigh">Piste de bobsleigh</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="Plongée" id="plongee">
+                        <label for="plongee">Plongée</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="Spa" id="spa">
+                        <label for="spa">Spa</label>
+                    </div>
+                    
+                    <div>
+                        <input type="checkbox" name="Hiver" id="hiver">
+                        <label for="hiver">Sports d'hiver</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="Tennis" id="tennis">
+                        <label for="tennis">Tennis</label>
+                    </div>
+                </fieldset>
+            </div>
+        </section>
+
+        <section class="6choices">
+            <div class="choice">
+                <img src="./images/la-maison-en-montagne2.jpg" alt="Grand chalet de montagne">
+                <h3>Le Pic, 180m²</h3>
+                <p>Gavarnie (65)</p>
+                <div class="prix-locarion">
+                    <p>À partir de :</p>
+                    <p>2000€/semaine TTC</p>    
+                </div>
+                <div class="le-bien">
+                    <p>Type de bien :</p>
+                    <p>Chalet</p>    
+                </div>
+            </div>
+
+            <div class="choice">
+                <img src="./images/alpage.png" alt="Grande maison de montagne">
+                <h3>L'Alpage, 200m²</h3>
+                <p>Voiron (38)</p>
+                <div class="prix-locarion">
+                    <p>À partir de :</p>
+                    <p>2000€/semaine TTC</p>    
+                </div>
+                <div class="le-bien">
+                    <p>Type de bien :</p>
+                    <p>Maison</p>    
+                </div>
+            </div>
+
+            <div class="choice">
+                <img src="./images/Les cîmes.jpg" alt="Grand chalet de montagne">
+                <h3>Les Cimes, 200m²</h3>
+                <p>Chambéry (59)</p>
+                <div class="prix-locarion">
+                    <p>À partir de :</p>
+                    <p>2000€/semaine TTC</p>    
+                </div>
+                <div class="le-bien">
+                    <p>Type de bien :</p>
+                    <p>Chalet</p>    
+                </div>
+            </div>
+
+            <div class="choice">
+                <img src="./images/Snowbeach.jpg" alt="Grande villa de montagne">
+                <h3>Snowbeach, 200m²</h3>
+                <p>Megève (74)</p>
+                <div class="prix-locarion">
+                    <p>À partir de :</p>
+                    <p>2000€/semaine TTC</p>    
+                </div>
+                <div class="le-bien">
+                    <p>Type de bien :</p>
+                    <p>Villa</p>    
+                </div>
+            </div>
+
+            <div class="choice">
+                <img src="./images/Yololoiou.jpg" alt="Chalet typique de montagne">
+                <h3>Yololoiou, 180m²</h3>
+                <p>Alpes suisses (Neuchâtel)</p>
+                <div class="prix-locarion">
+                    <p>À partir de :</p>
+                    <p>2000€/semaine TTC</p>    
+                </div>
+                <div class="le-bien">
+                    <p>Type de bien :</p>
+                    <p>Chalet</p>    
+                </div>
+            </div>
+
+            <div class="choice">
+                <img src="./images/SPA.jpg" alt="Grande villa de montagne">
+                <h3>Buron des Cimes, 600m²</h3>
+                <p>Serre Chevalier (05)</p>
+                <div class="prix-locarion">
+                    <p>À partir de :</p>
+                    <p>8000€/semaine TTC</p>    
+                </div>
+                <div class="le-bien">
+                    <p>Type de bien :</p>
+                    <p>Villa</p>    
+                </div>
+            </div>
+        </section>
+        
+            <div class="pagination">
+                <a href="#" class="previous">&lt;&lt; précédent</a>
+                <!-- &lt;&lt;<< correspond à la représentation HTML du symbole "<<". -->
+                <span class="page-number">1</span>
+                <span class="separator">|</span>
+                <a href="#" class="page-number">2</a>
+                <span class="separator">|</span>
+                <a href="#" class="page-number">3</a>
+                <a href="#" class="next">suivant &gt;&gt;</a>
+            </div>
+        </main>
+
     <footer>
         <span class="logo-rond">
             <img src="./images/lesvacanceschezgustave - logo.png" alt="logo-rond">
@@ -136,12 +351,14 @@
                 <li>Recherche</li>
                 <li>Se connecter</li>
             </ul>
+
             <h4>En savoir plus</h4>
             <ul>
                 <li>Mentions légales</li>
                 <li>CGV | RGPD</li>
                 <li>FAQ</li>
             </ul>
+
             <h4>Contacts</h4>
             <ul>
                 <li>Gustave MAURICE</li>
@@ -151,6 +368,7 @@
                 <li>Paul ALKER</li>
             </ul>
         </div>
+
         <div class="footer-media">
             <img src="" alt="logo insta">
             <img src="" alt="logo facebook">
@@ -158,7 +376,7 @@
         </div>
     </footer>
 
-    
-    
+        
+        
 </body>
 </html>
