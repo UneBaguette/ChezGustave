@@ -1,10 +1,10 @@
 ### Enpoint pour ajouter une invitation
 POST http://localhost:3000/invitation
 Content-Type: application/json
-Set-Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY1ZTgzNjhiYzQyYWFkZGVhMzRiNTVjYSIsImVtYWlsIjoibm91dmVsdXRpbGlzYXRldXIyQGV4YW1wbGUuY29tIiwibmFtZSI6Ik5vdXZlbCBVdGlsaXNhdGV1cjIiLCJ0ZWwiOiIwMTIzNDU2Nzg5IiwiaXNfYWRtaW4iOnRydWUsInJlc2VydmF0aW9ucyI6W10sIl9fdiI6MH0sImlhdCI6MTcwOTczMDM4OH0.binA_QfekJ9XY-o2RpE46etfIub9ZB3xRw59IKd2QyY; Path=/; HttpOnly
+Set-Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY1ZWFjYWFhN2Y3MzllY2YxNTM5ZDdiMSIsImVtYWlsIjoibWFydmluLm1vcmluQGluc3RpdHV0c29sYWNyb3VwLmNvbSIsIm5hbWUiOiJNYXJ2aW4gTW9yaW4iLCJ0ZWwiOiIwMTIzNDU2Nzg5IiwiaXNfYWRtaW4iOnRydWUsInJlc2VydmF0aW9ucyI6W10sIl9fdiI6MH0sImlhdCI6MTcxMDI1MzgzMX0.YaQUHbhrtx7BtitOyfIlSnrDe7h01vIprLEueIPFunY; Path=/; HttpOnly
 
 {
-  "email": "marvin.morin@institutsolacroup.com",
+  "email": "marvin.malouin@gmail.com",
   "name" : "Marvin Morin",
   "tel" : "06-12-98-09-32",
   "message": "Rejoins-nous sur notre plateforme !"
