@@ -145,3 +145,35 @@ window.addEventListener("click", (event) => {
     closeModal();
   }
 });
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  handleSubmit();
+});
+
+const handleSubmit = async () => {
+  // Accéder aux valeurs des champs d'entrée
+  let destinationInput = document.getElementById("destination_name").value;
+  let startDateInput = document.getElementById("start-date").value;
+  let endDateInput = document.getElementById("end-date").value;
+  let adultsInput = document.getElementById("adults").value;
+  let childrenInput = document.getElementById("children").value;
+  let petsInput = document.getElementById("pets").value;
+
+  // Convertir les valeurs numériques si nécessaire
+  let adultsValue = parseInt(adultsInput, 10);
+  let childrenValue = parseInt(childrenInput, 10);
+  let petsValue = parseInt(petsInput, 10);
+
+  // Afficher les valeurs dans la console (à titre d'exemple)
+  console.log(
+    destinationInput,
+    startDateInput,
+    endDateInput,
+    adultsValue,
+    childrenValue,
+    petsValue
+  );
+};
