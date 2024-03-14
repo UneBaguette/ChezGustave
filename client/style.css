@@ -12,6 +12,7 @@
     --yellow-light-logo:#E5D19A;
     --text-light:#FFFDF9;
     --text-dark:#00302C;
+    --yellow-logo-transparent: rgba(185, 149, 80, 0.4);
 }
 *{
     margin: 0;
@@ -659,6 +660,44 @@ h2 {
 
 /* Ici, les résultats affichés suite à une recherche */
 
+.sochoices {
+    display: grid;
+    grid-template-columns: 25vw 25vw;
+    column-gap: 38px;
+    row-gap: 66px;
+}
+
 .choice {
     background: #FFFFFF;
+    max-width: 25vw;
+    max-height: 63vh;
+    padding: 3vh 1.5vw;
+    box-shadow: 0px 4px 4px var(--yellow-logo-transparent);
+}
+
+.choice > img {
+    width: 22vw;
+    margin-bottom: 3vh;
+}
+
+p {
+    font-family: 'raleway';
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--text-dark);
+}
+
+.choice > h3 {
+    font-family: 'cormorant';
+    font-weight: 600;
+    font-size: 32px;
+    color: var(--text-dark);
+}
+
+.prix-locarion > p {
+    font-size: 16px;
+}
+
+.le-bien > p {
+    font-size: 16px;
 }
