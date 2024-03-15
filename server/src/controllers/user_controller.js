@@ -8,24 +8,28 @@ const bcrypt = require('bcrypt');
 
 
 // Controller pour l'inscritpion d'un utilisateur
+// Controller for user inscription
 exports.create_user = async (req, res) => {
     try {
         // Récupération des informations de l'utilisateur via la requête
         const { email, name, tel, password, is_admin } = req.body;
 
         // Hash du mot de passe
+        // Hash of password
         const hashed_password = await bcrypt.hash(password, 10);
 
         // Création d'un nouvel utilisateur avec le mot de passe hashé
+        // Creation new user with the hashed password
         const new_user = new User({
             email,
             name,
             tel,
-            password: hashed_password, // Utilisation du mot de passe hashé
+            password: hashed_password, // Utilisation du mot de passe hashé // Using hashed password
             is_admin
         });
 
         // Sauvegarde de l'utilisateur
+        // Save user
         await new_user.save();
 
         const user_saved_for_token = {
@@ -36,6 +40,7 @@ exports.create_user = async (req, res) => {
         }
 
         // Réponse positive de l'utilisateur sauvegardé
+        // Response of save user 
         res.status(201).json(user_saved_for_token);
     } catch (error) {
         res.status(400).json({ message: error.message });
