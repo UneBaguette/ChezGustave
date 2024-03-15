@@ -20,14 +20,8 @@ router.get('/', rating_controller.get_all_ratings);
 // Route pour mettre à jour le detail d'une note avec son id
 router.put('/:id', rating_controller.update_rating);
 
-// Route pour mettre à jour toutes les notes
-router.put('/', rating_controller.update_all_ratings);
-
 // Route pour supprimer une note par son ID
 router.delete('/:id', rating_controller.delete_rating);
-
-// Route pour supprimer toutes les notes
-router.delete('/', rating_controller.delete_all_ratings);
 
 // Route pour récupérer les détails d'une note par son ID
 router.get('/:id', rating_controller.get_rating_details);

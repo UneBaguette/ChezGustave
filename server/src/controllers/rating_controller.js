@@ -108,26 +108,6 @@ exports.update_rating = async (req, res) => {
 
 
 
-// Controller pour mettre à jour toutes les notes
-exports.update_all_ratings = async (req, res) => {
-    try {
-        const { rated, text } = req.body;
-
-        // Mettre à jour toutes les notes
-        await Rating.updateMany({}, { rated, text });
-
-        // Renvoyer une réponse de succès
-        res.status(200).json({ message: "Toutes les notes ont été mises à jour avec succès." });
-    } catch (error) {
-        console.error("Une erreur s'est produite lors de la mise à jour de toutes les notes :", error);
-        res.status(500).json({ message: "Une erreur s'est produite lors de la mise à jour de toutes les notes." });
-    }
-};
-
-
-
-
-
 // Controller pour supprimer une note par son ID
 exports.delete_rating = async (req, res) => {
     try {
@@ -147,24 +127,6 @@ exports.delete_rating = async (req, res) => {
     } catch (error) {
         console.error("Une erreur s'est produite lors de la suppression de la note :", error);
         res.status(500).json({ message: "Une erreur s'est produite lors de la suppression de la note." });
-    }
-};
-
-
-
-
-
-// Controller pour supprimer toutes les notes
-exports.delete_all_ratings = async (req, res) => {
-    try {
-        // Supprimer toutes les notes
-        await Rating.deleteMany({});
-
-        // Renvoyer une réponse de succès
-        res.status(200).json({ message: "Toutes les notes ont été supprimées avec succès." });
-    } catch (error) {
-        console.error("Une erreur s'est produite lors de la suppression de toutes les notes :", error);
-        res.status(500).json({ message: "Une erreur s'est produite lors de la suppression de toutes les notes." });
     }
 };
 

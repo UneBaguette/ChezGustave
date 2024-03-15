@@ -2,18 +2,16 @@
 
 
 
+// Importation de la configuration de la connexionà l'application
+const {mongoose, objet_connexion} = require("./config/db_info.js");
 // Importation du framework express 
 const express = require('express');
 // Importation de la bibliothèque JWT
 const jwt = require('jsonwebtoken');
-// Charger le module des variables d'environnement & exportation des variables d'environnements
-require('dotenv').config();
 // Importation des middlewares de l'application
 const { session_middleware, cookie_parser_middleware, body_parser_middleware } = require('./middlewares/app_middlewares');
 // Importation du module cors
 const cors = require('cors');
-
-
 
 
 
@@ -68,14 +66,7 @@ app.use((req, res, next) => {
 
 
 
-// Mise en écoute du server
 
-const PORT = process.env.SERVER_PORT || 3000;
-
-// Configuration du port d'écoute 
-app.listen(PORT, () => {
-    console.log('Serveur en écoute sur le port : ', PORT);
-});
 
 
 

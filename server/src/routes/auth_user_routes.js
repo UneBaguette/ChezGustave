@@ -4,7 +4,7 @@ const router = express.Router();
 const auth_controller = require('../controllers/auth_user_controllers');
 
 // Route pour se connecter à un utilisateur
-router.get('/', auth_controller.login_user )
+router.post('/', auth_controller.login_user )
 
 // Route pour la déconnexion de l'utilisateur
 router.get('/logout', auth_controller.logout_user);
