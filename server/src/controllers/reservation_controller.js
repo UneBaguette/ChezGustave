@@ -147,25 +147,6 @@ exports.update_reservation_details = async (req, res) => {
 
 
 
-// Contorller pour metttre à jour toutes les reservations 
-exports.update_all_reservations = async (req, res) => {
-    try {
-        // Mise à jour de toutes les réservations avec les données reçues du corps de la requête
-        const updated_reservations = await Reservation.updateMany({}, req.body, { new: true });
-
-        // Renvoi des réservations mises à jour dans la réponse
-        res.status(200).json(updated_reservations);
-    } catch (error) {
-        // En cas d'erreur, renvoi d'un message d'erreur avec le code d'erreur 500 (Internal Server Error)
-        console.error("Une erreur s'est produite lors de la mise à jour des réservations :", error);
-        res.status(500).json({ message: "Une erreur s'est produite lors de la mise à jour des réservations." });
-    }
-};
-
-
-
-
-
 // Controller pour Supprimer une réservation par son id
 exports.delete_reservation = async (req, res) => {
     try {

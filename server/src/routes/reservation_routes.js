@@ -19,9 +19,6 @@ router.get('/:id', reservation_controller.get_reservation_details)
 // route pour mettre à jour les détails d'une réservation par son id
 router.put('/:id', reservation_controller.update_reservation_details);
 
-// Route pour mettre à jour toutes les réservations
-router.put('/', reservation_controller.update_all_reservations);
-
 // Route pour supprimer une réservation par son ID
 router.delete('/:id', reservation_controller.delete_reservation);
 

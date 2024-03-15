@@ -122,25 +122,6 @@ exports.update_logement_details = async (req, res) => {
 
 
 
-// Contorller pour modifier les logemens
-exports.update_all_logements = async (req, res) => {
-    try {
-        // Mise à jour de tous les logements avec les données reçues du corps de la requête
-        const updated_logements = await Logement.updateMany({}, req.body, { new: true });
-
-        // Renvoi des logements mis à jour dans la réponse
-        res.status(200).json(updated_logements);
-    } catch (error) {
-        // En cas d'erreur, renvoi d'un message d'erreur avec le code d'erreur 500 (Internal Server Error)
-        console.error("Une erreur s'est produite lors de la mise à jour des détails de tous les logements :", error);
-        res.status(500).json({ message: "Une erreur s'est produite lors de la mise à jour des détails de tous les logements." });
-    }
-};
-
-
-
-
-
 // Controller pour supprimer un logement par son id
 exports.delete_logement = async (req, res) => {
     try {
@@ -161,25 +142,6 @@ exports.delete_logement = async (req, res) => {
         // En cas d'erreur, renvoyer un code d'erreur avec un message
         console.error("Erreur lors de la suppression du logement :", error);
         res.status(500).json({ message: "Une erreur s'est produite lors de la suppression du logement." });
-    }
-};
-
-
-
-
-
-// Controller pour supprimer tout les logmements
-exports.delete_all_logements = async (req, res) => {
-    try {
-        // Suppression de tous les logements dans la base de données
-        await Logement.deleteMany();
-
-        // Renvoi d'une réponse de succès
-        res.status(200).json({ message: "Tous les logements ont été supprimés avec succès." });
-    } catch (error) {
-        // En cas d'erreur, renvoi d'un message d'erreur avec le code d'erreur 500 (Internal Server Error)
-        console.error("Une erreur s'est produite lors de la suppression de tous les logements :", error);
-        res.status(500).json({ message: "Une erreur s'est produite lors de la suppression de tous les logements." });
     }
 };
 

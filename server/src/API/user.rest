@@ -21,32 +21,6 @@ GET http://localhost:3000/user
 
 
 
-### Endpoint pour Modifier les informations des utilisateurs en bloc (ici 1 bloc "{}")
-PUT http://localhost:3000/user
-Content-Type: application/json
-
-[
-  {
-    "_id": "65e72dcfe6339dfd13e6a075",
-    "email": "nouveau_email2@example.com",
-    "name": "Nouveau Nom 1",
-    "tel": "091011121314",
-    "password": "1234",
-    "is_admin": true
-  }
-]
-
-
-
-
-
-### Endpoint pour Supprimer tous les utilisateurs
-DELETE http://localhost:3000/user
-
-
-
-
-
 ### Endpoint pour Supprimer un utilisateur par son id
 DELETE http://localhost:3000/user/65e72dcfe6339dfd13e6a075
 
@@ -69,7 +43,7 @@ Content-Type: application/json
   
   "name": "Marvin Morin",
   "tel": "0123456789",
-  "password": "12345",
+  "password": "fsUTdur461",
   "is_admin": true
   }
 
@@ -78,12 +52,12 @@ Content-Type: application/json
 
 
 ### Endpoint pour la connexion d'un utilisateur 
-GET http://localhost:3000/auth
+POST http://localhost:3000/auth
 Content-Type: application/json
 
 {
-  "email": "marvin.morin@institutsolacroup.com",
-  "password": "fsUTdur461"
+  "email": "marvin.malouin@gmail.com",
+  "password": "lO1cyTG48y"
 }
 
 
