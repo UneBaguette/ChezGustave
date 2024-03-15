@@ -1,93 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Définit l'encodage des caractères /Sets the character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Définit la vue pour les appareils mobiles /Sets view for mobile devices-->
     <title>Chez Gustave/connection</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <!-- Titre de la page /  page title-->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Lien vers le fichier CSS / Link to CSS file-->
+  </head>
+  <body>
     <header>
-        <section class="header-container">
-            <nav class="navbar">
-                <ul>
-                    <!-- <a> autour de chaque élément de la liste pour transformer chaque élément en un lien cliquable. -->
-                    <li><a href="#">Accueil</a></li>
-                    <li><img src="./images/logo gustave transparent.png" alt="fleur du logo"></li> 
-                    <li><a href="#">A propos</a></li>
-                    <li class="cta__button" id="btn-open-modal"><a href="connection.html">SE CONNECTER</a></li>
-                </ul>
-            <!-- <img src="./images/page d'accueil.jpg" alt="image de fond"> -->
-            </nav>
-            
-            <div class="logo-container">
-                <div class="glass-effect">  
-                    <span class="cadre-header">
-                        <img src="./images/lesvacanceschezgustave - logo.png" alt="logo">
-                    </span>
-                    <div class="text">
-               <p class="p1">Loin des pauvres, près du ciel</p>
-            <p class="p2">Monsieur Poulpe</p>
+      <section class="header-container">
+        <nav class="navbar">
+          <ul>
+            <!-- Liens de navigation /Navigation links -->
+            <!-- <a>(anchor) autour de chaque élément de la liste pour transformer chaque élément en un lien cliquable./ clickable link -->
+            <li><a href="#">Accueil</a></li>
+            <li>
+              <!-- Logo -->
+              <img
+                src="./images/logo gustave transparent.png"
+                alt="fleur du logo"
+              />
+            </li>
+            <li><a href="a_propos.html">A propos</a></li>
+            <!-- Bouton pour ouvrir la modale de connexion /Button to open the connection mode -->
+            <li class="cta__button" id="btn-open-modal">
+              <a href="connection.html">SE CONNECTER</a>
+            </li>
+          </ul>
+          <!-- <img src="./images/page d'accueil.jpg" alt="image de fond"> -->
+        </nav>
+
+        <!-- Logo de l'entreprise /Company logo-->
+        <div class="logo-container">
+          <div class="glass-effect">
+            <span class="cadre-header">
+              <img
+                src="./images/lesvacanceschezgustave - logo.png"
+                alt="logo"
+              />
+            </span>
+            <!-- Texte associé au logo / Text associated with the logo-->
+            <div class="text">
+              <p class="p1">Loin des pauvres, près du ciel</p>
+              <p class="p2">Monsieur Poulpe</p>
             </div>
-            </div>
-            </div>
-        </section>
+          </div>
+        </div>
+      </section>
     </header>
-    
+
+    <!-- Pied de page -->
     <footer>
-        <span class="logo-rond">
-            <img src="./images/lesvacanceschezgustave - logo.png" alt="logo-rond">
-        </span>
-        <section class="footer-legal">
+      <!-- Logo de l'entreprise -->
+      <span class="logo-rond">
+        <img src="./images/lesvacanceschezgustave - logo.png" alt="logo-rond" />
+      </span>
+
+      <!-- Section contenant des liens et des informations légales /Section containing links and legal information-->
+      <section class="footer-legal">
         <h4>Plan site</h4>
         <ul>
-            <li>Accueil</li>
-            <li>A propos</li>
-            <li>Recherche</li>
-            <li>Se connecter</li>
+          <li>Accueil</li>
+          <li>A propos</li>
+          <li>Recherche</li>
+          <li>Se connecter</li>
         </ul>
         <h4>En savoir plus</h4>
         <ul>
-            <li>Mentions légales</li>
-            <li>CGV | RGPD</li>
-            <li>FAQ</li>
+          <li>Mentions légales</li>
+          <li>CGV | RGPD</li>
+          <li>FAQ</li>
         </ul>
         <h4>Contacts</h4>
         <ul>
-            <li>Gustave MAURICE</li>
-            <li>Jean MARLIN</li>
-            <li>Marc LAVIE</li>
-            <li>Martin CRAIE</li>
-            <li>Paul ALKER</li>
+          <li>Gustave MAURICE</li>
+          <li>Jean MARLIN</li>
+          <li>Marc LAVIE</li>
+          <li>Martin CRAIE</li>
+          <li>Paul ALKER</li>
         </ul>
-    </section>
-    <div class="footer-media">
-        <img src="" alt="logo insta">
-        <img src="" alt="logo facebook">
-        <img src="" alt="logo tel">
-
-
-    </div>
+      </section>
+      <div class="footer-media">
+        <img src="./images/icons8-instagram-60.png" alt="logo insta" />
+        <img
+          src="./images/icons8-facebook-nouveau-60.png"
+          alt="logo facebook"
+        />
+        <img src="./images/icons8-whatsapp-60.png" alt="logo whatsapp" />
+      </div>
     </footer>
-    
-    
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Veuillez vous identifier</h2>
-            <form id="login-form">
-                <label for="email">Votre mail ou identifiant </label><br>
-                <input type="text" id="email" name="username"><br>
-                <label for="password">Votre mot de passe </label><br>
-                <input type="password" id="password" name="password"><br>
-                <button type="submit">Se connecter</button>
-              </form>
-        </div>
-    </div>
-    
 
-<script src="./connection.js"></script>
-    
-</body>
+    <!-- Modale de connexion /Connection mode-->
+    <div
+      id="modal"
+      class="modal"
+      role="dialog"
+      aria-labelledby="modal-title"
+      aria-describedby="modal-description"
+    >
+      <div class="modal-content">
+        <!-- Bouton pour fermer la modale /Button to close the modal-->
+        <span class="close" aria-label="Fermer la modale">&times;</span>
+        <!-- Titre de la modale /Modal title-->
+        <h2 id="modal-title">Veuillez vous identifier</h2>
+        <!-- Formulaire de connexion/Login form-->
+        <form id="login-form">
+          <label for="email">Votre mail ou identifiant</label><br />
+          <input type="text" id="email" name="username" /><br />
+          <label for="password">Votre mot de passe</label><br />
+          <input type="password" id="password" name="password" /><br />
+          <button type="submit">Se connecter</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="./connection.js"></script>
+  </body>
 </html>

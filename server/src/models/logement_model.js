@@ -1,6 +1,4 @@
-const mongoose = require('mongoose');
-
-
+const mongoose = require("mongoose");
 
 // Définition du schéma logement
 const logement_schema = new mongoose.Schema({
@@ -16,26 +14,22 @@ const logement_schema = new mongoose.Schema({
   categorie: { type: String },
   type: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Type'
+    ref: "Type",
   },
   equipements: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Equipment'
+    ref: "Equipment",
   },
   adulte: { type: Number },
   enfant: { type: Number },
   animaux: { type: Number },
   reservation: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Reservation'
-  }
+    ref: "Reservation",
+  },
 });
 
 // Création du modèle à partir du schéma
-const Logement_model = mongoose.model('Logement', logement_schema);
-
-
-
-
+const Logement_model = mongoose.model("Logement", logement_schema);
 
 module.exports = Logement_model;

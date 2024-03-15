@@ -17,7 +17,7 @@ Content-Type: application/json
   "equipements": ["65e6f8d89d1d89c4e4095c34"],
   "adulte": 2,
   "enfant": 1,
-  "animeaux": 1
+  "animaux": 1
 }
 
 
@@ -99,7 +99,7 @@ POST http://localhost:3000/logement/recherche-logement
 Content-Type: application/json
 
 {
-  "tarif_bas": 110
+  "tarif_bas": 100
 }
 
 ### Enpoint pour rechercher logement avec critères prix
@@ -124,6 +124,25 @@ Content-Type: application/json
 
 {
     "secteur": "Quartier B"
+}
+
+### Enpoint pour rechercher logement avec critères
+POST http://127.0.0.1:3000/logement/recherche-logement
+Content-Type: application/json
+
+{
+    "categorie": "Campagne",
+    "adulte": 2,
+    "enfant": 1,
+    "animaux": 1
+}
+
+### Enpoint pour rechercher logement avec critères
+POST http://127.0.0.1:3000/logement/recherche-logement
+Content-Type: application/json
+
+{
+    "animaux": 1
 }
 
 ### Rechercher des logements par plusieurs critères
@@ -161,5 +180,5 @@ Content-Type: application/json
 {
   "adulte": 3,
   "enfant": 3,
-  "animeaux": 1
+  "animaux": 1
   }
