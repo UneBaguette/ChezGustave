@@ -90,36 +90,6 @@ exports.update_equipment = async (req, res) => {
 
 
 
-// Controller pour Mettre à jour tous les équipements
-exports.update_all_equipments = async (req, res) => {
-    try {
-        // Récupération des données mises à jour de tous les équipements depuis le corps de la requête
-        const updated_data = req.body;
-
-        // Récupération de tous les équipements depuis la base de données
-        const equipments = await Equipment.find();
-
-        // Parcours de tous les équipements pour les mettre à jour
-        for (let equipment of equipments) {
-            // Appliquer les données mises à jour à chaque équipement
-            Object.assign(equipment, updated_data);
-            // Sauvegarder l'équipement mis à jour dans la base de données
-            await equipment.save();
-        }
-
-        // Renvoyer une réponse de succès
-        res.status(200).json({ message: "Tous les équipements ont été mis à jour avec succès." });
-    } catch (error) {
-        // En cas d'erreur, renvoyer un code d'erreur avec un message
-        console.error("Erreur lors de la mise à jour de tous les équipements :", error);
-        res.status(500).json({ message: "Une erreur s'est produite lors de la mise à jour de tous les équipements." });
-    }
-};
-
-
-
-
-
 // Controller pour supprimer un équipement par son id
 exports.delete_equipment = async (req, res) => {
     try {
@@ -140,25 +110,6 @@ exports.delete_equipment = async (req, res) => {
         // En cas d'erreur, renvoyer un code d'erreur avec un message
         console.error("Erreur lors de la suppression de l'équipement :", error);
         res.status(500).json({ message: "Une erreur s'est produite lors de la suppression de l'équipement." });
-    }
-};
-
-
-
-
-
-// Contorller pour Supprimer tous les équipements
-exports.delete_all_equipments = async (req, res) => {
-    try {
-        // Suppression de tous les équipements dans la base de données
-        await Equipment.deleteMany();
-
-        // Renvoyer une réponse de succès
-        res.status(200).json({ message: "Tous les équipements ont été supprimés avec succès." });
-    } catch (error) {
-        // En cas d'erreur, renvoyer un code d'erreur avec un message
-        console.error("Erreur lors de la suppression de tous les équipements :", error);
-        res.status(500).json({ message: "Une erreur s'est produite lors de la suppression de tous les équipements." });
     }
 };
 

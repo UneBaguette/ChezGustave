@@ -16,14 +16,8 @@ router.get('/', equipment_controller.get_all_equipments);
 // Route pour mettre à jour un équipement par son ID
 router.put('/:id', equipment_controller.update_equipment);
 
-// Route pour mettre à jour tous les équipements
-router.put('/', equipment_controller.update_all_equipments);
-
 // Route pour supprimer un équipement par son ID
 router.delete('/:id', equipment_controller.delete_equipment);
-
-// Route pour supprimer tous les équipements
-router.delete('/', equipment_controller.delete_all_equipments);
 
 // Route pour récupérer les détails d'un équipement par son ID
 router.get('/:id', equipment_controller.get_equipment_details);

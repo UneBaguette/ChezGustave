@@ -4,7 +4,19 @@
 
 
 
+// Charger le module des variables d'environnement & exportation des variables d'environnements
+require('dotenv').config();
 // Importation de la configuration de l'application
 const app = require("./app.js");
-// Importation de la configuration de la connexionà l'application
-const {mongoose, objet_connexion} = require("./config/db_info.js");
+
+
+
+
+// Mise en écoute du server
+
+const PORT = process.env.SERVER_PORT || 3000;
+
+// Configuration du port d'écoute 
+app.listen(PORT, () => {
+    console.log('Serveur en écoute sur le port : ', PORT);
+});

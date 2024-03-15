@@ -1,85 +1,52 @@
 // app.js
 
-
-
-// Importation du framework express 
-const express = require('express');
+// Utilisé pour quitter proprement la connection mongodb
+const gracefulExit = require("./utils/GracefulExit");
+// Importation du framework express
+const express = require("express");
 // Importation de la bibliothèque JWT
-const jwt = require('jsonwebtoken');
-// Charger le module des variables d'environnement & exportation des variables d'environnements
-require('dotenv').config();
+const jwt = require("jsonwebtoken");
 // Importation des middlewares de l'application
-const { session_middleware, cookie_parser_middleware, body_parser_middleware } = require('./middlewares/app_middlewares');
+const {
+  session_middleware,
+  cookie_parser_middleware,
+  body_parser_middleware,
+} = require("./middlewares/app_middlewares");
 // Importation du module cors
-const cors = require('cors');
-
-
-
-
+const cors = require("cors");
 
 // Création d'une nouvelle instance de l'application Express
 const app = express();
 
-
-
-
-
 // Utilisation du middleware CORS
 app.use(cors());
-
-
-
-
 
 // Utilisation des middlewares
 app.use(body_parser_middleware);
 app.use(cookie_parser_middleware);
 app.use(session_middleware);
 
-
-
-
-
 // Utilisation des routes
-const routes = require('./routes');
-app.use('/', routes);
-
-
-
-
+const routes = require("./routes");
+app.use("/", routes);
 
 // Décoder le token dans le cookie à l'aide de JWT
 app.use((req, res, next) => {
-    const token = req.cookies.token;
-    if (token) {
-        try {
-            const decoded = jwt.verify(token, process.env.SECRET_KEY);
-            req.user = decoded;
-            next();
-        } catch (error) {
-            logger.error('Erreur de vérification JWT token :', error);
-            res.clearCookie('token');
-        }
+  const token = req.cookies.token;
+  if (token) {
+    try {
+      const decoded = jwt.verify(token, process.env.SECRET_KEY);
+      req.user = decoded;
+      next();
+    } catch (error) {
+      logger.error("Erreur de vérification JWT token :", error);
+      res.clearCookie("token");
     }
-    next();
+  }
+  next();
 });
 
-
-
-
-
-// Mise en écoute du server
-
-const PORT = process.env.SERVER_PORT || 3000;
-
-// Configuration du port d'écoute 
-app.listen(PORT, () => {
-    console.log('Serveur en écoute sur le port : ', PORT);
-});
-
-
-
-
+process.on("SIGINT", gracefulExit).on("SIGTERM", gracefulExit);
 
 // Exportation de l'application
 module.exports = app;

@@ -1,25 +1,22 @@
-const app = require('../src/app');
-const database = require('../src/database');
-const supertest = require('supertest');
+const supertest = require("supertest");
 
-describe('Tests', () => {
+describe("API", () => {
+  let app;
 
-    beforeAll(async () => {
-        // INIT
-        await database.authenticate();
-        await database.sync({ force: true });
-    });
+  beforeEach(() => {
+    app = supertest(require("../src/app"));
+  });
 
-    it('Example should work', async () => {
-        const helloWorld = await supertest(app).get('/');
-
-        expect(helloWorld.statusCode).toBe(200);
-        expect(helloWorld.text).toBe('Hello world');
-    });
-
-    afterAll(async () => {
-        // CLEANUP
-        await database.close();
-    });
-
+  it("Should get /", (done) => {
+    // Envoyer une requête GET à la racine de l'application
+    app
+      .get("/")
+      .expect(200)
+      .end((err, response) => {
+        if (err) return done(err);
+        // Vérifier la valeur de la clé dans la réponse JSON
+        expect(response.body.test).toBe("Test API");
+        done();
+      });
+  });
 });
