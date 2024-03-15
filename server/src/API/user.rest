@@ -82,8 +82,8 @@ GET http://localhost:3000/auth
 Content-Type: application/json
 
 {
-  "email": "marvin.morin@institutsolacroup.com",
-  "password": "fsUTdur461"
+  "email": "marvin.malouin@gmail.com",
+  "password": "12345"
 }
 
 
