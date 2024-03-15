@@ -34,7 +34,7 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
+    
     height: 100px;
     padding: 0 20px;
 }
@@ -181,6 +181,7 @@ body{
     justify-content:center; 
     align-items: center; 
     margin-right: 100px;
+    margin-top: 50px;
 }
   
 .middle-section {
@@ -219,15 +220,17 @@ body{
     color: var(--text-light);
     
 }
-.deco{
+.deco1, .deco2{
+    display: inline-block; /* Assure que les éléments sont affichés en ligne */
+    /*transform: scaley(-1); Retourne verticalement les éléments */
+    transform: scaleX(0.7);
+    margin-left: -100px;
     font-family: 'cormorant',sans-serif;
     font-size: 300px;
     font-weight: 600;
     text-align: left;
     color: var(--yellow-logo);
-
-   
-
+    margin-top: -150px;
 }
 
 .middle-section button{
@@ -277,7 +280,7 @@ body{
     letter-spacing: normal;
 }
 .bottom-section .p1{
-    line-height: 210px; 
+    line-height: 230px; 
 }
  
 .bottom-section .p2,.bottom-section-search-bar .p2 {
@@ -294,9 +297,10 @@ body{
 }
 
 .search-bar-container{
-    background-image: url(./images/salon-chalet.jpg);
-    background-size: cover;
-    background-position: center;
+    background-image: url('./images/salon-chalet.jpg');
+    background-size:cover;
+    background-position:center;
+    width:100%;
     height:1200px;
     display: flex;
     justify-content: center;
@@ -326,7 +330,7 @@ body{
     justify-content: center; /* Centrer horizontalement */
     align-items: center; /* Centrer verticalement */ 
     width: 500px;
-    padding: 20px 40px;
+    padding: 20px 40px 100px 40px;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.41); /* Ajoutez une couleur de fond semi-transparente */
     /* background: rgba(229, 209, 154, 0.35); */
@@ -335,7 +339,8 @@ body{
     backdrop-filter: blur(4.4px);
     -webkit-backdrop-filter: blur(4.4px);
 }
-.top-search-bar-form form label{
+/* .top-search-bar-form */
+ #form_recherche label{
     font-family: 'raleway',sans-serif;
     font-size: 28px;
     font-weight: 500;
@@ -343,9 +348,12 @@ body{
     letter-spacing: 0em;
     text-align: left;  
 }
-.top-search-bar-form form input[type="text"],
+/* .top-search-bar-form form input[type="text"],
 .top-search-bar-form form input[type="date"],
-.top-search-bar-form form input[type="number"] {
+.top-search-bar-form form input[type="number"] */
+#form_recherche input[type="text"],
+#form_recherche input[type="date"],
+#form_recherche input[type="number"]{
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -355,7 +363,8 @@ body{
     font-size: 16px;
     color: var(--text-dark);
 }
-.top-search-bar-form form button[type="submit"]{
+/* .top-search-bar-form form button[type="submit"] */
+#form_recherche button[type="submit"] {
     background-color: var(--green-logo);
     color: white;
     border: 2px solid white;
@@ -380,12 +389,15 @@ body{
 
 .bottom-section-search-bar {
     position: absolute;
-    bottom: 0;
+    bottom: -250px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%; /* Assurez-vous qu'il couvre la largeur totale */
-    text-align: center; /* Centrer le contenu horizontalement */
+    line-height: 40px;
+    
 }
+
+
+
 .slider-container{
     background-image:url('./images/feuille\ pour\ chez\ gustave.png');
     background-size: 30%;
@@ -496,25 +508,46 @@ footer{
 }
 .footer-legal{
     list-style-type: none; 
-    margin:0;
-    padding:0;
     display: flex;
     width: 70%;
 }
+
 .footer-legal h4, .footer-legal ul, .footer-legal li{
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 100%;
 }
+footer h4{
+    font-family:'cormorant', sans-serif;
+    font-size: 28px;
+    line-height: 32px;
+    font-weight:600;
+}
+
+footer ul{
+    font-family:'cormorant', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 26px;
+    text-align: left;
+
+}
+
+
 footer li{
-color:var(--yellow-light-logo);
-}
+    color:var(--yellow-light-logo);
+    }
 .footer-media{
+    display: flex;
+    align-items: center;
     height:80px;
     width: 100%;
     background:var(--yellow-light-logo) ;
+ 
 }
-
+.footer-media img{
+   padding:  0 17px;
+}
 /* Style pour la modale */
 .modal {
     display: none; /* Cacher la modale par défaut */
@@ -603,13 +636,23 @@ color:var(--yellow-light-logo);
 
 
 .header-container-recherche{
-    background-image:url('./images/salon-chalet.jpg" alt="salon-chalet');
+    background-image:url('./images/salon-chalet.jpg');
     background-size:cover;
     background-position:center;
     width:100%;
-
 }
 
+
+.header-container-a_propos{
+    background-image:url('./images/maison-avec-vue-mer.jpg');
+    background-size:cover;
+    background-position:center;
+    width:100%; 
+}
+.a_propos-text, .a_propos-associés{
+    background: var(--text-dark);
+    color: var(--text-light);
+}
 
 
 

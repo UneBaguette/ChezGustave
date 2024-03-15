@@ -1,181 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chez Gustave</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header>
-    <section class="header-container">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <section class="header-container">
         <nav class="navbar">
-            <ul>
-                <!-- <a> autour de chaque élément de la liste pour transformer chaque élément en un lien cliquable. -->
-                <li><a href="#">Accueil</a></li>
-                <li><img src="./images/logo gustave transparent.png" alt="fleur du logo"></li> 
-                <li><a href="#">A propos</a></li>
-                <!-- <li class="cta__button" id="btn-open-modal"><a href="#">SE CONNECTER</a></li> -->
-            </ul>
-        <!-- <img src="./images/page d'accueil.jpg" alt="image de fond"> -->
+          <ul>
+            <!-- <a> autour de chaque élément de la liste pour transformer chaque élément en un lien cliquable. -->
+            <li><a href="#">Accueil</a></li>
+            <li>
+              <img
+                src="./images/logo gustave transparent.png"
+                alt="fleur du logo"
+              />
+            </li>
+            <li><a href="a_propos.html">A propos</a></li>
+            <!-- <li class="cta__button" id="btn-open-modal"><a href="#">SE CONNECTER</a></li> -->
+          </ul>
+          <!-- <img src="./images/page d'accueil.jpg" alt="image de fond"> -->
         </nav>
-        
+
         <div class="logo-container">
-            <div class="glass-effect">  
-                <span class="cadre-header">
-                    <img src="./images/lesvacanceschezgustave - logo.png" alt="logo">
-                </span>
-                <div class="text">
-           <p class="p1">Loin des pauvres, près du ciel</p>
-        <p class="p2">Monsieur Poulpe</p>
-        </div>
-        </div>
-        </div>
-    </section>
-</header>
-
-<main>
-    <section class="text-container">
-
-        <div class="top-section">
-            <span class="cadre2">
-        <img src="./images/maison-avec-vue-mer.jpg" alt="vue sur mer avec longue vue">
+          <div class="glass-effect">
+            <span class="cadre-header">
+              <img
+                src="./images/lesvacanceschezgustave - logo.png"
+                alt="logo"
+              />
             </span>
-        <div class="text">
-            <span class="deco">,,</span>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Sed felis eget velit aliquet sagittis id consectetur purus ut. Condimentum id venenatis a condimentum vitae sapien pellentesque habitant morbi. Tincidunt praesent semper feugiat nibh sed pulvinar. Dui vivamus arcu felis bibendum ut. Arcu risus quis varius quam quisque id diam vel. Nunc lobortis mattis aliquam faucibus purus in massa tempor nec. Vel turpis nunc eget lorem dolor sed viverra ipsum.</p>
+            <div class="text">
+              <p class="p1">Loin des pauvres, près du ciel</p>
+              <p class="p2">Monsieur Poulpe</p>
+            </div>
+          </div>
         </div>
+      </section>
+    </header>
+
+    <main>
+      <!-- Section contenant des textes et des images /Section containing texts and pictures-->
+      <section class="text-container">
+        <div class="top-section">
+          <!-- Image principale /Main picture-->
+          <span class="cadre2">
+            <img
+              src="./images/maison-avec-vue-mer.jpg"
+              alt="vue sur mer avec longue vue"
+              aria-hidden="true"
+            />
+            <!-- Ajout de aria-hidden pour indiquer que l'image n'est pas importante pour l'accessibilité /
+            Added aria-hidden to indicate that the image is not important for accessibility-->
+          </span>
+          <!-- Texte associé à l'image/Text associated with the picture -->
+          <div class="text">
+            <span class="deco1">,</span>
+            <span class="deco2">,</span>
+            <!-- Décoration de texte /Text decoration-->
+
+            <!-- Paragraphe de Lorem Ipsum -->
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed
+              felis eget velit aliquet sagittis id consectetur purus ut.
+              Condimentum id venenatis a condimentum vitae sapien pellentesque
+              habitant morbi. Tincidunt praesent semper feugiat nibh sed
+              pulvinar. Dui vivamus arcu felis bibendum ut. Arcu risus quis
+              varius quam quisque id diam vel. Nunc lobortis mattis aliquam
+              faucibus purus in massa tempor nec. Vel turpis nunc eget lorem
+              dolor sed viverra ipsum.
+            </p>
+          </div>
         </div>
 
+        <!-- Section du milieu avec un bouton/ midle section with button-->
         <div class="middle-section">
-            <button>En savoir plus</button>
+          <button aria-label="En savoir plus">En savoir plus</button
+          ><!-- Bouton pour en savoir plus /Learn more button-->
+          <!-- Ajout de aria-label pour donner une description au bouton pour les lecteurs d'écran /
+          Added aria-label to give a description to the button for screen readers-->
         </div>
 
+        <!-- Section du bas avec un titre/ bottom section with title -->
         <div class="bottom-section">
-            <span class="cadre3">
+          <span class="cadre3">
+            <!-- Titre /title-->
             <h2>
-             <p class="p1">Réservez</p>  
-             <p class="p2">vos prochaines vacances</p>  
-           </h2>
-           </span>
+              <p class="p1">Réservez</p>
+              <p class="p2">vos prochaines vacances</p>
+            </h2>
+          </span>
         </div>
-    </section>
+      </section>
 
-    <section class="search-bar-container">
+      <!-- Section contenant une barre de recherche /Section containing a search bar-->
+      <section class="search-bar-container">
+        <!-- Texte introductif /
+Introductory text-->
         <div class="top-search-bar-p">
-            <p>Réservez dès à présent pour vous offrir votre escapade de rêve.</p>
+          <p>Réservez dès à présent pour vous offrir votre escapade de rêve.</p>
         </div>
 
-        <div class="top-search-bar-form"> 
-        <form>
-            <label for="destination_name">Où allez-vous? </label>
-            <input type="text" id="destination_name" name="destination_name"  placeholder="ville, département,région...." required>
-            
-            <label for="dates">Quand partez-vous?</label>
-            <input type="date" id="start-date" name="start-date">
-            <input type="date" id="end-date" name="end-date">
+        <!-- Formulaire de recherche/ Search form-->
+        <div class="top-search-bar-form">
+          <form
+            id="form_recherche"
+            role="search"
+            aria-label="Formulaire de recherche"
+          >
+            <!-- Ajout de role et aria-label pour indiquer que c'est un formulaire de recherche /
+            Added role and aria-label to indicate that it is a search form-->
+            <label for="categorie">Où allez-vous? </label>
+            <!-- Champ de saisie pour la destination /Input field for destination-->
+            <label for="categorie">Où allez-vous? </label>
+            <input
+              type="text"
+              id="categorie"
+              name="categorie"
+              placeholder="ville, département,région...."
+              required
+              aria-required="true"
+            />
+            <!-- Ajout de aria-required pour indiquer que le champ est requis /
+            Added aria-required to indicate that the field is required-->
+
+            <!-- <label for="dates">Quand partez-vous?</label>
+            <input type="date" id="start_date" name="start_date">
+            <input type="date" id="end_date" name="end_date"> -->
+
+            <!-- Labels et champs pour le nombre d'adultes, d'enfants et d'animaux -->
             <label for="participants">Combien êtes-vous?</label>
             <div>
-            <label for="adults">Adultes:</label>
-            <input type="number" id="adults" name="adults" value="2" min="0">
+              <label for="adulte">Adultes:</label>
+              <input
+                type="number"
+                id="adulte"
+                name="adulte"
+                value="2"
+                min="0"
+              />
             </div>
             <div>
-            <label for="children">Enfants:</label>
-            <input type="number" id="children" name="children" value="0" min="0">
+              <label for="enfant">Enfants:</label>
+              <input
+                type="number"
+                id="enfant"
+                name="enfant"
+                value="0"
+                min="0"
+              />
             </div>
             <div>
-            <label for="pets">Animaux:</label>
-            <input type="number" id="pets" name="pets" value="1" min="0">
+              <label for="animaux">Animaux:</label>
+              <input
+                type="number"
+                id="animaux"
+                name="animaux"
+                value="1"
+                min="0"
+              />
             </div>
+            <!-- Bouton de recherche /Search button -->
             <button type="submit">Rechercher</button>
           </form>
         </div>
 
-    <div class="bottom-section-search-bar">
-            <span class="cadre4">
-          <h2>
-            <p class="p1">Venez découvrir</p>  
-            <p class="p2">nos biens d'exception</p>  
-          </h2> 
-            </span>
-    </div>
-    </section>
-
-    <section class="slider-container" id="slider-container">
-        <div id="slider">
-            
-         <!-- <div class="slider-images">
-            <img src="./images/mer.jpg" alt="Vue sur mer">
-            <h5>Une pause au bord de la mer</h5>
-            <img src="./images/campagne.jpg" alt="Maison de campagne">
-            <h5>Une virée à la campagne</h5>
-            <img src="./images/chalet.jpg" alt="Chalet ville">
-            <h5>Un havre de paix en ville</h5>
-            <img src="./images/montagne.jpg" alt="Grand chalet de montagne">
-            <h5>Un retour aux sources à la montagne</h5>
-        </div>  -->
+        <!-- Section du bas avec un titre/ bottom section with button -->
+        <div class="bottom-section-search-bar">
+          <span class="cadre4">
+            <!-- Titre/ Title -->
+            <h2>
+              <p class="p1">Venez découvrir</p>
+              <p class="p2">nos biens d'exception</p>
+            </h2>
+          </span>
         </div>
-    <div class="slider-button">
-        <button>En savoir plus</button>
-    </div>   
-    </section> 
-    
-</main>
+      </section>
+
+      <!-- Section contenant un / section with a slider -->
+      <section class="slider-container" id="slider-container">
+        <div id="slider"></div>
+        <!-- Bouton de navigation pour le slider/ Navigation button for the slider-->
+        <div class="slider-button">
+          <button aria-label="En savoir plus">En savoir plus</button>
+          <!-- Ajout de aria-label pour donner une description au bouton pour les lecteurs d'écran /
+          Added aria-label to give a description to the button for screen readers -->
+        </div>
+      </section>
+    </main>
 
     <footer>
-        <span class="logo-rond">
-            <img src="./images/lesvacanceschezgustave - logo.png" alt="logo-rond">
-        </span>
-        <section class="footer-legal">
+      <span class="logo-rond">
+        <img src="./images/lesvacanceschezgustave - logo.png" alt="logo-rond" />
+      </span>
+      <section class="footer-legal">
         <h4>Plan site</h4>
         <ul>
-            <li>Accueil</li>
-            <li>A propos</li>
-            <li>Recherche</li>
-            <li>Se connecter</li>
+          <li>Accueil</li>
+          <li>A propos</li>
+          <li>Recherche</li>
+          <li>Se connecter</li>
         </ul>
         <h4>En savoir plus</h4>
         <ul>
-            <li>Mentions légales</li>
-            <li>CGV | RGPD</li>
-            <li>FAQ</li>
+          <li>Mentions légales</li>
+          <li>CGV | RGPD</li>
+          <li>FAQ</li>
         </ul>
         <h4>Contacts</h4>
         <ul>
-            <li>Gustave MAURICE</li>
-            <li>Jean MARLIN</li>
-            <li>Marc LAVIE</li>
-            <li>Martin CRAIE</li>
-            <li>Paul ALKER</li>
+          <li>Gustave MAURICE</li>
+          <li>Jean MARLIN</li>
+          <li>Marc LAVIE</li>
+          <li>Martin CRAIE</li>
+          <li>Paul ALKER</li>
         </ul>
-    </section>
-    <div class="footer-media">
-        <img src="" alt="logo insta">
-        <img src="" alt="logo facebook">
-        <img src="" alt="logo tel">
-
-
-    </div>
+      </section>
+      <div class="footer-media">
+        <img src="./images/icons8-instagram-60.png" alt="logo insta" />
+        <img
+          src="./images/icons8-facebook-nouveau-60.png"
+          alt="logo facebook"
+        />
+        <img src="./images/icons8-whatsapp-60.png" alt="logo whatsapp" />
+      </div>
     </footer>
-    
-    
-     <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Veuillez vous identifier</h2>
-            <form id="login-form">
-                <label for="username">Votre mail ou identifiant </label><br>
-                <input type="text" id="username" name="username"><br>
-                <label for="password">Votre mot de passe </label><br>
-                <input type="password" id="password" name="password"><br>
-                <button type="submit">Se connecter</button>
-            </form>
-        </div>
-    </div> 
-    
 
-<script src="./script.js"></script>
-</body>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Veuillez vous identifier</h2>
+        <form id="login-form">
+          <label for="username">Votre mail ou identifiant </label><br />
+          <input type="text" id="username" name="username" /><br />
+          <label for="password">Votre mot de passe </label><br />
+          <input type="password" id="password" name="password" /><br />
+          <button type="submit">Se connecter</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
 </html>

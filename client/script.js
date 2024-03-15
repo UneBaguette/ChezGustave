@@ -61,16 +61,16 @@ let position = 0;
 // Fonction pour afficher une image dans le slider
 const affiche = (step) => {
   // Met à jour la position
-  console.log(step);
+  // console.log(step);
   position += step;
-  console.log(position);
+  // console.log(position);
   if (position >= aListeImage.length) {
     position = 0;
   }
   if (position < 0) {
     position = aListeImage.length - 1;
   }
-  console.log(position);
+  // console.log(position);
 
   // Met à jour l'image et son titre
   monImage.setAttribute(
@@ -115,65 +115,76 @@ btnPlay.addEventListener("click", () => {
   runSlider(); // Redémarre le défilement automatique si autoplay est vrai
 });
 
-// Sélectionner les éléments nécessaires
-const modal = document.getElementById("modal");
-const btnOpenModal = document.getElementById("btn-open-modal");
-const btnCloseModal = document.querySelector(".modal .close");
-
-// Fonction pour ouvrir la modale
-function openModal() {
-  modal.style.display = "block";
-}
-
-// Fonction pour fermer la modale
-function closeModal() {
-  modal.style.display = "none";
-}
-
-// Événement de clic sur le lien "Se connecter" pour ouvrir la modale
-btnOpenModal.addEventListener("click", (event) => {
-  event.preventDefault(); // Empêcher le comportement de lien par défaut
-  openModal();
-});
-
-// Événement de clic sur le bouton de fermeture pour fermer la modale
-btnCloseModal.addEventListener("click", closeModal);
-
-// Événement de clic en dehors de la modale pour la fermer
-window.addEventListener("click", (event) => {
-  if (event.target === modal) {
-    closeModal();
-  }
-});
-
-const form = document.querySelector("form");
-
+// Sélectionne le formulaire dans le document HTML
+const form = document.querySelector("#form_recherche");
+// Ajoute un écouteur d'événements pour la soumission du formulaire
 form.addEventListener("submit", (e) => {
+  // Empêche le comportement par défaut du formulaire (rechargement de la page)
   e.preventDefault();
+  // Appelle la fonction handleSubmit lorsque le formulaire est soumis
   handleSubmit();
 });
 
+// Définition de la fonction handleSubmit
 const handleSubmit = async () => {
   // Accéder aux valeurs des champs d'entrée
-  let destinationInput = document.getElementById("destination_name").value;
-  let startDateInput = document.getElementById("start-date").value;
-  let endDateInput = document.getElementById("end-date").value;
-  let adultsInput = document.getElementById("adults").value;
-  let childrenInput = document.getElementById("children").value;
-  let petsInput = document.getElementById("pets").value;
+  // Accéder aux valeurs des champs d'entrée
+  let destinationInput = document.getElementById("categorie").value;
+  console.log("Valeur du champ destinationInput :", destinationInput);
+  let adultsInput = document.getElementById("adulte").value;
+  console.log("Valeur du champ adultsInput :", adultsInput);
+  let childrenInput = document.getElementById("enfant").value;
+  console.log("Valeur du champ childrenInput :", childrenInput);
+  let petsInput = document.getElementById("animaux").value;
+  console.log("Valeur du champ petsInput :", petsInput);
 
-  // Convertir les valeurs numériques si nécessaire
-  let adultsValue = parseInt(adultsInput, 10);
-  let childrenValue = parseInt(childrenInput, 10);
-  let petsValue = parseInt(petsInput, 10);
+  // Affichage des valeurs dans la console
+
+  // Convertir les valeurs numériques (string) en nombres entiers (integer) si nécessaire
+  // Convertir les valeurs numériques (string) en nombres entiers (integer) si nécessaire
+  let adultsValue =
+    adultsInput.trim() !== "" ? parseInt(adultsInput, 10) : null;
+  let childrenValue =
+    childrenInput.trim() !== "" ? parseInt(childrenInput, 10) : null;
+  let petsValue = petsInput.trim() !== "" ? parseInt(petsInput, 10) : null;
+
+  // Affichage des valeurs converties dans la console
 
   // Afficher les valeurs dans la console (à titre d'exemple)
-  console.log(
-    destinationInput,
-    startDateInput,
-    endDateInput,
-    adultsValue,
-    childrenValue,
-    petsValue
-  );
+  console.log(destinationInput, adultsValue, childrenValue, petsValue);
+
+  try {
+    const response = await fetch(
+      "http://127.0.0.1:3000/logement/recherche-logement",
+      {
+        method: "POST", // Utiliser la méthode POST
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          categorie: destinationInput,
+          adulte: adultsValue,
+          enfant: childrenValue,
+          animaux: petsValue,
+        }),
+      }
+    );
+
+    // Vérifie si la réponse est OK (statut 200-299)
+    if (!response.ok) {
+      throw new Error("Erreur réseau: " + response.statusText);
+    }
+
+    // Traiter les réponses JSON si nécessaire
+    const data = await response.json();
+
+    // Faites quelque chose avec les données récupérées
+    console.log(data);
+
+    // Rediriger vers la page d'accueil
+    window.location.href = "recherche.html";
+  } catch (error) {
+    // Attrape et gère les erreurs
+    console.error("Erreur lors de la récupération des données:", error);
+  }
 };
